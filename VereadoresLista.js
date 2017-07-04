@@ -13,6 +13,7 @@ export default class VereadoresLista extends React.Component {
             <View style={styles.container}>
 
               <ToolbarAndroid style={styles.toolbar} title="VEREADORES" titleColor="green"/>
+
                             
               <TouchableHighlight style = {styles.button} onPress={this._handlePress()}>
                   <Text style = {styles.buttonText}>Jailton da Mercearia</Text>
