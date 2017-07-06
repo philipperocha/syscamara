@@ -2,6 +2,22 @@ import React, {Component} from "react";
 import { StyleSheet, View, Text, FlatList, ActivityIndicator, ToolbarAndroid } from "react-native";
 import { List, ListItem, SearchBar,  } from "react-native-elements";
 
+
+
+const DATA = [
+  {
+    codigo: 1,
+    nome: 'Alex Dentinho',
+    partido: 'PRB',
+    foto: 'http://sapl.lagarto.se.leg.br/sapl_documentos/parlamentar/fotos/27_foto_parlamentar'
+  }, {
+   codigo: 2,
+    nome: 'Baiano Treze',
+    partido: 'PSB',
+    foto: 'http://sapl.lagarto.se.leg.br/sapl_documentos/parlamentar/fotos/1_foto_parlamentar'
+  }
+];
+
 export default class VereadoresLista extends Component {
   constructor(props) {
     super(props);
@@ -24,19 +40,14 @@ export default class VereadoresLista extends Component {
     const { page, seed } = this.state;
     const url = `https://randomuser.me/api/?seed=${seed}&page=${page}&results=20`;
     this.setState({ loading: true });
-    fetch(url)
-      .then(res => res.json())
-      .then(res => {
+    setTimeout(2000, () => {
         this.setState({
-          data: page === 1 ? res.results : [...this.state.data, ...res.results],
+          data: DATA,
           error: res.error || null,
           loading: false,
           refreshing: false
         });
-      })
-      .catch(error => {
-        this.setState({ error, loading: false });
-      });
+    });
   };
 
   renderSeparator = () => {
@@ -83,14 +94,14 @@ export default class VereadoresLista extends Component {
                     renderItem={({ item }) => (
                     <ListItem
                         roundAvatar
-                        title={`${item.name.first} ${item.name.last}`}
-                        subtitle={item.email}
-                        avatar={{ uri: item.picture.thumbnail }}
+                        title={item.nome}
+                        subtitle={item.partido}
+                        avatar={{ uri: item.foto }}
                         containerStyle={{ borderBottomWidth: 0 }}
                         
                     />
                     )}
-                    keyExtractor={item => item.email}
+                    keyExtractor={item => item.codigo}
                     ItemSeparatorComponent={this.renderSeparator}
                     ListHeaderComponent={this.renderHeader}
                     ListFooterComponent={this.renderFooter}
