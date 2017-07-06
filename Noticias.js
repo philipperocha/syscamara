@@ -74,10 +74,10 @@ export default class Noticias extends Component {
 
     render() {
         return (
-            <View>
+            <View >
                 <ToolbarAndroid style={styles.toolbar} title="Notícias" titleColor="green"/>
-
                 <List containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
+                
                 <FlatList
                     data={this.state.data}
                     renderItem={({ item }) => (
@@ -104,7 +104,16 @@ export default class Noticias extends Component {
 const styles = StyleSheet.create({
   toolbar:{
         alignSelf: 'stretch',
-        height: 24,
+        alignItems: 'center',
+        height: 50,
+        width: 360,
         backgroundColor: 'black',
+        //color: 'white',
    },
+     container: {
+    top: 0,
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+  },
 });

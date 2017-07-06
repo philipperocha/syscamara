@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         alignItems: 'center',
         height: 50,
-        width: 400,
+        width: 360,
         backgroundColor: 'silver',
         //color: 'white',
    },
