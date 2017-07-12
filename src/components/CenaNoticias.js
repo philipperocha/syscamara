@@ -13,7 +13,7 @@ import { List, ListItem, SearchBar,  } from "react-native-elements";
 //importar o componente barra navegação
 import BarraNavegacao from './BarraNavegacao';
 
-const detalheEmpresa = require('../img/detalhe_noticias.png');
+const detalheNoticia = require('../img/detalhe_noticias.png');
 
 
 const DATA = [
@@ -135,7 +135,7 @@ export default class CenaNoticias extends Component {
         <BarraNavegacao voltar navigator={this.props.navigator} corDeFundo='black' />
 
         <View style={styles.cabecalho}>
-          <Image source={detalheEmpresa} />
+          <Image source={detalheNoticia} />
           <Text style={styles.txtTitulo}>Notícias</Text>
         </View>
 

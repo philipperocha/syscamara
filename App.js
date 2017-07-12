@@ -9,10 +9,13 @@ import CenaVereadores from './src/components/CenaVereadores';
 import CenaContato from './src/components/CenaContato';
 import CenaNoticias from './src/components/CenaNoticias';
 import CenaPautas from './src/components/CenaPautas';
+import Noticia from './src/components/Noticia';
+import Vereador from './src/components/Vereador';
 
 export default class App extends Component {
   render() {
     return (
+
       <Navigator
         initialRoute={{ id: 'principal' }}
         renderScene={(route, navigator) => {
