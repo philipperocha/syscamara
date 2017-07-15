@@ -12,36 +12,42 @@ import CenaPautas from './src/components/CenaPautas';
 import Noticia from './src/components/Noticia';
 import Vereador from './src/components/Vereador';
 
+import TesteRedux from './src/components/TesteRedux';
+
 export default class App extends Component {
   render() {
+
+    console.log("Hello World");
+
     return (
 
-      <Navigator
-        initialRoute={{ id: 'principal' }}
-        renderScene={(route, navigator) => {
-          switch (route.id) {
-            case 'principal':
-              return (<CenaPrincipal navigator={navigator} />);
+      <TesteRedux />
+      // <Navigator
+      //   initialRoute={{ id: 'principal' }}
+      //   renderScene={(route, navigator) => {
+      //     switch (route.id) {
+      //       case 'principal':
+      //         return (<CenaPrincipal navigator={navigator} />);
 
-            case 'vereadores':
-              return (<CenaVereadores navigator={navigator} />);
+      //       case 'vereadores':
+      //         return (<CenaVereadores navigator={navigator} />);
 
-            case 'contato':
-              return (<CenaContato navigator={navigator} />);
+      //       case 'contato':
+      //         return (<CenaContato navigator={navigator} />);
 
-            case 'noticias': 
-              return (<CenaNoticias navigator={navigator} />);
+      //       case 'noticias': 
+      //         return (<CenaNoticias navigator={navigator} />);
 
-            case 'pautas':
-              return (<CenaPautas navigator={navigator} />);
+      //       case 'pautas':
+      //         return (<CenaPautas navigator={navigator} />);
 
-            default:
-              return false;
-          }
-        }}
-      />
+      //       default:
+      //         return false;
+      //     }
+      //   }}
+      // />
     );
   }
 }
 
-//AppRegistry.registerComponent('App', () => App);
+// AppRegistry.registerComponent('PoliticoApp', () => PoliticoApp);
