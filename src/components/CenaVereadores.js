@@ -1,155 +1,86 @@
 import React, { Component } from 'react';
-import {
-  View,
-  StatusBar,
-  Image,
-  Text,
-  StyleSheet,
-  FlatList, 
-  ActivityIndicator,
-} from 'react-native';
-import { List, ListItem, SearchBar,  } from "react-native-elements";
-
-//importar o componente barra navegação
+import { View, StatusBar, Image, Text, StyleSheet, FlatList, ActivityIndicator, AppRegistry, TextInput, ListView, ToolbarAndroid,} from 'react-native';
+import { List, ListItem, Separator, SearchBar,  } from "react-native-elements";
+import FloatingActionButton from 'react-native-action-button';
 import BarraNavegacao from './BarraNavegacao';
+import * as firebase from 'firebase';
+import Header from './auxiliares/Header';
+import Footer from './auxiliares/Footer';
 
 const detalheVereadores = require('../img/detalhe_vereadores.png');
 
-
-const DATA = [
-  {
-    codigo: 1,
-    nome: 'Alex Dentinho',
-    partido: 'PRB',
-    foto: 'http://sapl.lagarto.se.leg.br/sapl_documentos/parlamentar/fotos/27_foto_parlamentar'
-  }, {
-   codigo: 2,
-    nome: 'Baiano Treze',
-    partido: 'PSB',
-    foto: 'http://sapl.lagarto.se.leg.br/sapl_documentos/parlamentar/fotos/1_foto_parlamentar'
-  }, {
-   codigo: 3,
-    nome: 'Eduardo de João Maratá',
-    partido: 'PR',
-    foto: 'http://sapl.lagarto.se.leg.br/sapl_documentos/parlamentar/fotos/28_foto_parlamentar'
-  }, {
-   codigo: 4,
-    nome: 'Itamar de Santana',
-    partido: 'PPS',
-    foto: 'http://sapl.lagarto.se.leg.br/sapl_documentos/parlamentar/fotos/38_foto_parlamentar'
-  }, {
-   codigo: 5,
-    nome: 'Creusa Maria dos Santos',
-    partido: 'PPS',
-    foto: 'http://sapl.lagarto.se.leg.br/sapl_documentos/parlamentar/fotos/30_foto_parlamentar'
-  }, {
-   codigo: 6,
-    nome: 'Gilberto da Farinha',
-    partido: 'DEM',
-    foto: 'http://sapl.lagarto.se.leg.br/sapl_documentos/parlamentar/fotos/18_foto_parlamentar'
-  }, {
-   codigo: 7,
-    nome: 'Jailton da Mercearia',
-    partido: 'PRP',
-    foto: 'http://sapl.lagarto.se.leg.br/sapl_documentos/parlamentar/fotos/32_foto_parlamentar'
-  },{
-   codigo: 8,
-    nome: 'Zé do Perfume',
-    partido: 'PSC',
-    foto: 'http://sapl.lagarto.se.leg.br/sapl_documentos/parlamentar/fotos/33_foto_parlamentar'
-  },{
-   codigo: 9,
-    nome: 'Marta da Dengue',
-    partido: 'PMDB',
-    foto: 'http://sapl.lagarto.se.leg.br/sapl_documentos/parlamentar/fotos/23_foto_parlamentar'
-  },{
-   codigo: 10,
-    nome: 'Gordinho da Laranja',
-    partido: 'PRP',
-    foto: 'http://sapl.lagarto.se.leg.br/sapl_documentos/parlamentar/fotos/37_foto_parlamentar'
-  }
-];
+const firebaseConfig = {
+  apiKey: "AIzaSyAoACV4fA2Q_47VEKBXu3UrQVdM_Ik_IOI",
+  authDomain: "my-app-5c471.firebaseio.com",
+  databaseURL: "https://my-app-5c471.firebaseio.com/",
+  storageBucket: "",
+};
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 export default class CenaVereadores extends Component {
 
   constructor(props) {
     super(props);
 
+    this.tasksRef = firebaseApp.database().ref();
+    const dataSource = new ListView.DataSource({
+      rowHasChanged: (row1, row2) => row1 !== row2,
+    });
+
     this.state = {
-      loading: false,
-      data: [],
-      page: 1,
-      seed: 1,
-      error: null,
-      refreshing: false,
+      dataSource: dataSource, // dataSource for our list
+      newVereador: "", // The name of the new task
     };
   }
 
-  componentDidMount() {
-    this.makeRemoteRequest();
-  }
-
-  makeRemoteRequest = () => {
-    const { page, seed } = this.state;
-    const url = `https://randomuser.me/api/?seed=${seed}&page=${page}&results=2`;
-    this.setState({ loading: true });
-    
-    fetch(url)
-    .then(res => res.json())
-    .then(res => {
-
-        this.setState({
-          data: DATA,
-          error: res.error || null,
-          loading: false,
-          refreshing: false
-        });
-    });
-  };
-
-  renderSeparator = () => {
+  _renderItem(task) {
     return (
-      <View
-        style={{
-          height: 1,
-          width: "86%",
-          backgroundColor: "#CED0CE",
-          marginLeft: "14%"
-        }}
-      />
-    );
-  };
-
-    renderHeader = () => {
-    return <SearchBar placeholder="Type Here..." lightTheme round />;
-  };
-
-    renderFooter = () => {
-    if (!this.state.loading) return null;
-
-    return (
-      <View
-        style={{
-          paddingVertical: 20,
-          borderTopWidth: 1,
-          borderColor: "#CED0CE"
-        }}
-      >
-        <ActivityIndicator animating size="large" />
+      <View>
+        <ListItem
+            roundAvatar
+            title={task.name}
+            subtitle={task.partido}
+            avatar={task.foto}
+            containerStyle={{ borderBottomWidth: 0 }}
+        />
       </View>
     );
-  };
+  }
 
+    listenForTasks(tasksRef) {
+    // listen for changes to the tasks reference, when it updates we'll get a
+    // dataSnapshot from firebase
+    tasksRef.on('value', (dataSnapshot) => {
+      // transform the children to an array
+      var tasks = [];
+      dataSnapshot.forEach((child) => {
+        tasks.push({
+          name: child.val().name,
+          partido: child.val().partido,
+          foto: child.val().foto,
+          _key: child.key
+        });
+      });
+
+      // Update the state with the new tasks
+      this.setState({
+        dataSource: this.state.dataSource.cloneWithRows(tasks)
+      });
+    });
+  }
+
+  componentDidMount() {
+    this.listenForTasks(this.tasksRef);
+  }
 
   render() {
     return (
-			<View style={{ flex: 1, backgroundColor: '#FFF' }}>
+			<View style={{ flex: 1, backgroundColor: '#f2f2f2' }}>
         <StatusBar 
           //hidden
           backgroundColor='#B9C941'
         />
 
-        {/*<BarraNavegacao voltar navigator={this.props.navigator} corDeFundo='#B9C941' />*/}
         <BarraNavegacao voltar navigator={this.props.navigator} corDeFundo='black' />
 
         <View style={styles.cabecalho}>
@@ -157,26 +88,15 @@ export default class CenaVereadores extends Component {
           <Text style={styles.txtTitulo}>Vereadores</Text>
         </View>
 
-        <List containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
-                
-          <FlatList
-              data={this.state.data}
-              renderItem={({ item }) => (
-              <ListItem
-                  roundAvatar
-                  title={item.nome}
-                  subtitle={item.partido}
-                  avatar={item.foto}
-                  containerStyle={{ borderBottomWidth: 0 }}
-                  
-              />
-              )}
-              keyExtractor={item => item.codigo}
-              ItemSeparatorComponent={this.renderSeparator}
-              ListHeaderComponent={this.renderHeader}
-              ListFooterComponent={this.renderFooter}
-          />
-        </List>
+        <ListView
+          dataSource={this.state.dataSource}
+          //enableEmptySections={true}
+          renderRow={this._renderItem.bind(this)}
+          renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
+          renderHeader={() => <Header />}
+          renderFooter={() => <Footer />}
+          style={styles.listView}
+        />
 
       </View>
     );
@@ -203,5 +123,13 @@ const styles = StyleSheet.create({
   txtDetalheVereador: {
     fontSize: 18,
     marginLeft: 20
-  }
+  },
+  listView: {
+    flex: 1,
+  },
+  separator: {
+    flex: 1,
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: '#8E8E8E',
+  },
 });
