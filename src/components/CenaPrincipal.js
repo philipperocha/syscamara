@@ -16,8 +16,23 @@ const menuVereadores = require('../img/vereadores.jpg');
 const menuContato = require('../img/contato.jpg');
 const menuNoticias = require('../img/noticias.jpg');
 const menuPautas = require('../img/pautas.jpg');
+import * as firebase from 'firebase';
 
 export default class CenaPrincipal extends Component {
+
+  async logOut(){
+      try{
+          await firebase.auth().signOut()
+          this.props.navigator.push({
+            id: 'Login'
+          })
+
+      }catch(error){
+          console.log(error);
+      }
+
+  }
+
   render() {
     return (
 			<View>
@@ -78,9 +93,14 @@ export default class CenaPrincipal extends Component {
               <Image style={styles.imgMenu} source={menuPautas} />
             </TouchableHighlight>
 
-
-
           </View>
+
+          <View style={styles.menuGrupo}>
+              <TouchableHighlight onPress={this.logOut.bind(this)} style={styles.button}>
+                  <Text style={styles.buttonText}> LogOut </Text>
+              </TouchableHighlight>
+          </View>
+
         </View>
 
             {/*<Text style={{ position: 'absolute', top:560, }}>Criado por Philippe e Gabriel</Text>
@@ -114,6 +134,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   imgMenu: {
-    margin: 10
-  }
+    margin: 10,
+    height: 72,
+    width: 75,
+  },
+  button: {
+    height: 30,
+    width: 100,
+    backgroundColor: '#003566',
+    alignSelf: 'stretch',
+    marginTop: 50,
+    justifyContent: 'center'
+  },
+  buttonText: {
+    color: '#FFF',
+    alignSelf: 'center'
+  },
 });

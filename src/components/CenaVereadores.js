@@ -9,20 +9,23 @@ import Footer from './auxiliares/Footer';
 
 const detalheVereadores = require('../img/detalhe_vereadores.png');
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAoACV4fA2Q_47VEKBXu3UrQVdM_Ik_IOI",
-  authDomain: "my-app-5c471.firebaseio.com",
-  databaseURL: "https://my-app-5c471.firebaseio.com/",
-  storageBucket: "",
-};
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAoACV4fA2Q_47VEKBXu3UrQVdM_Ik_IOI",
+//   authDomain: "my-app-5c471.firebaseio.com",
+//   databaseURL: "https://my-app-5c471.firebaseio.com/",
+//   storageBucket: "",
+// };
+// const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 export default class CenaVereadores extends Component {
+
 
   constructor(props) {
     super(props);
 
-    this.tasksRef = firebaseApp.database().ref();
+    console.log(firebase.database().ref());
+
+    this.tasksRef = firebase.database().ref();
     const dataSource = new ListView.DataSource({
       rowHasChanged: (row1, row2) => row1 !== row2,
     });
@@ -47,7 +50,7 @@ export default class CenaVereadores extends Component {
     );
   }
 
-    listenForTasks(tasksRef) {
+  listenForTasks(tasksRef) {
     // listen for changes to the tasks reference, when it updates we'll get a
     // dataSnapshot from firebase
     tasksRef.on('value', (dataSnapshot) => {
@@ -61,6 +64,8 @@ export default class CenaVereadores extends Component {
           _key: child.key
         });
       });
+
+      console.log(tasks);
 
       // Update the state with the new tasks
       this.setState({
