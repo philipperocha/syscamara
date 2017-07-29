@@ -13,17 +13,7 @@ import Noticia from './src/components/Noticia';
 import Vereador from './src/components/Vereador';
 
 import Login from './src/components/Login';
-import * as firebase from 'firebase';
-//import Firebase from './src/lib/firebase'
 
-firebase.initializeApp({
-    apiKey: "AIzaSyAoACV4fA2Q_47VEKBXu3UrQVdM_Ik_IOI",
-    authDomain: "my-app-5c471.firebaseapp.com",
-    databaseURL: "https://my-app-5c471.firebaseio.com",
-    projectId: "my-app-5c471",
-    storageBucket: "my-app-5c471.appspot.com",
-    messagingSenderId: "566860187383"
-});
 
 export default class App extends Component {
 
@@ -59,7 +49,7 @@ export default class App extends Component {
         return (<Login navigator={navigator}/>);
 
       case 'vereadores':
-        return (<CenaVereadores navigator={navigator} />);
+        return (<CenaVereadores navigator={navigator} firebase={firebaseApp} />);
 
       case 'contato':
         return (<CenaContato navigator={navigator} />);

@@ -3,7 +3,6 @@ import { View, StatusBar, Image, Text, StyleSheet, FlatList, ActivityIndicator, 
 import { List, ListItem, Separator, SearchBar,  } from "react-native-elements";
 import FloatingActionButton from 'react-native-action-button';
 import BarraNavegacao from './BarraNavegacao';
-import * as firebase from 'firebase';
 import Header from './auxiliares/Header';
 import Footer from './auxiliares/Footer';
 
@@ -22,10 +21,11 @@ export default class CenaVereadores extends Component {
 
   constructor(props) {
     super(props);
-
+    let firebase = props.firebase;
     console.log(firebase.database().ref());
 
-    this.tasksRef = firebase.database().ref();
+    let tasksRef = firebase.database().ref();
+
     const dataSource = new ListView.DataSource({
       rowHasChanged: (row1, row2) => row1 !== row2,
     });
@@ -33,6 +33,7 @@ export default class CenaVereadores extends Component {
     this.state = {
       dataSource: dataSource, // dataSource for our list
       newVereador: "", // The name of the new task
+      tasksRef: tasksRef,
     };
   }
 
@@ -51,6 +52,9 @@ export default class CenaVereadores extends Component {
   }
 
   listenForTasks(tasksRef) {
+
+    console.log(tasksRef);
+
     // listen for changes to the tasks reference, when it updates we'll get a
     // dataSnapshot from firebase
     tasksRef.on('value', (dataSnapshot) => {
@@ -69,13 +73,13 @@ export default class CenaVereadores extends Component {
 
       // Update the state with the new tasks
       this.setState({
-        dataSource: this.state.dataSource.cloneWithRows(tasks)
+        dataSource: this.state.dataSource.cloneWithRows(tasks),
       });
     });
   }
 
   componentDidMount() {
-    this.listenForTasks(this.tasksRef);
+    this.listenForTasks(this.state.tasksRef);
   }
 
   render() {
