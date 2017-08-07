@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
 import {StatusBar, Image, FlatList, ActivityIndicator, AppRegistry, ListView, ToolbarAndroid, Text, View, StyleSheet, TextInput, TouchableHighlight} from 'react-native'
-import * as firebase from 'firebase'
 import BarraNavegacao from './BarraNavegacao';
+
+import firebase from './firebase';
 
 export default class Login extends Component{
 
     constructor(props){
         super(props)
+
         this.state = {
             email: '',
             password: '',

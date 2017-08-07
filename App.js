@@ -3,6 +3,7 @@ import {
   AppRegistry,
   Navigator
 } from 'react-native-deprecated-custom-components';
+import {View, Text} from 'react-native'
 
 import CenaPrincipal from './src/components/CenaPrincipal';
 import CenaVereadores from './src/components/CenaVereadores';
@@ -13,9 +14,9 @@ import Noticia from './src/components/Noticia';
 import Vereador from './src/components/Vereador';
 
 import Login from './src/components/Login';
+import firebase from './src/components/firebase';
 
-
-export default class App extends Component {
+export default class PoliticoApp extends Component {
 
     constructor(props){
     super(props)
@@ -46,10 +47,10 @@ export default class App extends Component {
         return (<CenaPrincipal navigator={navigator}/>);
 
       case 'Login':
-        return (<Login navigator={navigator}/>);
+        return (<Login navigator={navigator} />);
 
       case 'vereadores':
-        return (<CenaVereadores navigator={navigator} firebase={firebaseApp} />);
+        return (<CenaVereadores navigator={navigator} firebase={firebase} />);
 
       case 'contato':
         return (<CenaContato navigator={navigator} />);
@@ -77,16 +78,10 @@ export default class App extends Component {
   }
 
 
-// render(){
-//   return(
-//     <CenaVereadores />
-//   );
-// }
-
   render() {
+
     if(this.state.userLoaded){
       return (
-        // <Principal />
         <Navigator
           initialRoute={{
             id: this.state.initialView
@@ -100,36 +95,4 @@ export default class App extends Component {
     }
   }
 
-  // render() {
-
-  //   return (
-
-  //     <Navigator
-  //       initialRoute={{ id: 'principal' }}
-  //       renderScene={(route, navigator) => {
-  //         switch (route.id) {
-  //           case 'principal':
-  //             return (<CenaPrincipal navigator={navigator} />);
-
-  //           case 'vereadores':
-  //             return (<CenaVereadores navigator={navigator} />);
-
-  //           case 'contato':
-  //             return (<CenaContato navigator={navigator} />);
-
-  //           case 'noticias': 
-  //             return (<CenaNoticias navigator={navigator} />);
-
-  //           case 'pautas':
-  //             return (<CenaPautas navigator={navigator} />);
-
-  //           default:
-  //             return false;
-  //         }
-  //       }}
-  //     />
-  //   );
-  // }
 }
-
-// AppRegistry.registerComponent('PoliticoApp', () => PoliticoApp);

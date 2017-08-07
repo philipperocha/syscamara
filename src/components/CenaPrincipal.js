@@ -11,14 +11,20 @@ import {
 //importar o componente barra navegação
 import BarraNavegacao from './BarraNavegacao';
 
+import firebase from './firebase';
+
 const logo = require('../img/logo.png');
 const menuVereadores = require('../img/vereadores.jpg');
 const menuContato = require('../img/contato.jpg');
 const menuNoticias = require('../img/noticias.jpg');
 const menuPautas = require('../img/pautas.jpg');
-import * as firebase from 'firebase';
 
 export default class CenaPrincipal extends Component {
+
+  // constructor(props) {
+  //   super(props);
+  //   let firebase = props.firebase;
+  // }
 
   async logOut(){
       try{
