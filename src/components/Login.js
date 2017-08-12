@@ -4,6 +4,12 @@ import BarraNavegacao from './BarraNavegacao';
 
 import firebase from './firebase';
 
+const FBSDK = require('react-native-fbsdk');
+const {
+    LoginButton,
+    AccessToken
+} = FBSDK;
+
 export default class Login extends Component{
 
     constructor(props){
@@ -17,6 +23,8 @@ export default class Login extends Component{
         this.signUp = this.signUp.bind(this)
         this.login = this.login.bind(this)
     }
+
+    
 
     async signUp(){
         try{
@@ -89,6 +97,26 @@ export default class Login extends Component{
                 <TouchableHighlight onPress={this.signUp} style={[styles.loginButton, styles.button]} >
                     <Text style={styles.textButton}>Novo Cadastro</Text>
                 </TouchableHighlight>
+
+                <LoginButton
+                publishPermissions={["publish_actions"]}
+                onLoginFinished={
+                    (error, result) => {
+                    if (error) {
+                        alert("login has error: " + result.error);
+                    } else if (result.isCancelled) {
+                        alert("login is cancelled.");
+                    } else {
+                        AccessToken.getCurrentAccessToken().then(
+                        (data) => {
+                            alert(data.accessToken.toString())
+                        }
+                        )
+                    }
+                    }
+                }
+                onLogoutFinished={() => alert("logout.")}/>
+
             </View>
         )
     }
@@ -102,7 +130,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
     },
     inputText:{
-        height: 80,
+        height: 50,
         borderWidth: 1,
         borderColor: '#ccc',
         paddingHorizontal: 20,
@@ -110,8 +138,9 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     button:{
+        height: 50,
         backgroundColor: '#003566',
-        paddingVertical: 20,
+        paddingVertical: 10,
         borderRadius: 5,
         marginBottom: 10,
         borderWidth: 1,
@@ -154,4 +183,7 @@ const styles = StyleSheet.create({
         height: StyleSheet.hairlineWidth,
         backgroundColor: '#8E8E8E',
     },
+    buttonFacebook: {
+        alignItems: 'center'
+    }
 })

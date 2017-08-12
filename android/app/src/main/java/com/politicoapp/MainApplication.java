@@ -3,6 +3,7 @@ package com.politicoapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 //import io.invertase.firebase.RNFirebaseAdMobPackage;
 import com.facebook.react.ReactNativeHost;
@@ -21,9 +22,18 @@ import io.invertase.firebase.RNFirebasePackage; // <-- Add this line
 import io.invertase.firebase.auth.RNFirebaseAuthPackage; // Firebase Auth
 import io.invertase.firebase.database.RNFirebaseDatabasePackage; // Firebase Realtime Database
 
-
+import com.facebook.CallbackManager;
+import com.facebook.FacebookSdk;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import com.facebook.appevents.AppEventsLogger;
 
 public class MainApplication extends Application implements ReactApplication {
+
+  private static CallbackManager mCallbackManager = CallbackManager.Factory.create();
+
+  protected static CallbackManager getCallbackManager() {
+    return mCallbackManager;
+  }
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
@@ -40,7 +50,9 @@ public class MainApplication extends Application implements ReactApplication {
           new RNFirebasePackage(),  // <-- Add this line
           // Add these packages as appropriate
           new RNFirebaseAuthPackage(),
-          new RNFirebaseDatabasePackage()
+          new RNFirebaseDatabasePackage(),
+
+          new FBSDKPackage(mCallbackManager)
 
       );
     }
@@ -55,5 +67,11 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+
+    FacebookSdk.sdkInitialize(getApplicationContext());
+    // If you want to use AppEventsLogger to log events.
+    AppEventsLogger.activateApp(this);
   }
+
+
 }
