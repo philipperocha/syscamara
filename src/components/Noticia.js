@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 //importar o componente barra navegação
-import BarraNavegacao from './BarraNavegacao';
+import BarraNavegacao from './auxiliares/BarraNavegacao';
 
 const noticia = require('../img/noticias/sao_joao_de_cg.jpg');
 const detalheNoticia = require('../img/detalhe_noticias.png');
@@ -23,7 +23,7 @@ export default class Noticia extends Component {
             backgroundColor='#CCC'
             />
 
-            <BarraNavegacao voltar navigator={this.props.navigator} corDeFundo='black'/>
+            <BarraNavegacao voltar navigator={this.props.navigator} titulo='Notícias' corDeFundo='black'/>
 
             <View style={styles.cabecalho}>
                 <Image source={detalheNoticia} />

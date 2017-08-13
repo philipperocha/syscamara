@@ -6,15 +6,15 @@ import {
 import {View, Text} from 'react-native'
 
 import CenaPrincipal from './src/components/CenaPrincipal';
-import CenaVereadores from './src/components/CenaVereadores';
+import CenaPoliticos from './src/components/CenaPoliticos';
 import CenaContato from './src/components/CenaContato';
 import CenaNoticias from './src/components/CenaNoticias';
 import CenaPautas from './src/components/CenaPautas';
 import Noticia from './src/components/Noticia';
 import Vereador from './src/components/Vereador';
 
-import Login from './src/components/Login';
-import firebase from './src/components/firebase';
+import CenaLogin from './src/components/CenaLogin';
+import firebase from './src/data/firebase';
 
 export default class PoliticoApp extends Component {
 
@@ -47,10 +47,10 @@ export default class PoliticoApp extends Component {
         return (<CenaPrincipal navigator={navigator}/>);
 
       case 'Login':
-        return (<Login navigator={navigator} />);
+        return (<CenaLogin navigator={navigator} />);
 
       case 'vereadores':
-        return (<CenaVereadores navigator={navigator} firebase={firebase} />);
+        return (<CenaPoliticos navigator={navigator} />);
 
       case 'contato':
         return (<CenaContato navigator={navigator} />);

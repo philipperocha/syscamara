@@ -12,6 +12,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/customtabs/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="94ba691efc31bf53264db0716d9c9ec03843ea31">
+        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-customtabs-25.0.0_fd95681c7c8deabf60aee605e4ee403b3d360253.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/philippe/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
         jumboMode="false"
         optimize="true"
@@ -93,21 +102,21 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/philippe/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/support-annotations-25.2.0_164099c4b47309fb2455be2cf65bd45782c6464d.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/philippe/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="6975da39a7040257bd51d21a231b76c915872d38">
         <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_a7238dd87f0dbccb0cca059fc922cdfa66cf6845.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.3.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.3.1_6195da77c3d5f4cab1603727952663841e9966ff.jar" />
     </item>
     <item
         is-multidex="false"
@@ -237,6 +246,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.2.0_d1fa0f4c0c4672204bde47716e544350c7d49de5.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/philippe/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
         jumboMode="false"
         optimize="true"
@@ -252,15 +270,6 @@
         revision="25.0.2"
         sha1="98c1221c29c1a146edc6be342039cc242f9773c5">
         <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-clearcut-11.0.0_33a30e25dabbbf6d79b5afe574f5f2657dd008a0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.3.1_5b0206f06287eae7238bf1ea27979ed0aad50ec4.jar" />
     </item>
     <item
         is-multidex="false"
@@ -336,12 +345,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/philippe/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/support-annotations-25.3.1_6d3a79945fa8c546680c744fb66cfdd7a282c8ee.jar" />
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.0_1d8c7e2f81d4f3237e4e9bcd321962d62bd0acf3.jar" />
     </item>
     <item
         is-multidex="false"
@@ -369,6 +378,24 @@
         revision="25.0.2"
         sha1="6dfa77c356a9a8c13ad61253ed95ed3a746527e6">
         <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-11.0.0_87d7b7dc547887eecab1fc87972e9068edeaf780.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.0_4eb36c69e38846948a57610c27391c770b9c8aed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.2.0_c2a93fa6eaba540a505bdaa1e572caabe4aaddf6.jar" />
     </item>
     <item
         is-multidex="false"
@@ -408,6 +435,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.2.0_d782f3060cd980d3882ecc9e86cff33b10e4b27a.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/PoliticoApp/react-native-firebase/unspecified/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -417,21 +453,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.3.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.3.1_97a1346e57b8fcac2380c72f9949e4653693125b.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/philippe/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
         <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1_b7b0755c6dcb058203923d930c15c777bb43deb3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.2.0_14443870142d83617d13b0a2405e774eb937ffcc.jar" />
     </item>
     <item
         is-multidex="false"
@@ -525,21 +561,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.3.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.3.1_158c4ce3c4169faca0bc97f8329ccb5a45dbe6fc.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/philippe/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
         <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_f744793f9c25e1aa8c5220119487b769e47b6245.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d5cbc9214ee567ea6ef56fb2707d48e58d240fc2">
+        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-android-sdk-4.22.1_a09a8b9393f95540365e225686bd0913452ce228.jar" />
     </item>
     <item
         is-multidex="false"
@@ -576,24 +612,6 @@
         revision="23.0.1"
         sha1="cf836a435a496eb22ff2aa69aa1e619462549f81">
         <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.0.1_b7c07bd23ae94354b5bcb52586dd2dfda826af01.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.3.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-25.3.1_c2783b72ba9b91ee8b2d4ae4c16ed4b2814f4884.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.3.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.3.1_28d8be3297de13ae76bc092df39efeb20d6387ca.jar" />
     </item>
     <item
         is-multidex="false"
@@ -642,15 +660,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.3.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.3.1_a962927c684c0aa87c462f4ea401e6b406fdfb6e.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/11.0.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -675,6 +684,15 @@
         revision="23.0.1"
         sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
         <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_f744793f9c25e1aa8c5220119487b769e47b6245.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.0_9195ee56473b614ce0be4a09d8ee252212da6346.jar" />
     </item>
     <item
         is-multidex="false"
@@ -705,12 +723,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.3.1/jars/classes.jar"
+        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.2.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.3.1_76a9f6f4816a8422e9882ddb00d148df3a07ee12.jar" />
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.2.0_fa544c82826d98e6165dd1425b55f08b870c8f12.jar" />
     </item>
     <item
         is-multidex="false"
@@ -768,24 +786,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.3.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.3.1_8e29ca4ba953ae32b016f10940d24e73efd8fdbd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="474cccf169297d49fff89fd35b7634a7a9d1031c">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-android-sdk-4.25.0_c70d5e07b229ebae1e0a1a2435f68fc7b9b2076f.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -804,12 +804,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.3.1/jars/classes.jar"
+        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.2.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.3.1_ab2a631eadf7b7661bca3bc2ddef3ddbd9c9cebb.jar" />
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.2.0_0e5011347b4c5995da64486bf706790b1eadd805.jar" />
     </item>
     <item
         is-multidex="false"
@@ -822,21 +822,21 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8a372c4191f80489770a231f7be4820b204b886a">
+        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-25.0.0_3d7a5455c496e03e7a920692503514ac41e21aef.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/PoliticoApp/react-native-fbsdk/unspecified/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="97556aa71d6d89bbc89c2c7e1c394917740f6c89">
+        sha1="39004731ae4635f4ef2b0dfa7dc4354e005afd53">
         <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/PoliticoApp-react-native-fbsdk-unspecified_c84c35315e9131cc25efc0800be9c3555267a421.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/customtabs/25.3.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="807751a24cf96566fd8675517c94d8463cf364db">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-customtabs-25.3.1_04bf54bd07cfd83218ccf808e66986d8dd208607.jar" />
     </item>
     <item
         is-multidex="false"

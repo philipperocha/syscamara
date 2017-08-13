@@ -8,25 +8,29 @@ import {
 } from 'react-native';
 
 //importar o componente barra navegação
-import BarraNavegacao from './BarraNavegacao';
+import BarraNavegacao from './auxiliares/BarraNavegacao';
 
 const detalheContato = require('../img/detalhe_contato.png');
 
 export default class CenaContato extends Component {
+
+  static navigationOptions = {
+        tabBarVisible: true,
+        tabBarLabel: 'Contato',
+        tabBarIcon: ({tintColor}) => (
+            <Image
+                source={require('../img/bottomBar/contato.png')}
+                style={[styles.icon, {tintColor: tintColor}]}
+            />
+        )
+  }
+
   render() {
     return (
 			<View style={{ flex: 1, backgroundColor: '#FFF' }}>
-        <StatusBar 
-          //hidden
-          backgroundColor='#61BD8C'
-        />
-
-        <BarraNavegacao voltar navigator={this.props.navigator} corDeFundo='black' />
-
-        <View style={styles.cabecalho}>
-          <Image source={detalheContato} />
-          <Text style={styles.txtTitulo}>Contato</Text>
-        </View>
+        
+        <StatusBar backgroundColor='black'/>
+        <BarraNavegacao titulo='Contato' corDeFundo='#004466' />
 
         <View style={styles.detalheContato}>
           <Text style={styles.txtContato}>Fone: (79) 3631-5252</Text>
@@ -64,5 +68,9 @@ const styles = StyleSheet.create({
   txtContato: {
     fontSize: 16,
     //marginLeft: 20
-  }
+  },
+  icon:{
+    width: 26,
+    height: 26,
+}
 });

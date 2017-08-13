@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 //importar o componente barra navegação
-import BarraNavegacao from './BarraNavegacao';
+import BarraNavegacao from './auxiliares/BarraNavegacao';
 
 const vereador = require('../img/vereador/27_foto_parlamentar.jpg');
 const detalheVereadores = require('../img/detalhe_vereadores.png');
@@ -23,7 +23,7 @@ export default class Vereador extends Component {
             backgroundColor='#CCC'
             />
 
-            <BarraNavegacao voltar navigator={this.props.navigator} corDeFundo='black'/>
+            <BarraNavegacao voltar navigator={this.props.navigator} titulo='Vereador' corDeFundo='black'/>
 
             <View style={styles.cabecalho}>
                 <Image source={detalheVereadores} />

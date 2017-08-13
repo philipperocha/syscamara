@@ -7,17 +7,17 @@
                     "startLine": 2,
                     "startColumn": 4,
                     "startOffset": 105,
-                    "endColumn": 173,
-                    "endOffset": 274
+                    "endColumn": 154,
+                    "endOffset": 255
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
                         "startOffset": 55,
-                        "endColumn": 173,
-                        "endOffset": 224
+                        "endColumn": 154,
+                        "endOffset": 205
                     }
                 }
             },
@@ -25,18 +25,18 @@
                 "to": {
                     "startLine": 3,
                     "startColumn": 4,
-                    "startOffset": 279,
-                    "endColumn": 139,
-                    "endOffset": 414
+                    "startOffset": 260,
+                    "endColumn": 112,
+                    "endOffset": 368
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 139,
-                        "endOffset": 364
+                        "startOffset": 210,
+                        "endColumn": 112,
+                        "endOffset": 318
                     }
                 }
             },
@@ -44,18 +44,18 @@
                 "to": {
                     "startLine": 4,
                     "startColumn": 4,
-                    "startOffset": 419,
-                    "endColumn": 132,
-                    "endOffset": 547
+                    "startOffset": 373,
+                    "endColumn": 112,
+                    "endOffset": 481
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 369,
-                        "endColumn": 132,
-                        "endOffset": 497
+                        "startOffset": 323,
+                        "endColumn": 112,
+                        "endOffset": 431
                     }
                 }
             },
@@ -63,18 +63,18 @@
                 "to": {
                     "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 552,
-                    "endColumn": 110,
-                    "endOffset": 658
+                    "startOffset": 486,
+                    "endColumn": 93,
+                    "endOffset": 575
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 502,
-                        "endColumn": 110,
-                        "endOffset": 608
+                        "startOffset": 436,
+                        "endColumn": 93,
+                        "endOffset": 525
                     }
                 }
             },
@@ -82,18 +82,18 @@
                 "to": {
                     "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 663,
-                    "endColumn": 87,
-                    "endOffset": 746
+                    "startOffset": 580,
+                    "endColumn": 74,
+                    "endOffset": 650
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 613,
-                        "endColumn": 87,
-                        "endOffset": 696
+                        "startOffset": 530,
+                        "endColumn": 74,
+                        "endOffset": 600
                     }
                 }
             },
@@ -101,18 +101,18 @@
                 "to": {
                     "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 751,
-                    "endColumn": 97,
-                    "endOffset": 844
+                    "startOffset": 655,
+                    "endColumn": 72,
+                    "endOffset": 723
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 701,
-                        "endColumn": 97,
-                        "endOffset": 794
+                        "startOffset": 605,
+                        "endColumn": 72,
+                        "endOffset": 673
                     }
                 }
             },
@@ -120,18 +120,18 @@
                 "to": {
                     "startLine": 8,
                     "startColumn": 4,
-                    "startOffset": 849,
-                    "endColumn": 77,
-                    "endOffset": 922
+                    "startOffset": 728,
+                    "endColumn": 60,
+                    "endOffset": 784
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 799,
-                        "endColumn": 77,
-                        "endOffset": 872
+                        "startOffset": 678,
+                        "endColumn": 60,
+                        "endOffset": 734
                     }
                 }
             },
@@ -139,18 +139,18 @@
                 "to": {
                     "startLine": 9,
                     "startColumn": 4,
-                    "startOffset": 927,
-                    "endColumn": 91,
-                    "endOffset": 1014
+                    "startOffset": 789,
+                    "endColumn": 74,
+                    "endOffset": 859
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 877,
-                        "endColumn": 91,
-                        "endOffset": 964
+                        "startOffset": 739,
+                        "endColumn": 74,
+                        "endOffset": 809
                     }
                 }
             },
@@ -158,18 +158,18 @@
                 "to": {
                     "startLine": 10,
                     "startColumn": 4,
-                    "startOffset": 1019,
-                    "endColumn": 94,
-                    "endOffset": 1109
+                    "startOffset": 864,
+                    "endColumn": 74,
+                    "endOffset": 934
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 969,
-                        "endColumn": 94,
-                        "endOffset": 1059
+                        "startOffset": 814,
+                        "endColumn": 74,
+                        "endOffset": 884
                     }
                 }
             },
@@ -177,18 +177,18 @@
                 "to": {
                     "startLine": 11,
                     "startColumn": 4,
-                    "startOffset": 1114,
-                    "endColumn": 114,
-                    "endOffset": 1224
+                    "startOffset": 939,
+                    "endColumn": 95,
+                    "endOffset": 1030
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 1064,
-                        "endColumn": 114,
-                        "endOffset": 1174
+                        "startOffset": 889,
+                        "endColumn": 95,
+                        "endOffset": 980
                     }
                 }
             },
@@ -196,18 +196,18 @@
                 "to": {
                     "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 1229,
-                    "endColumn": 114,
-                    "endOffset": 1339
+                    "startOffset": 1035,
+                    "endColumn": 97,
+                    "endOffset": 1128
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 1179,
-                        "endColumn": 114,
-                        "endOffset": 1289
+                        "startOffset": 985,
+                        "endColumn": 97,
+                        "endOffset": 1078
                     }
                 }
             },
@@ -215,18 +215,18 @@
                 "to": {
                     "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 1344,
-                    "endColumn": 91,
-                    "endOffset": 1431
+                    "startOffset": 1133,
+                    "endColumn": 74,
+                    "endOffset": 1203
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 1294,
-                        "endColumn": 91,
-                        "endOffset": 1381
+                        "startOffset": 1083,
+                        "endColumn": 74,
+                        "endOffset": 1153
                     }
                 }
             },
@@ -234,18 +234,18 @@
                 "to": {
                     "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 1436,
-                    "endColumn": 91,
-                    "endOffset": 1523
+                    "startOffset": 1208,
+                    "endColumn": 74,
+                    "endOffset": 1278
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 1386,
-                        "endColumn": 91,
-                        "endOffset": 1473
+                        "startOffset": 1158,
+                        "endColumn": 74,
+                        "endOffset": 1228
                     }
                 }
             },
@@ -253,18 +253,18 @@
                 "to": {
                     "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 1528,
-                    "endColumn": 109,
-                    "endOffset": 1633
+                    "startOffset": 1283,
+                    "endColumn": 91,
+                    "endOffset": 1370
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 1478,
-                        "endColumn": 109,
-                        "endOffset": 1583
+                        "startOffset": 1233,
+                        "endColumn": 91,
+                        "endOffset": 1320
                     }
                 }
             },
@@ -272,18 +272,18 @@
                 "to": {
                     "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 1638,
-                    "endColumn": 138,
-                    "endOffset": 1772
+                    "startOffset": 1375,
+                    "endColumn": 111,
+                    "endOffset": 1482
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
-                        "startOffset": 1588,
-                        "endColumn": 138,
-                        "endOffset": 1722
+                        "startOffset": 1325,
+                        "endColumn": 111,
+                        "endOffset": 1432
                     }
                 }
             },
@@ -291,18 +291,18 @@
                 "to": {
                     "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 1777,
-                    "endColumn": 82,
-                    "endOffset": 1855
+                    "startOffset": 1487,
+                    "endColumn": 65,
+                    "endOffset": 1548
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 1727,
-                        "endColumn": 82,
-                        "endOffset": 1805
+                        "startOffset": 1437,
+                        "endColumn": 65,
+                        "endOffset": 1498
                     }
                 }
             },
@@ -310,18 +310,18 @@
                 "to": {
                     "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 1860,
-                    "endColumn": 81,
-                    "endOffset": 1937
+                    "startOffset": 1553,
+                    "endColumn": 64,
+                    "endOffset": 1613
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 1810,
-                        "endColumn": 81,
-                        "endOffset": 1887
+                        "startOffset": 1503,
+                        "endColumn": 64,
+                        "endOffset": 1563
                     }
                 }
             },
@@ -329,18 +329,18 @@
                 "to": {
                     "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 1942,
-                    "endColumn": 189,
-                    "endOffset": 2127
+                    "startOffset": 1618,
+                    "endColumn": 174,
+                    "endOffset": 1788
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 1892,
-                        "endColumn": 189,
-                        "endOffset": 2077
+                        "startOffset": 1568,
+                        "endColumn": 174,
+                        "endOffset": 1738
                     }
                 }
             },
@@ -348,18 +348,18 @@
                 "to": {
                     "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 2132,
-                    "endColumn": 97,
-                    "endOffset": 2225
+                    "startOffset": 1793,
+                    "endColumn": 80,
+                    "endOffset": 1869
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
-                        "startOffset": 2082,
-                        "endColumn": 97,
-                        "endOffset": 2175
+                        "startOffset": 1743,
+                        "endColumn": 80,
+                        "endOffset": 1819
                     }
                 }
             },
@@ -367,18 +367,18 @@
                 "to": {
                     "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 2230,
-                    "endColumn": 103,
-                    "endOffset": 2329
+                    "startOffset": 1874,
+                    "endColumn": 89,
+                    "endOffset": 1959
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
-                        "startOffset": 2180,
-                        "endColumn": 103,
-                        "endOffset": 2279
+                        "startOffset": 1824,
+                        "endColumn": 89,
+                        "endOffset": 1909
                     }
                 }
             },
@@ -386,18 +386,18 @@
                 "to": {
                     "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 2334,
-                    "endColumn": 110,
-                    "endOffset": 2440
+                    "startOffset": 1964,
+                    "endColumn": 99,
+                    "endOffset": 2059
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
-                        "startOffset": 2284,
-                        "endColumn": 110,
-                        "endOffset": 2390
+                        "startOffset": 1914,
+                        "endColumn": 99,
+                        "endOffset": 2009
                     }
                 }
             },
@@ -405,18 +405,18 @@
                 "to": {
                     "startLine": 23,
                     "startColumn": 4,
-                    "startOffset": 2445,
-                    "endColumn": 117,
-                    "endOffset": 2558
+                    "startOffset": 2064,
+                    "endColumn": 142,
+                    "endOffset": 2202
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 4,
-                        "startOffset": 2395,
-                        "endColumn": 117,
-                        "endOffset": 2508
+                        "startOffset": 2014,
+                        "endColumn": 142,
+                        "endOffset": 2152
                     }
                 }
             },
@@ -424,28 +424,9 @@
                 "to": {
                     "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 2563,
-                    "endColumn": 170,
-                    "endOffset": 2729
-                },
-                "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
-                    "position": {
-                        "startLine": 24,
-                        "startColumn": 4,
-                        "startOffset": 2513,
-                        "endColumn": 170,
-                        "endOffset": 2679
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 25,
-                    "startColumn": 4,
-                    "startOffset": 2734,
+                    "startOffset": 2207,
                     "endColumn": 106,
-                    "endOffset": 2836
+                    "endOffset": 2309
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -460,11 +441,11 @@
             },
             {
                 "to": {
-                    "startLine": 26,
+                    "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 2841,
+                    "startOffset": 2314,
                     "endColumn": 183,
-                    "endOffset": 3020
+                    "endOffset": 2493
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -479,11 +460,11 @@
             },
             {
                 "to": {
-                    "startLine": 27,
+                    "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 3025,
+                    "startOffset": 2498,
                     "endColumn": 128,
-                    "endOffset": 3149
+                    "endOffset": 2622
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -498,11 +479,11 @@
             },
             {
                 "to": {
-                    "startLine": 28,
+                    "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 3154,
+                    "startOffset": 2627,
                     "endColumn": 107,
-                    "endOffset": 3257
+                    "endOffset": 2730
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -517,11 +498,11 @@
             },
             {
                 "to": {
-                    "startLine": 29,
+                    "startLine": 28,
                     "startColumn": 4,
-                    "startOffset": 3262,
+                    "startOffset": 2735,
                     "endColumn": 210,
-                    "endOffset": 3468
+                    "endOffset": 2941
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -536,11 +517,11 @@
             },
             {
                 "to": {
-                    "startLine": 30,
+                    "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 3473,
+                    "startOffset": 2946,
                     "endColumn": 129,
-                    "endOffset": 3598
+                    "endOffset": 3071
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -555,11 +536,11 @@
             },
             {
                 "to": {
-                    "startLine": 31,
+                    "startLine": 30,
                     "startColumn": 4,
-                    "startOffset": 3603,
+                    "startOffset": 3076,
                     "endColumn": 129,
-                    "endOffset": 3728
+                    "endOffset": 3201
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -574,11 +555,11 @@
             },
             {
                 "to": {
-                    "startLine": 32,
+                    "startLine": 31,
                     "startColumn": 4,
-                    "startOffset": 3733,
+                    "startOffset": 3206,
                     "endColumn": 224,
-                    "endOffset": 3953
+                    "endOffset": 3426
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.0.0/res/values-ta/values.xml",
@@ -593,11 +574,11 @@
             },
             {
                 "to": {
-                    "startLine": 33,
+                    "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 3958,
+                    "startOffset": 3431,
                     "endColumn": 241,
-                    "endOffset": 4195
+                    "endOffset": 3668
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -612,11 +593,11 @@
             },
             {
                 "to": {
-                    "startLine": 34,
+                    "startLine": 33,
                     "startColumn": 4,
-                    "startOffset": 4200,
+                    "startOffset": 3673,
                     "endColumn": 108,
-                    "endOffset": 4304
+                    "endOffset": 3777
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -631,11 +612,11 @@
             },
             {
                 "to": {
-                    "startLine": 35,
+                    "startLine": 34,
                     "startColumn": 4,
-                    "startOffset": 4309,
+                    "startOffset": 3782,
                     "endColumn": 183,
-                    "endOffset": 4488
+                    "endOffset": 3961
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -650,11 +631,11 @@
             },
             {
                 "to": {
-                    "startLine": 36,
+                    "startLine": 35,
                     "startColumn": 4,
-                    "startOffset": 4493,
+                    "startOffset": 3966,
                     "endColumn": 136,
-                    "endOffset": 4625
+                    "endOffset": 4098
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -669,11 +650,11 @@
             },
             {
                 "to": {
-                    "startLine": 37,
+                    "startLine": 36,
                     "startColumn": 4,
-                    "startOffset": 4630,
+                    "startOffset": 4103,
                     "endColumn": 212,
-                    "endOffset": 4838
+                    "endOffset": 4311
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -688,11 +669,11 @@
             },
             {
                 "to": {
-                    "startLine": 38,
+                    "startLine": 37,
                     "startColumn": 4,
-                    "startOffset": 4843,
+                    "startOffset": 4316,
                     "endColumn": 185,
-                    "endOffset": 5024
+                    "endOffset": 4497
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -707,11 +688,11 @@
             },
             {
                 "to": {
-                    "startLine": 39,
+                    "startLine": 38,
                     "startColumn": 4,
-                    "startOffset": 5029,
+                    "startOffset": 4502,
                     "endColumn": 91,
-                    "endOffset": 5116
+                    "endOffset": 4589
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -726,11 +707,11 @@
             },
             {
                 "to": {
-                    "startLine": 40,
+                    "startLine": 39,
                     "startColumn": 4,
-                    "startOffset": 5121,
+                    "startOffset": 4594,
                     "endColumn": 92,
-                    "endOffset": 5209
+                    "endOffset": 4682
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -745,11 +726,11 @@
             },
             {
                 "to": {
-                    "startLine": 41,
+                    "startLine": 40,
                     "startColumn": 4,
-                    "startOffset": 5214,
+                    "startOffset": 4687,
                     "endColumn": 109,
-                    "endOffset": 5319
+                    "endOffset": 4792
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/res/values-ta/values.xml",
@@ -764,30 +745,30 @@
             },
             {
                 "to": {
-                    "startLine": 42,
+                    "startLine": 41,
                     "startColumn": 4,
-                    "startOffset": 5324,
+                    "startOffset": 4797,
                     "endColumn": 62,
-                    "endOffset": 5382
+                    "endOffset": 4855
                 },
                 "from": {
-                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.25.0/res/values-ta/values-ta.xml",
+                    "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/values-ta/values-ta.xml",
                     "position": {
-                        "startLine": 25,
+                        "startLine": 24,
                         "startColumn": 4,
-                        "startOffset": 2684,
+                        "startOffset": 2157,
                         "endColumn": 62,
-                        "endOffset": 2742
+                        "endOffset": 2215
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 43,
+                    "startLine": 42,
                     "startColumn": 4,
-                    "startOffset": 5387,
+                    "startOffset": 4860,
                     "endColumn": 73,
-                    "endOffset": 5456
+                    "endOffset": 4929
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/11.0.0/res/values-ta/values.xml",
@@ -802,11 +783,11 @@
             },
             {
                 "to": {
-                    "startLine": 44,
+                    "startLine": 43,
                     "startColumn": 4,
-                    "startOffset": 5461,
+                    "startOffset": 4934,
                     "endColumn": 116,
-                    "endOffset": 5573
+                    "endOffset": 5046
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/11.0.0/res/values-ta/values.xml",
@@ -821,11 +802,11 @@
             },
             {
                 "to": {
-                    "startLine": 45,
+                    "startLine": 44,
                     "startColumn": 4,
-                    "startOffset": 5578,
+                    "startOffset": 5051,
                     "endColumn": 67,
-                    "endOffset": 5641
+                    "endOffset": 5114
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/11.0.0/res/values-ta/values.xml",
@@ -840,11 +821,11 @@
             },
             {
                 "to": {
-                    "startLine": 46,
+                    "startLine": 45,
                     "startColumn": 4,
-                    "startOffset": 5646,
+                    "startOffset": 5119,
                     "endColumn": 68,
-                    "endOffset": 5710
+                    "endOffset": 5183
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/11.0.0/res/values-ta/values.xml",
@@ -859,11 +840,11 @@
             },
             {
                 "to": {
-                    "startLine": 47,
+                    "startLine": 46,
                     "startColumn": 4,
-                    "startOffset": 5715,
+                    "startOffset": 5188,
                     "endColumn": 88,
-                    "endOffset": 5799
+                    "endOffset": 5272
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/11.0.0/res/values-ta/values.xml",
@@ -878,11 +859,11 @@
             },
             {
                 "to": {
-                    "startLine": 48,
+                    "startLine": 47,
                     "startColumn": 4,
-                    "startOffset": 5804,
+                    "startOffset": 5277,
                     "endColumn": 113,
-                    "endOffset": 5913
+                    "endOffset": 5386
                 },
                 "from": {
                     "file": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/11.0.0/res/values-ta/values.xml",

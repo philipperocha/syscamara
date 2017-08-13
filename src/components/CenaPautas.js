@@ -9,11 +9,22 @@ import {
 } from 'react-native';
 
 //importar o componente barra navegação
-import BarraNavegacao from './BarraNavegacao';
+import BarraNavegacao from './auxiliares/BarraNavegacao';
 
 const detalhePautas = require('../img/detalhe_pautas.png');
 
 export default class CenaPautas extends Component {
+
+  static navigationOptions = {
+        tabBarVisible: true,
+        tabBarLabel: 'Pautas',
+        tabBarIcon: ({tintColor}) => (
+            <Image
+                source={require('../img/bottomBar/pautas.png')}
+                style={[styles.icon, {tintColor: tintColor}]}
+            />
+        )
+  }
 
   _handlePress() {
     console.log('Button Pressed!');
@@ -23,20 +34,9 @@ export default class CenaPautas extends Component {
   render() {
     return (
 			<View style={{ flex: 1, backgroundColor: '#FFF' }}>
-        <StatusBar 
-          //hidden
-          backgroundColor='#19D1C8'
-        />
-
-        <BarraNavegacao voltar navigator={this.props.navigator} corDeFundo='black' />
-
-        <View style={styles.cabecalho}>
-          <Image source={detalhePautas} />
-          <Text style={styles.txtTitulo}>Pautas e Sessões</Text>
-        </View>
-
-
-
+        
+        <StatusBar backgroundColor='black'/>
+        <BarraNavegacao titulo='Pautas e Sessões' corDeFundo='#004466' />
 
         <View style={styles.gridPautas}>
 
@@ -138,5 +138,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
     padding: 10,
     alignItems: 'center',
-  }
+  },
+  icon:{
+    width: 26,
+    height: 26,
+}
 });

@@ -11,7 +11,7 @@ import {
 import { List, ListItem, SearchBar,  } from "react-native-elements";
 
 //importar o componente barra navegação
-import BarraNavegacao from './BarraNavegacao';
+import BarraNavegacao from './auxiliares/BarraNavegacao';
 
 const detalheNoticia = require('../img/detalhe_noticias.png');
 
@@ -53,7 +53,7 @@ const DATA = [
 
 export default class CenaNoticias extends Component {
 
-   constructor(props) {
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -65,6 +65,19 @@ export default class CenaNoticias extends Component {
       refreshing: false,
     };
   }
+  
+  static navigationOptions = {
+        tabBarVisible: true,
+        tabBarLabel: 'Noticias',
+        tabBarIcon: ({tintColor}) => (
+            <Image
+                source={require('../img/bottomBar/noticias.png')}
+                style={[styles.icon, {tintColor: tintColor}]}
+            />
+        )
+  }
+
+  
 
   componentDidMount() {
     this.makeRemoteRequest();
@@ -121,25 +134,12 @@ export default class CenaNoticias extends Component {
     );
   };
 
-
-
-
   render() {
     return (
 			<View style={{ flex: 1, backgroundColor: '#FFF' }}>
-        <StatusBar 
-          //hidden
-          backgroundColor='#EC7148'
-        />
-
-        <BarraNavegacao voltar navigator={this.props.navigator} corDeFundo='black' />
-
-        <View style={styles.cabecalho}>
-          <Image source={detalheNoticia} />
-          <Text style={styles.txtTitulo}>Notícias</Text>
-        </View>
-
-
+        
+        <StatusBar backgroundColor='black'/>
+        <BarraNavegacao titulo='Notícias' corDeFundo='#004466' />
 
         <List containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
                 
@@ -161,12 +161,6 @@ export default class CenaNoticias extends Component {
               ListFooterComponent={this.renderFooter}
           />
         </List>
-
-        {/*<View style={styles.detalheEmpresa}>
-          <Text style={styles.txtEmpresa}>
-            Aguardando o administrador cadastrar novas notícias...
-          </Text>
-        </View>*/}
 
       </View>
     );
@@ -192,5 +186,9 @@ const styles = StyleSheet.create({
   },
   txtNoticias: {
     fontSize: 18
-  }
+  },
+  icon:{
+    width: 26,
+    height: 26,
+}
 });
