@@ -5,6 +5,8 @@ import FloatingActionButton from 'react-native-action-button';
 import BarraNavegacao from './auxiliares/BarraNavegacao';
 import Header from './auxiliares/Header';
 import Footer from './auxiliares/Footer';
+//import Avatar from './auxiliares/Avatar';
+import { Avatar } from 'react-native-material-design';
 
 import firebase from '../data/firebase2';
 
@@ -41,14 +43,14 @@ export default class CenaPoliticos extends Component {
     };
   }
 
-  _renderItem(task) {
+  _renderItem(politicos) {
     return (
       <View>
         <ListItem
             roundAvatar
-            title={task.name}
-            subtitle={task.partido}
-            avatar={task.foto}
+            title={politicos.name}
+            subtitle={politicos.partido}
+            avatar={politicos.foto}
             containerStyle={{ borderBottomWidth: 0 }}
         />
       </View>
@@ -72,7 +74,7 @@ export default class CenaPoliticos extends Component {
       });
 
       console.log(data);
-      
+
       // Update the state with the new tasks
       this.setState({
         dataSource: this.state.dataSource.cloneWithRows(data),
@@ -128,12 +130,15 @@ const styles = StyleSheet.create({
     marginLeft: 20
   },
   listView: {
-    flex: 1,
+    //flex: 1,
   },
   separator: {
     flex: 1,
     height: StyleSheet.hairlineWidth,
     backgroundColor: '#8E8E8E',
+    width: "80%",
+    marginLeft: "15%",
+    marginRight: "5%",
   },
   icon:{
     width: 26,

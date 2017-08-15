@@ -5,67 +5,23 @@ import {
   Image,
   Text,
   StyleSheet,
-  FlatList, 
+  FlatList,
+  ListView,
   ActivityIndicator,
 } from 'react-native';
 import { List, ListItem, SearchBar,  } from "react-native-elements";
+import Header from './auxiliares/Header';
+import Footer from './auxiliares/Footer';
 
 //importar o componente barra navegação
 import BarraNavegacao from './auxiliares/BarraNavegacao';
 
+import firebase from '../data/firebase2';
+
 const detalheNoticia = require('../img/detalhe_noticias.png');
-
-
-const DATA = [
-  {
-    codigo: 1,
-    nome: 'Vereador rouba 500.000',
-    partido: 'Vereador é acusado de roubar 500.000 reais...',
-    foto: 'http://cdn.wp-infinity.com/wp-content/uploads2/news-icon.png'
-  }, {
-   codigo: 2,
-    nome: 'Vereador é pego em flagrante',
-    partido: 'A polícia investiga vereador após caso...',
-    foto: 'http://cdn.wp-infinity.com/wp-content/uploads2/news-icon.png'
-  }, {
-   codigo: 3,
-    nome: 'Câmara passa por reformas',
-    partido: 'Em dezembro a câmara passará por reformas...',
-    foto: 'http://cdn.wp-infinity.com/wp-content/uploads2/news-icon.png'
-  }, {
-   codigo: 4,
-    nome: 'Feriado em Lagarto',
-    partido: 'Próxima sexte-feira será feriado em Lagarto...',
-    foto: 'http://cdn.wp-infinity.com/wp-content/uploads2/news-icon.png'
-  }, {
-   codigo: 5,
-    nome: 'Briga entre Vereadores',
-    partido: 'Durante a sessão de quinta, dois vereadores...',
-    foto: 'http://cdn.wp-infinity.com/wp-content/uploads2/news-icon.png'
-  }, {
-   codigo: 6,
-    nome: 'Gabriel ganha eleições',
-    partido: 'O vereador Gabriel ganha as eleições de...',
-    foto: 'http://cdn.wp-infinity.com/wp-content/uploads2/news-icon.png'
-  }
-];
-
 
 export default class CenaNoticias extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      loading: false,
-      data: [],
-      page: 1,
-      seed: 1,
-      error: null,
-      refreshing: false,
-    };
-  }
-  
   static navigationOptions = {
         tabBarVisible: true,
         tabBarLabel: 'Noticias',
@@ -77,62 +33,66 @@ export default class CenaNoticias extends Component {
         )
   }
 
-  
+  constructor(props) {
+    super(props);
 
-  componentDidMount() {
-    this.makeRemoteRequest();
+    let fireRef = firebase.database().ref('Noticias');
+
+    const dataSource = new ListView.DataSource({
+      rowHasChanged: (row1, row2) => row1 !== row2,
+    });
+
+    this.state = {
+      dataSource: dataSource, // dataSource for our list
+      newVereador: "", // The name of the new task
+      fireRef: fireRef,
+    };
   }
 
-  makeRemoteRequest = () => {
-    const { page, seed } = this.state;
-    const url = `https://randomuser.me/api/?seed=${seed}&page=${page}&results=2`;
-    this.setState({ loading: true });
-    
-    fetch(url)
-    .then(res => res.json())
-    .then(res => {
-
-        this.setState({
-          data: DATA,
-          error: res.error || null,
-          loading: false,
-          refreshing: false
-        });
-    });
-  };
-
-  renderSeparator = () => {
+  _renderItem(noticia) {
+    console.log("Noticia");
+    console.log(noticia);
     return (
-      <View
-        style={{
-          height: 1,
-          width: "86%",
-          backgroundColor: "#CED0CE",
-          marginLeft: "14%"
-        }}
-      />
-    );
-  };
-
-    renderHeader = () => {
-    return <SearchBar placeholder="Type Here..." lightTheme round />;
-  };
-
-    renderFooter = () => {
-    if (!this.state.loading) return null;
-
-    return (
-      <View
-        style={{
-          paddingVertical: 20,
-          borderTopWidth: 1,
-          borderColor: "#CED0CE"
-        }}
-      >
-        <ActivityIndicator animating size="large" />
+      <View>
+        <ListItem
+            roundAvatar
+            title={noticia.titulo}
+            subtitle={noticia.descricao}
+            avatar={noticia.foto}
+            containerStyle={{ borderBottomWidth: 0 }}
+        />
       </View>
     );
-  };
+  }
+
+  listenFor(fRef) {
+    // listen for changes to the tasks reference, when it updates we'll get a
+    // dataSnapshot from firebase
+
+    fRef.on('value', (dataSnapshot) => {
+      // transform the children to an array
+      var data = [];
+      dataSnapshot.forEach((child) => {
+        data.push({
+          titulo: child.val().titulo,
+          descricao: child.val().descricao,
+          foto: child.val().foto,
+          _key: child.key
+        });
+      });
+
+      console.log(data);
+
+      // Update the state with the new tasks
+      this.setState({
+        dataSource: this.state.dataSource.cloneWithRows(data),
+      });
+    });
+  }
+
+  componentDidMount() {
+    this.listenFor(this.state.fireRef);
+  }
 
   render() {
     return (
@@ -141,26 +101,15 @@ export default class CenaNoticias extends Component {
         <StatusBar backgroundColor='black'/>
         <BarraNavegacao titulo='Notícias' corDeFundo='#004466' />
 
-        <List containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
-                
-          <FlatList
-              data={this.state.data}
-              renderItem={({ item }) => (
-              <ListItem
-                  roundAvatar
-                  title={item.nome}
-                  subtitle={item.partido}
-                  avatar={item.foto}
-                  containerStyle={{ borderBottomWidth: 0 }}
-                  
-              />
-              )}
-              keyExtractor={item => item.codigo}
-              ItemSeparatorComponent={this.renderSeparator}
-              ListHeaderComponent={this.renderHeader}
-              ListFooterComponent={this.renderFooter}
-          />
-        </List>
+        <ListView
+          dataSource={this.state.dataSource}
+          //enableEmptySections={true}
+          renderRow={this._renderItem.bind(this)}
+          renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
+          renderHeader={() => <Header />}
+          renderFooter={() => <Footer />}
+          style={styles.listView}
+        />
 
       </View>
     );
@@ -186,6 +135,14 @@ const styles = StyleSheet.create({
   },
   txtNoticias: {
     fontSize: 18
+  },
+  separator: {
+    flex: 1,
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: '#8E8E8E',
+    width: "80%",
+    marginLeft: "15%",
+    marginRight: "5%",
   },
   icon:{
     width: 26,
