@@ -63,75 +63,97 @@ export default class CenaLogin extends Component{
 
     render(){
         return(
-            <View style={{ flex: 1, backgroundColor: '#f2f2f2' }} >
-
-                <StatusBar backgroundColor='black'/>
-                <BarraNavegacao titulo='Bem Vindo' corDeFundo='#004466' />
-
-                <View style={styles.containerInputs}>
-                    <TextInput
-                        placeholderTextColor="grey"
-                        placeholder="Email"
-                        style={styles.inputText}
-                        onChangeText={(email) => this.setState({email})}
-                    />
-                    <TextInput
-                        placeholderTextColor="grey"
-                        placeholder="Senha"
-                        style={styles.inputText}
-                        password={true}
-                        onChangeText={(password) => this.setState({password})}
-                    />
+            
+            <View style={styles.container}>
+            <Image source={require('../img/back-br.png')} style={styles.imgBackground}>
+                <View style={styles.containerBarra}>
+                    <StatusBar backgroundColor='black'/>
+                    <BarraNavegacao titulo='Camara de Lagarto App' corDeFundo='#004466' />
                 </View>
+                <View style={styles.containerLogin}>
+                    <View style={styles.containerInputs}>
+                        <TextInput
+                            placeholderTextColor="black"
+                            placeholder="Email"
+                            style={styles.inputText}
+                            onChangeText={(email) => this.setState({email})}
+                        />
+                        <TextInput
+                            placeholderTextColor="black"
+                            placeholder="Senha"
+                            style={styles.inputText}
+                            password={true}
+                            onChangeText={(password) => this.setState({password})}
+                        />
+                        <TouchableHighlight onPress={this.login} style={[styles.loginButton, styles.button]} >
+                        <Text style={styles.textButton}>Login</Text>
+                        </TouchableHighlight>
+                        <TouchableHighlight onPress={this.signUp} style={[styles.loginButton, styles.button]} >
+                            <Text style={styles.textButton}>Novo Cadastro</Text>
+                        </TouchableHighlight>
+                    </View>
 
-                <TouchableHighlight onPress={this.login} style={[styles.loginButton, styles.button]} >
-                    <Text style={styles.textButton}>Login</Text>
-                </TouchableHighlight>
-                <TouchableHighlight onPress={this.signUp} style={[styles.loginButton, styles.button]} >
-                    <Text style={styles.textButton}>Novo Cadastro</Text>
-                </TouchableHighlight>
-
-                <LoginButton
-                publishPermissions={["publish_actions"]}
-                onLoginFinished={
-                    (error, result) => {
-                    if (error) {
-                        alert("login has error: " + result.error);
-                    } else if (result.isCancelled) {
-                        alert("login is cancelled.");
-                    } else {
-                        AccessToken.getCurrentAccessToken().then(
-                        (data) => {
-                            alert(data.accessToken.toString())
+                    <LoginButton
+                        publishPermissions={["publish_actions"]}
+                        onLoginFinished={
+                        (error, result) => {
+                        if (error) {
+                            alert("login has error: " + result.error);
+                        } else if (result.isCancelled) {
+                            alert("login is cancelled.");
+                        } else {
+                            AccessToken.getCurrentAccessToken().then(
+                            (data) => {
+                                alert(data.accessToken.toString())
+                            }
+                            )
                         }
-                        )
+                        }
                     }
-                    }
-                }
-                onLogoutFinished={() => alert("logout.")}/>
-
+                    onLogoutFinished={() => alert("logout.")}/>
+                </View>
+            </Image>
             </View>
+            
         )
     }
 
 }
 
 const styles = StyleSheet.create({
+    imgBackground:{
+        flex: 1,
+        alignSelf: 'stretch',
+        width: null,
+    },
     container:{
         flex: 1,
-        marginTop: 100,
+    },
+    containerBarra: {
+        flex: 1,
+    },
+    containerLogin: {
+        flex:1,
+        marginTop: 10,
         marginHorizontal: 10,
+        //backgroundColor: '#f2f2f2',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        marginBottom: 40,
     },
     inputText:{
-        height: 50,
+        height: 40,
+        width: 280,
         borderWidth: 1,
         borderColor: '#ccc',
         paddingHorizontal: 20,
         paddingVertical: 10,
-        color: 'black'
+        color: 'black',
+        marginBottom: 10,
     },
     button:{
-        height: 50,
+        height: 40,
+        width: 280,
         backgroundColor: '#003566',
         paddingVertical: 10,
         borderRadius: 5,
@@ -147,36 +169,4 @@ const styles = StyleSheet.create({
         marginTop: 30,
         marginBottom: 20,
     },
-
-    cabecalho: {
-        flexDirection: 'row',
-        marginTop: 10
-    },
-    txtTitulo: {
-        fontSize: 22,
-        //color: '#B9C941',
-        color: 'black',
-        fontWeight: 'bold',
-        marginLeft: 10,
-        marginTop: 10
-    },
-    detalheVereador: {
-        padding: 20,
-        marginTop: 20
-    },
-    txtDetalheVereador: {
-        fontSize: 18,
-        marginLeft: 20
-    },
-    listView: {
-        flex: 1,
-    },
-    separator: {
-        flex: 1,
-        height: StyleSheet.hairlineWidth,
-        backgroundColor: '#8E8E8E',
-    },
-    buttonFacebook: {
-        alignItems: 'center'
-    }
 })

@@ -31,7 +31,7 @@ export default class PoliticoApp extends Component {
 
   getInitialView(){
     firebase.auth().onAuthStateChanged((user) => {
-      let initialView = user ? 'principal' : 'Login'
+      let initialView = user ? 'principal' : 'login'
 
       this.setState({
         userLoaded: true,
@@ -46,7 +46,7 @@ export default class PoliticoApp extends Component {
       case 'principal':
         return (<CenaPrincipal navigator={navigator}/>);
 
-      case 'Login':
+      case 'login':
         return (<CenaLogin navigator={navigator} />);
 
       case 'vereadores':

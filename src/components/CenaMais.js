@@ -5,11 +5,11 @@ import {
   StatusBar,
   Image,
   StyleSheet,
-  TouchableHighlight
+  TouchableHighlight,
+  ListView
 } from 'react-native';
 
 import BarraNavegacao from './auxiliares/BarraNavegacao';
-import firebase from '../data/firebase';
 
 export default class CenaMais extends Component {
 
@@ -38,57 +38,48 @@ export default class CenaMais extends Component {
 
   render() {
     return (
-	    <View>
-            <StatusBar backgroundColor='black'/>
-            <BarraNavegacao titulo='Mais' corDeFundo='#004466'/>
+	    <View style={styles.container}>
 
-            <View style={styles.menu}>
-                <View style={styles.menuGrupo}>
-                    <Text>Caro usuáro, deseja fazer LogOut?</Text>
-                    <TouchableHighlight onPress={this.logOut.bind(this)} style={styles.button}>
-                        <Text style={styles.buttonText}> LogOut </Text>
-                    </TouchableHighlight>
-                </View>
+             <View style={styles.containerBarra}>
+                <StatusBar backgroundColor='black'/>
+                <BarraNavegacao titulo='Mais' corDeFundo='#004466'/>
             </View>
+
+            <View style={styles.containerMenu}>
+                <Text>Caro usuáro, deseja fazer LogOut?</Text>
+                <TouchableHighlight onPress={this.logOut.bind(this)} style={styles.button}>
+                    <Text style={styles.buttonText}> LogOut </Text>
+                </TouchableHighlight>
+            </View> 
         </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  footerText: {
-    marginTop: 46,
-    alignItems: 'center'
-  },
-  logo: {
-    marginTop: 10,
-    alignItems: 'center'
-  },
-  menu: {
-    alignItems: 'center'
-  },
-  menuGrupo: {
-    flexDirection: 'row'
-  },
-  imgMenu: {
-    margin: 10,
-    height: 72,
-    width: 75,
-  },
-  button: {
-    height: 30,
-    width: 100,
-    backgroundColor: '#003566',
-    alignSelf: 'stretch',
-    marginTop: 50,
-    justifyContent: 'center'
-  },
-  buttonText: {
-    color: '#FFF',
-    alignSelf: 'center'
-  },
-icon:{
-    width: 26,
-    height: 26,
-}
+    container: {
+        flex: 1,
+    },
+    containerBarra: {
+        flex: 2,
+    },
+    containerMenu: {
+        flex: 1,
+        alignItems: 'center'
+    },
+    button: {
+        height: 30,
+        width: 100,
+        backgroundColor: '#003566',
+        marginTop: 50,
+        justifyContent: 'center'
+    },
+    buttonText: {
+        color: '#FFF',
+        alignSelf: 'center'
+    },
+    icon:{
+        width: 26,
+        height: 26,
+    }
 });

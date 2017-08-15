@@ -15,9 +15,9 @@ import CenaContato from './CenaContato';
 import CenaMais from './CenaMais';
 
 const Navegacao = TabNavigator({
+  CenaPoliticos: {screen: CenaPoliticos},
   CenaNoticias: {screen: CenaNoticias},
   CenaPautas: {screen: CenaPautas},
-  CenaPoliticos: {screen: CenaPoliticos},
   CenaContato: {screen: CenaContato},
   CenaMais: {screen: CenaMais},
 },{

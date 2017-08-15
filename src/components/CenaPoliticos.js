@@ -6,9 +6,10 @@ import BarraNavegacao from './auxiliares/BarraNavegacao';
 import Header from './auxiliares/Header';
 import Footer from './auxiliares/Footer';
 
-import firebase from '../data/firebase';
+import firebase from '../data/firebase2';
 
 const detalheVereadores = require('../img/detalhe_vereadores.png');
+
 
 export default class CenaPoliticos extends Component {
 
@@ -26,10 +27,8 @@ export default class CenaPoliticos extends Component {
 
   constructor(props) {
     super(props);
-    // let firebase = props.firebase;
-    // console.log(firebase.database().ref());
 
-    let tasksRef = firebase.database().ref();
+    let fireRef = firebase.database().ref('Politicos');
 
     const dataSource = new ListView.DataSource({
       rowHasChanged: (row1, row2) => row1 !== row2,
@@ -38,7 +37,7 @@ export default class CenaPoliticos extends Component {
     this.state = {
       dataSource: dataSource, // dataSource for our list
       newVereador: "", // The name of the new task
-      tasksRef: tasksRef,
+      fireRef: fireRef,
     };
   }
 
@@ -56,17 +55,15 @@ export default class CenaPoliticos extends Component {
     );
   }
 
-  listenForTasks(tasksRef) {
-
-    console.log(tasksRef);
-
+  listenFor(fRef) {
     // listen for changes to the tasks reference, when it updates we'll get a
     // dataSnapshot from firebase
-    tasksRef.on('value', (dataSnapshot) => {
+
+    fRef.on('value', (dataSnapshot) => {
       // transform the children to an array
-      var tasks = [];
+      var data = [];
       dataSnapshot.forEach((child) => {
-        tasks.push({
+        data.push({
           name: child.val().name,
           partido: child.val().partido,
           foto: child.val().foto,
@@ -74,17 +71,17 @@ export default class CenaPoliticos extends Component {
         });
       });
 
-      console.log(tasks);
-
+      console.log(data);
+      
       // Update the state with the new tasks
       this.setState({
-        dataSource: this.state.dataSource.cloneWithRows(tasks),
+        dataSource: this.state.dataSource.cloneWithRows(data),
       });
     });
   }
 
   componentDidMount() {
-    this.listenForTasks(this.state.tasksRef);
+    this.listenFor(this.state.fireRef);
   }
 
   render() {
