@@ -8,7 +8,7 @@ import Footer from './auxiliares/Footer';
 //import Avatar from './auxiliares/Avatar';
 import { Avatar } from 'react-native-material-design';
 
-import firebase from '../data/firebase2';
+import firebase from '../data/firebase';
 
 const detalheVereadores = require('../img/detalhe_vereadores.png');
 
@@ -52,9 +52,14 @@ export default class CenaPoliticos extends Component {
             subtitle={politicos.partido}
             avatar={politicos.foto}
             containerStyle={{ borderBottomWidth: 0 }}
+            onPress={() => this.onLearnMore(politicos)}
         />
       </View>
     );
+  }
+
+  onLearnMore = (politicos) => {
+    this.props.navigation.navigate('Details', {...politicos});
   }
 
   listenFor(fRef) {
@@ -73,8 +78,6 @@ export default class CenaPoliticos extends Component {
         });
       });
 
-      console.log(data);
-
       // Update the state with the new tasks
       this.setState({
         dataSource: this.state.dataSource.cloneWithRows(data),
@@ -91,7 +94,7 @@ export default class CenaPoliticos extends Component {
 			<View style={{ flex: 1, backgroundColor: '#f2f2f2' }}>
         
         <StatusBar backgroundColor='black'/>
-        <BarraNavegacao titulo='Políticos' corDeFundo='#004466' />
+        <BarraNavegacao titulo='Políticos 2' corDeFundo='#004466' />
 
         <ListView
           dataSource={this.state.dataSource}

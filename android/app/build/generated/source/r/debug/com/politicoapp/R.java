@@ -2822,6 +2822,7 @@ containing a value of this type.
         public static final int google_crash_reporting_api_key=0x7f07006e;
         public static final int google_storage_bucket=0x7f07006f;
         public static final int messenger_send_button_text=0x7f07003a;
+        public static final int project_id=0x7f070070;
         public static final int s1=0x7f07003b;
         public static final int s2=0x7f07003c;
         public static final int s3=0x7f07003d;

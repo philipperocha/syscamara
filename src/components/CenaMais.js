@@ -9,6 +9,8 @@ import {
   ListView
 } from 'react-native';
 
+import firebase from '../data/firebase';
+
 import BarraNavegacao from './auxiliares/BarraNavegacao';
 
 export default class CenaMais extends Component {
@@ -27,9 +29,9 @@ export default class CenaMais extends Component {
   async logOut(){
       try{
           await firebase.auth().signOut()
-          this.props.navigator.push({
-            id: 'Login'
-          })
+        //   this.props.navigator.push({
+        //     id: 'Login'
+        //   })
 
       }catch(error){
           console.log(error);
@@ -46,7 +48,7 @@ export default class CenaMais extends Component {
             </View>
 
             <View style={styles.containerMenu}>
-                <Text>Caro usuáro, deseja fazer LogOut?</Text>
+                <Text>Caro usuáro <Text style={{fontSize: 14, fontWeight: 'bold'}}>{firebase.auth().currentUser.email}</Text>, deseja fazer LogOut?</Text>
                 <TouchableHighlight onPress={this.logOut.bind(this)} style={styles.button}>
                     <Text style={styles.buttonText}> LogOut </Text>
                 </TouchableHighlight>

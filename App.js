@@ -5,16 +5,11 @@ import {
 } from 'react-native-deprecated-custom-components';
 import {View, Text} from 'react-native'
 
-import CenaPrincipal from './src/components/CenaPrincipal';
-import CenaPoliticos from './src/components/CenaPoliticos';
-import CenaContato from './src/components/CenaContato';
-import CenaNoticias from './src/components/CenaNoticias';
-import CenaPautas from './src/components/CenaPautas';
-import Noticia from './src/components/Noticia';
-import Vereador from './src/components/Vereador';
-
+//import CenaPrincipal from './src/components/CenaPrincipal';
 import CenaLogin from './src/components/CenaLogin';
 import firebase from './src/data/firebase';
+
+import {Root} from './src/components/CenaPrincipal';
 
 export default class PoliticoApp extends Component {
 
@@ -44,22 +39,22 @@ export default class PoliticoApp extends Component {
     var globalProps = {navigator}
     switch(route.id){
       case 'principal':
-        return (<CenaPrincipal navigator={navigator}/>);
+        return (<Root navigator={navigator}/>);
 
       case 'login':
         return (<CenaLogin navigator={navigator} />);
 
-      case 'vereadores':
-        return (<CenaPoliticos navigator={navigator} />);
+      // case 'vereadores':
+      //   return (<CenaPoliticos navigator={navigator} />);
 
-      case 'contato':
-        return (<CenaContato navigator={navigator} />);
+      // case 'contato':
+      //   return (<CenaContato navigator={navigator} />);
 
-      case 'noticias': 
-        return (<CenaNoticias navigator={navigator} />);
+      // case 'noticias': 
+      //   return (<CenaNoticias navigator={navigator} />);
 
-      case 'pautas':
-        return (<CenaPautas navigator={navigator} />);
+      // case 'pautas':
+      //   return (<CenaPautas navigator={navigator} />);
 
       default:
         return false;

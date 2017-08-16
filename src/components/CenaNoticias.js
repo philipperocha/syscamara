@@ -16,7 +16,7 @@ import Footer from './auxiliares/Footer';
 //importar o componente barra navegação
 import BarraNavegacao from './auxiliares/BarraNavegacao';
 
-import firebase from '../data/firebase2';
+import firebase from '../data/firebase';
 
 const detalheNoticia = require('../img/detalhe_noticias.png');
 
@@ -49,20 +49,23 @@ export default class CenaNoticias extends Component {
     };
   }
 
-  _renderItem(noticia) {
-    console.log("Noticia");
-    console.log(noticia);
+  _renderItem(noticias) {
     return (
       <View>
         <ListItem
             roundAvatar
-            title={noticia.titulo}
-            subtitle={noticia.descricao}
-            avatar={noticia.foto}
+            title={noticias.titulo}
+            subtitle={noticias.descricao}
+            avatar={noticias.foto}
             containerStyle={{ borderBottomWidth: 0 }}
+            onPress={() => this.onLearnMore(noticias)}
         />
       </View>
     );
+  }
+
+  onLearnMore = (noticias) => {
+    this.props.navigation.navigate('Details', {...noticias});
   }
 
   listenFor(fRef) {
@@ -80,8 +83,6 @@ export default class CenaNoticias extends Component {
           _key: child.key
         });
       });
-
-      console.log(data);
 
       // Update the state with the new tasks
       this.setState({

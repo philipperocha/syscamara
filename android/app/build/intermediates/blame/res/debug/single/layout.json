@@ -40,12 +40,12 @@
         "source": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_bar_title_item.xml"
     },
     {
-        "merged": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
-        "source": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_list_menu_item_icon.xml"
-    },
-    {
         "merged": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/res/merged/debug/layout/com_facebook_smart_device_dialog_fragment.xml",
         "source": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/layout/com_facebook_smart_device_dialog_fragment.xml"
+    },
+    {
+        "merged": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_list_menu_item_icon.xml"
     },
     {
         "merged": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/res/merged/debug/layout/dev_loading_view.xml",
@@ -60,12 +60,12 @@
         "source": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/res/layout/messenger_button_send_blue_round.xml"
     },
     {
-        "merged": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
-        "source": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/select_dialog_multichoice_material.xml"
-    },
-    {
         "merged": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/res/merged/debug/layout/redbox_view.xml",
         "source": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.44.2/res/layout/redbox_view.xml"
+    },
+    {
+        "merged": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
+        "source": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/select_dialog_multichoice_material.xml"
     },
     {
         "merged": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
