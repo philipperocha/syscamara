@@ -41,7 +41,6 @@ MERGED from [PoliticoApp:react-native-vector-icons:unspecified] /home/philippe/D
 MERGED from [PoliticoApp:react-native-firebase:unspecified] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/PoliticoApp/react-native-firebase/unspecified/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:multidex:1.0.1] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/AndroidManifest.xml:18:5-42
 MERGED from [me.leolin:ShortcutBadger:1.1.10] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/me.leolin/ShortcutBadger/1.1.10/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.firebase:firebase-core:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-core/11.0.0/AndroidManifest.xml:4:5-43
 MERGED from [com.google.firebase:firebase-config:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/11.0.0/AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-storage:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/11.0.0/AndroidManifest.xml:3:5-43
 MERGED from [com.google.firebase:firebase-storage-common:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/11.0.0/AndroidManifest.xml:3:5-43
@@ -54,9 +53,6 @@ MERGED from [com.google.android.gms:play-services-ads-lite:11.0.0] /home/philipp
 MERGED from [com.google.android.gms:play-services-clearcut:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/11.0.0/AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-gass:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/11.0.0/AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-safetynet:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/11.0.0/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-analytics:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/11.0.0/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-analytics-impl:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/11.0.0/AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-iid:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/11.0.0/AndroidManifest.xml:17:5-43
 MERGED from [com.facebook.react:react-native:0.44.2] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.44.2/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:25.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:animated-vector-drawable:25.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/AndroidManifest.xml:20:5-44
@@ -69,6 +65,10 @@ MERGED from [com.facebook.fresco:imagepipeline:1.0.1] /home/philippe/Documents/R
 MERGED from [com.facebook.fresco:imagepipeline-base:1.0.1] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.0.1/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:1.0.1] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.0.1/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.soloader:soloader:0.1.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/AndroidManifest.xml:2:3-70
+MERGED from [com.google.firebase:firebase-core:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-core/11.0.0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/11.0.0/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/11.0.0/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/11.0.0/AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-auth:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/11.0.0/AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-base:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-database:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/11.0.0/AndroidManifest.xml:3:5-43
@@ -98,7 +98,6 @@ MERGED from [PoliticoApp:react-native-fbsdk:unspecified] /home/philippe/Document
 MERGED from [com.facebook.android:facebook-android-sdk:4.22.1] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.22.1/AndroidManifest.xml:28:5-48:19
 MERGED from [com.android.support:cardview-v7:25.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:customtabs:25.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/customtabs/25.0.0/AndroidManifest.xml:22:5-20
-MERGED from [com.google.firebase:firebase-core:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-core/11.0.0/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-config:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/11.0.0/AndroidManifest.xml:18:5-19
 MERGED from [com.google.firebase:firebase-messaging:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/11.0.0/AndroidManifest.xml:19:5-29:19
 MERGED from [com.google.firebase:firebase-crash:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/11.0.0/AndroidManifest.xml:22:5-23:19
@@ -108,15 +107,16 @@ MERGED from [com.google.android.gms:play-services-ads-lite:11.0.0] /home/philipp
 MERGED from [com.google.android.gms:play-services-clearcut:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/11.0.0/AndroidManifest.xml:18:5-19
 MERGED from [com.google.android.gms:play-services-gass:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/11.0.0/AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-safetynet:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/11.0.0/AndroidManifest.xml:18:5-19
-MERGED from [com.google.firebase:firebase-analytics:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/11.0.0/AndroidManifest.xml:24:5-34:19
-MERGED from [com.google.firebase:firebase-analytics-impl:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/11.0.0/AndroidManifest.xml:24:5-28:19
-MERGED from [com.google.firebase:firebase-iid:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/11.0.0/AndroidManifest.xml:28:5-49:19
 MERGED from [com.facebook.react:react-native:0.44.2] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.44.2/AndroidManifest.xml:13:5-20
 MERGED from [com.android.support:appcompat-v7:25.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-vector-drawable:25.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/AndroidManifest.xml:23:5-20
 MERGED from [com.facebook.soloader:soloader:0.1.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/AndroidManifest.xml:3:3-17
 MERGED from [org.webkit:android-jsc:r174650] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/org.webkit/android-jsc/r174650/AndroidManifest.xml:2:3-17
+MERGED from [com.google.firebase:firebase-core:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-core/11.0.0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/11.0.0/AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/11.0.0/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/11.0.0/AndroidManifest.xml:28:5-49:19
 MERGED from [com.google.firebase:firebase-auth:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/11.0.0/AndroidManifest.xml:19:5-20:19
 MERGED from [com.google.android.gms:play-services-base:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/AndroidManifest.xml:18:5-20:19
 MERGED from [com.google.firebase:firebase-common:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/11.0.0/AndroidManifest.xml:4:5-7:19
@@ -279,6 +279,12 @@ ADDED from [com.google.android.gms:play-services-ads-lite:11.0.0] /home/philippe
 		ADDED from [com.google.android.gms:play-services-ads-lite:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/11.0.0/AndroidManifest.xml:25:182-230
 	android:name
 		ADDED from [com.google.android.gms:play-services-ads-lite:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/11.0.0/AndroidManifest.xml:25:19-71
+android:uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+IMPLIED from /home/philippe/Documents/RN/app-politico/android/app/src/main/AndroidManifest.xml:1:1-33:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+android:uses-permission#android.permission.READ_PHONE_STATE
+IMPLIED from /home/philippe/Documents/RN/app-politico/android/app/src/main/AndroidManifest.xml:1:1-33:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from /home/philippe/Documents/RN/app-politico/android/app/src/main/AndroidManifest.xml:1:1-33:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.firebase:firebase-analytics:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/11.0.0/AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-analytics-impl:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/11.0.0/AndroidManifest.xml:22:5-67
@@ -381,12 +387,6 @@ action#com.google.firebase.INSTANCE_ID_EVENT
 ADDED from [com.google.firebase:firebase-iid:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/11.0.0/AndroidManifest.xml:45:17-79
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/11.0.0/AndroidManifest.xml:45:25-77
-android:uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from /home/philippe/Documents/RN/app-politico/android/app/src/main/AndroidManifest.xml:1:1-33:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
-android:uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from /home/philippe/Documents/RN/app-politico/android/app/src/main/AndroidManifest.xml:1:1-33:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
-android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from /home/philippe/Documents/RN/app-politico/android/app/src/main/AndroidManifest.xml:1:1-33:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:11.0.0] /home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/AndroidManifest.xml:19:9-172
 	android:exported

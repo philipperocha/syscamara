@@ -1,9 +1,5 @@
 [
     {
-        "merged": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
-        "source": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.44.2\\res\\xml\\preferences.xml"
-    },
-    {
         "merged": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/res/merged/debug/xml/preferences.xml",
         "source": "/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.44.2/res/xml/preferences.xml"
     }

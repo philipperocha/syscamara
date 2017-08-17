@@ -1,0 +1,807 @@
+[1mdiff --git a/App.js b/App.js[m
+[1mindex 196c69b..e34a372 100644[m
+[1m--- a/App.js[m
+[1m+++ b/App.js[m
+[36m@@ -1,19 +1,23 @@[m
+ import React, { Component } from 'react';[m
+[31m-import {[m
+[31m-  AppRegistry,[m
+[31m-  Navigator[m
+[31m-} from 'react-native-deprecated-custom-components';[m
+[32m+[m[32m//import {Navigator} from 'react-native-deprecated-custom-components';[m
+[32m+[m[32mimport firebase from './src/data/firebase';[m
+[32m+[m[32mimport{StackNavigator, TabNavigator, TabBarBottom} from 'react-navigation'[m
+[32m+[m
+ import {View, Text} from 'react-native'[m
+ [m
+ //import CenaPrincipal from './src/components/CenaPrincipal';[m
+ import CenaLogin from './src/components/CenaLogin';[m
+[31m-import firebase from './src/data/firebase';[m
+[31m-[m
+ import {Root} from './src/components/CenaPrincipal';[m
+ [m
+[32m+[m
+[32m+[m
+ export default class PoliticoApp extends Component {[m
+ [m
+[31m-    constructor(props){[m
+[32m+[m[32m  static navigationOptions = {[m
+[32m+[m[32m    title: null,[m
+[32m+[m[32m  };[m
+[32m+[m
+[32m+[m[32m  constructor(props){[m
+     super(props)[m
+     this.state = {[m
+       initialView: null,[m
+[36m@@ -35,59 +39,29 @@[m [mexport default class PoliticoApp extends Component {[m
+     })[m
+   }[m
+ [m
+[31m-  renderScene(route, navigator){[m
+[31m-    var globalProps = {navigator}[m
+[31m-    switch(route.id){[m
+[31m-      case 'principal':[m
+[31m-        return (<Root navigator={navigator}/>);[m
+[31m-[m
+[31m-      case 'login':[m
+[31m-        return (<CenaLogin navigator={navigator} />);[m
+[31m-[m
+[31m-      // case 'vereadores':[m
+[31m-      //   return (<CenaPoliticos navigator={navigator} />);[m
+[31m-[m
+[31m-      // case 'contato':[m
+[31m-      //   return (<CenaContato navigator={navigator} />);[m
+[31m-[m
+[31m-      // case 'noticias': [m
+[31m-      //   return (<CenaNoticias navigator={navigator} />);[m
+[31m-[m
+[31m-      // case 'pautas':[m
+[31m-      //   return (<CenaPautas navigator={navigator} />);[m
+[32m+[m[32m  render() {[m
+[32m+[m[41m    [m
+[32m+[m[32m    if(this.state.userLoaded){[m
+ [m
+[31m-      default:[m
+[31m-        return false;[m
+[31m-    }[m
+[31m-  }[m
+[31m-[m
+[31m-  configureScene(route){[m
+[31m-    if(route.sceneConfig){[m
+[31m-      return route.sceneConfig[m
+[31m-    }else{[m
+[31m-      return ({[m
+[31m-        ...Navigator.SceneConfigs.HorizontalSwipeJumpFromRight,[m
+[31m-        gestures: {}[m
+[31m-      });[m
+[31m-    }[m
+[31m-  }[m
+[32m+[m[32m      switch(this.state.initialView){[m
+[32m+[m[32m        case 'principal':[m
+[32m+[m[32m          return (<Root navigator={navigator}/>);[m
+ [m
+[32m+[m[32m        case 'login':[m
+[32m+[m[32m          return (<CenaLogin navigator={navigator} />);[m
+ [m
+[31m-  render() {[m
+[32m+[m[32m        default:[m
+[32m+[m[32m          return false;[m
+[32m+[m[32m      }[m
+ [m
+[31m-    if(this.state.userLoaded){[m
+[31m-      return ([m
+[31m-        <Navigator[m
+[31m-          initialRoute={{[m
+[31m-            id: this.state.initialView[m
+[31m-          }}[m
+[31m-          renderScene={this.renderScene}[m
+[31m-          configureScene={this.configureScene}[m
+[31m-        />[m
+[31m-      );[m
+     }else{[m
+       return null;[m
+     }[m
+   }[m
+ [m
+[31m-}[m
+\ No newline at end of file[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mconst SimpleApp = StackNavigator({[m
+[32m+[m[32m  Log: { screen: CenaLogin },[m
+[32m+[m[32m  Princ: { screen: Root },[m
+[32m+[m[32m});[m
+\ No newline at end of file[m
+[1mdiff --git a/android/.gradle/3.4.1/fileContent/annotation-processors.bin b/android/.gradle/3.4.1/fileContent/annotation-processors.bin[m
+[1mindex 221fc3c..47def91 100644[m
+Binary files a/android/.gradle/3.4.1/fileContent/annotation-processors.bin and b/android/.gradle/3.4.1/fileContent/annotation-processors.bin differ
+[1mdiff --git a/android/.gradle/3.4.1/fileContent/fileContent.lock b/android/.gradle/3.4.1/fileContent/fileContent.lock[m
+[1mindex 6e3b44b..91a54d6 100644[m
+Binary files a/android/.gradle/3.4.1/fileContent/fileContent.lock and b/android/.gradle/3.4.1/fileContent/fileContent.lock differ
+[1mdiff --git a/android/.gradle/3.4.1/javaCompile/classAnalysis.bin b/android/.gradle/3.4.1/javaCompile/classAnalysis.bin[m
+[1mindex d446e7b..6f56da2 100644[m
+Binary files a/android/.gradle/3.4.1/javaCompile/classAnalysis.bin and b/android/.gradle/3.4.1/javaCompile/classAnalysis.bin differ
+[1mdiff --git a/android/.gradle/3.4.1/javaCompile/jarAnalysis.bin b/android/.gradle/3.4.1/javaCompile/jarAnalysis.bin[m
+[1mindex fb609f4..8e70475 100644[m
+Binary files a/android/.gradle/3.4.1/javaCompile/jarAnalysis.bin and b/android/.gradle/3.4.1/javaCompile/jarAnalysis.bin differ
+[1mdiff --git a/android/.gradle/3.4.1/javaCompile/javaCompile.lock b/android/.gradle/3.4.1/javaCompile/javaCompile.lock[m
+[1mindex 92c82bd..44d9c8f 100644[m
+Binary files a/android/.gradle/3.4.1/javaCompile/javaCompile.lock and b/android/.gradle/3.4.1/javaCompile/javaCompile.lock differ
+[1mdiff --git a/android/.gradle/3.4.1/javaCompile/taskJars.bin b/android/.gradle/3.4.1/javaCompile/taskJars.bin[m
+[1mindex d803412..7143611 100644[m
+Binary files a/android/.gradle/3.4.1/javaCompile/taskJars.bin and b/android/.gradle/3.4.1/javaCompile/taskJars.bin differ
+[1mdiff --git a/android/.gradle/3.4.1/taskHistory/fileHashes.bin b/android/.gradle/3.4.1/taskHistory/fileHashes.bin[m
+[1mindex 135d617..0dd76dc 100644[m
+Binary files a/android/.gradle/3.4.1/taskHistory/fileHashes.bin and b/android/.gradle/3.4.1/taskHistory/fileHashes.bin differ
+[1mdiff --git a/android/.gradle/3.4.1/taskHistory/fileSnapshots.bin b/android/.gradle/3.4.1/taskHistory/fileSnapshots.bin[m
+[1mindex c151def..da56dca 100644[m
+Binary files a/android/.gradle/3.4.1/taskHistory/fileSnapshots.bin and b/android/.gradle/3.4.1/taskHistory/fileSnapshots.bin differ
+[1mdiff --git a/android/.gradle/3.4.1/taskHistory/jvmClassSignatures.bin b/android/.gradle/3.4.1/taskHistory/jvmClassSignatures.bin[m
+[1mindex 7ff315d..687ab03 100644[m
+Binary files a/android/.gradle/3.4.1/taskHistory/jvmClassSignatures.bin and b/android/.gradle/3.4.1/taskHistory/jvmClassSignatures.bin differ
+[1mdiff --git a/android/.gradle/3.4.1/taskHistory/taskHistory.bin b/android/.gradle/3.4.1/taskHistory/taskHistory.bin[m
+[1mindex b814fe8..6d41863 100644[m
+Binary files a/android/.gradle/3.4.1/taskHistory/taskHistory.bin and b/android/.gradle/3.4.1/taskHistory/taskHistory.bin differ
+[1mdiff --git a/android/.gradle/3.4.1/taskHistory/taskHistory.lock b/android/.gradle/3.4.1/taskHistory/taskHistory.lock[m
+[1mindex 85e6ba7..2928a02 100644[m
+Binary files a/android/.gradle/3.4.1/taskHistory/taskHistory.lock and b/android/.gradle/3.4.1/taskHistory/taskHistory.lock differ
+[1mdiff --git a/android/app/build.gradle b/android/app/build.gradle[m
+[1mindex 7efc969..eea346c 100644[m
+[1m--- a/android/app/build.gradle[m
+[1m+++ b/android/app/build.gradle[m
+[36m@@ -1,5 +1,5 @@[m
+ apply plugin: "com.android.application"[m
+[31m-apply plugin: "com.google.gms.google-services"[m
+[32m+[m
+ [m
+ import com.android.build.OutputFile[m
+ [m
+[36m@@ -141,16 +141,18 @@[m [mdependencies {[m
+     compile 'com.android.support:appcompat-v7:23.0.1'[m
+     compile 'com.facebook.react:react-native:+'[m
+     // From node_modules[m
+[32m+[m
+[32m+[m[32m    // If you are receiving Google Play API availability issues, add the following dependency[m
+[32m+[m[32m    compile 'com.google.android.gms:play-services-base:11.0.0'[m
+[32m+[m
+     // RNFirebase required dependencies[m
+     compile(project(':react-native-firebase')) {[m
+         transitive = false[m
+     }[m
+[31m-    compile 'com.google.firebase:firebase-core:9.0.0'[m
+[31m-    // If you are receiving Google Play API availability issues, add the following dependency[m
+[31m-    compile 'com.google.android.gms:play-services-base:9.0.0'[m
+[32m+[m[32m    compile 'com.google.firebase:firebase-core:11.0.0'[m
+     // RNFirebase optional dependencies[m
+[31m-    compile 'com.google.firebase:firebase-auth:9.0.0'[m
+[31m-    compile 'com.google.firebase:firebase-database:9.0.0'[m
+[32m+[m[32m    compile 'com.google.firebase:firebase-auth:11.0.0'[m
+[32m+[m[32m    compile 'com.google.firebase:firebase-database:11.0.0'[m
+ }[m
+ [m
+ // Run this once to be able to run the application with BUCK[m
+[36m@@ -159,3 +161,5 @@[m [mtask copyDownloadableDepsToLibs(type: Copy) {[m
+     from configurations.compile[m
+     into 'libs'[m
+ }[m
+[32m+[m
+[32m+[m[32mapply plugin: "com.google.gms.google-services"[m
+\ No newline at end of file[m
+[1mdiff --git a/android/app/build/generated/source/buildConfig/androidTest/debug/com/politicoapp/test/BuildConfig.java b/android/app/build/generated/source/buildConfig/androidTest/debug/com/politicoapp/test/BuildConfig.java[m
+[1mdeleted file mode 100644[m
+[1mindex 2ac4daa..0000000[m
+[1m--- a/android/app/build/generated/source/buildConfig/androidTest/debug/com/politicoapp/test/BuildConfig.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,13 +0,0 @@[m
+[31m-/**[m
+[31m- * Automatically generated file. DO NOT MODIFY[m
+[31m- */[m
+[31m-package com.politicoapp.test;[m
+[31m-[m
+[31m-public final class BuildConfig {[m
+[31m-  public static final boolean DEBUG = Boolean.parseBoolean("true");[m
+[31m-  public static final String APPLICATION_ID = "com.politicoapp.test";[m
+[31m-  public static final String BUILD_TYPE = "debug";[m
+[31m-  public static final String FLAVOR = "";[m
+[31m-  public static final int VERSION_CODE = 1;[m
+[31m-  public static final String VERSION_NAME = "1.0";[m
+[31m-}[m
+[1mdiff --git a/android/app/build/intermediates/blame/res/debug/multi/values-af.json b/android/app/build/intermediates/blame/res/debug/multi/values-af.json[m
+[1mindex 71b4bb7..a7c234c 100644[m
+[1m--- a/android/app/build/intermediates/blame/res/debug/multi/values-af.json[m
+[1m+++ b/android/app/build/intermediates/blame/res/debug/multi/values-af.json[m
+[36m@@ -1278,789 +1278,5 @@[m
+                 }[m
+             }[m
+         ][m
+[31m-    },[m
+[31m-    {[m
+[31m-        "outputFile": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-af\\values-af.xml",[m
+[31m-        "map": [[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 2,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 105,[m
+[31m-                    "endColumn": 103,[m
+[31m-                    "endOffset": 204[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 4,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 280,[m
+[31m-                        "endColumn": 103,[m
+[31m-                        "endOffset": 379[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 3,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 209,[m
+[31m-                    "endColumn": 107,[m
+[31m-                    "endOffset": 312[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 5,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 384,[m
+[31m-                        "endColumn": 107,[m
+[31m-                        "endOffset": 487[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 4,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 317,[m
+[31m-                    "endColumn": 122,[m
+[31m-                    "endOffset": 435[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 6,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 492,[m
+[31m-                        "endColumn": 122,[m
+[31m-                        "endOffset": 610[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 5,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 440,[m
+[31m-                    "endColumn": 99,[m
+[31m-                    "endOffset": 535[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 7,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 615,[m
+[31m-                        "endColumn": 99,[m
+[31m-                        "endOffset": 710[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 6,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 540,[m
+[31m-                    "endColumn": 105,[m
+[31m-                    "endOffset": 641[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 8,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 715,[m
+[31m-                        "endColumn": 105,[m
+[31m-                        "endOffset": 816[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 7,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 646,[m
+[31m-                    "endColumn": 84,[m
+[31m-                    "endOffset": 726[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 9,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 821,[m
+[31m-                        "endColumn": 84,[m
+[31m-                        "endOffset": 901[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 8,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 731,[m
+[31m-                    "endColumn": 102,[m
+[31m-                    "endOffset": 829[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 10,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 906,[m
+[31m-                        "endColumn": 102,[m
+[31m-                        "endOffset": 1004[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 9,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 834,[m
+[31m-                    "endColumn": 117,[m
+[31m-                    "endOffset": 947[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 11,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 1009,[m
+[31m-                        "endColumn": 117,[m
+[31m-                        "endOffset": 1122[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 10,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 952,[m
+[31m-                    "endColumn": 80,[m
+[31m-                    "endOffset": 1028[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 12,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 1127,[m
+[31m-                        "endColumn": 80,[m
+[31m-                        "endOffset": 1203[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 11,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 1033,[m
+[31m-                    "endColumn": 106,[m
+[31m-                    "endOffset": 1135[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 13,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 1208,[m
+[31m-                        "endColumn": 106,[m
+[31m-                        "endOffset": 1310[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 12,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 1140,[m
+[31m-                    "endColumn": 102,[m
+[31m-                    "endOffset": 1238[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 14,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 1315,[m
+[31m-                        "endColumn": 102,[m
+[31m-                        "endOffset": 1413[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 13,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 1243,[m
+[31m-                    "endColumn": 96,[m
+[31m-                    "endOffset": 1335[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 15,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 1418,[m
+[31m-                        "endColumn": 96,[m
+[31m-                        "endOffset": 1510[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 14,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 1340,[m
+[31m-                    "endColumn": 107,[m
+[31m-                    "endOffset": 1443[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 16,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 1515,[m
+[31m-                        "endColumn": 107,[m
+[31m-                        "endOffset": 1618[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 15,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 1448,[m
+[31m-                    "endColumn": 101,[m
+[31m-                    "endOffset": 1545[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 17,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 1623,[m
+[31m-                        "endColumn": 101,[m
+[31m-                        "endOffset": 1720[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 16,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 1550,[m
+[31m-                    "endColumn": 101,[m
+[31m-                    "endOffset": 1647[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 18,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 1725,[m
+[31m-                        "endColumn": 101,[m
+[31m-                        "endOffset": 1822[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 17,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 1652,[m
+[31m-                    "endColumn": 116,[m
+[31m-                    "endOffset": 1764[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 19,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 1827,[m
+[31m-                        "endColumn": 116,[m
+[31m-                        "endOffset": 1939[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 18,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 1769,[m
+[31m-                    "endColumn": 97,[m
+[31m-                    "endOffset": 1862[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values-af\\values-af.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 20,[m
+[31m-                        "startColumn": 4,[m
+[31m-                        "startOffset": 1944,[m
+[31m-                        "endColumn": 97,[m
+[31m-                        "endOffset": 2037[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 19,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 1867,[m
+[31m-                    "endColumn": 108,[m
+[31m-                    "endOffset": 1971[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 4,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 283,[m
+[31m-                        "endColumn": 104,[m
+[31m-                        "endOffset": 387[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 20,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 1976,[m
+[31m-                    "endColumn": 187,[m
+[31m-                    "endOffset": 2159[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 5,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 388,[m
+[31m-                        "endColumn": 187,[m
+[31m-                        "endOffset": 575[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 21,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 2164,[m
+[31m-                    "endColumn": 127,[m
+[31m-                    "endOffset": 2287[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 6,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 576,[m
+[31m-                        "endColumn": 123,[m
+[31m-                        "endOffset": 699[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 22,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 2292,[m
+[31m-                    "endColumn": 111,[m
+[31m-                    "endOffset": 2399[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 7,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 700,[m
+[31m-                        "endColumn": 107,[m
+[31m-                        "endOffset": 807[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 23,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 2404,[m
+[31m-                    "endColumn": 208,[m
+[31m-                    "endOffset": 2608[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 8,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 808,[m
+[31m-                        "endColumn": 208,[m
+[31m-                        "endOffset": 1016[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 24,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 2613,[m
+[31m-                    "endColumn": 123,[m
+[31m-                    "endOffset": 2732[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 9,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 1017,[m
+[31m-                        "endColumn": 119,[m
+[31m-                        "endOffset": 1136[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 25,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 2737,[m
+[31m-                    "endColumn": 130,[m
+[31m-                    "endOffset": 2863[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 10,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 1137,[m
+[31m-                        "endColumn": 126,[m
+[31m-                        "endOffset": 1263[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 26,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 2868,[m
+[31m-                    "endColumn": 201,[m
+[31m-                    "endOffset": 3065[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 4,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 285,[m
+[31m-                        "endColumn": 201,[m
+[31m-                        "endOffset": 486[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 27,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 3070,[m
+[31m-                    "endColumn": 224,[m
+[31m-                    "endOffset": 3290[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 11,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 1264,[m
+[31m-                        "endColumn": 224,[m
+[31m-                        "endOffset": 1488[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 28,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 3295,[m
+[31m-                    "endColumn": 109,[m
+[31m-                    "endOffset": 3400[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 12,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 1489,[m
+[31m-                        "endColumn": 105,[m
+[31m-                        "endOffset": 1594[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 29,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 3405,[m
+[31m-                    "endColumn": 187,[m
+[31m-                    "endOffset": 3588[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 13,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 1595,[m
+[31m-                        "endColumn": 187,[m
+[31m-                        "endOffset": 1782[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 30,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 3593,[m
+[31m-                    "endColumn": 128,[m
+[31m-                    "endOffset": 3717[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 14,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 1783,[m
+[31m-                        "endColumn": 124,[m
+[31m-                        "endOffset": 1907[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 31,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 3722,[m
+[31m-                    "endColumn": 197,[m
+[31m-                    "endOffset": 3915[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 15,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 1908,[m
+[31m-                        "endColumn": 197,[m
+[31m-                        "endOffset": 2105[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            },[m
+[31m-            {[m
+[31m-                "to": {[m
+[31m-                    "startLine": 32,[m
+[31m-                    "startColumn": 4,[m
+[31m-                    "startOffset": 3920,[m
+[31m-                    "endColumn": 183,[m
+[31m-                    "endOffset": 4099[m
+[31m-                },[m
+[31m-                "from": {[m
+[31m-                    "file": "/home/philippe/Documents/RN/app-politico/android/C:\\Users\\PHILIPPE\\PoliticoApp\\android\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\11.0.0\\res\\values-af\\values.xml",[m
+[31m-                    "position": {[m
+[31m-                        "startLine": 16,[m
+[31m-                        "startColumn": 0,[m
+[31m-                        "startOffset": 2106,[m
+[31m-                        "endColumn": 179,[m
+[31m-                        "endOffset": 2285[m
+[31m-                  

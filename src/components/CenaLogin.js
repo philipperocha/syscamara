@@ -4,6 +4,8 @@ import BarraNavegacao from './auxiliares/BarraNavegacao';
 
 import firebase from '../data/firebase';
 
+import{StackNavigator, TabNavigator, TabBarBottom} from 'react-navigation'
+
 const FBSDK = require('react-native-fbsdk');
 const {
     LoginButton,
@@ -11,6 +13,10 @@ const {
 } = FBSDK;
 
 export default class CenaLogin extends Component{
+
+  static navigationOptions = {
+    title: 'LOGIN',
+  };
 
     constructor(props){
         super(props)
@@ -30,11 +36,13 @@ export default class CenaLogin extends Component{
             this.setState({
                 response: 'Conta Criada!'
             })
+            //const { navigate } = this.props.navigation;
             setTimeout(() => {
+                //navigate('principal');
                 this.props.navigator.push({
                     id: 'principal'
                 })
-            }, 1500)
+            }, 500)
         }catch(error){
             this.setState({
                 response: error.toString()
@@ -49,11 +57,18 @@ export default class CenaLogin extends Component{
             this.setState({
                 response: 'Usuário Logado!'
             })
-            setTimeout(() => {
-                this.props.navigator.push({
-                    id: 'principal'
-                })
-            }, 1500)
+            
+            this.props.navigator.push({
+                id: 'principal'
+            })
+
+            // //const { navigate } = this.props.navigation;
+            // setTimeout(() => {
+            //     //navigate('principal');
+            //     this.props.navigator.push({
+            //         id: 'principal'
+            //     })
+            // }, 500)
         }catch(error){
             this.setState({
                 response: error.toString()

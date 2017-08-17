@@ -75,15 +75,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/11.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d410043f93e71bb0179ba86b85726dd080f14b79">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-11.0.0_356fa7696d8d379ea24acf8fc79c80169e7d4cf5.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.44.2/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -147,15 +138,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/11.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="b985bd4eb1abd0e7e1f49c9cdf80a0d3563bad2a">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-11.0.0_cec680b6b7d6ede8863c82788b4fe169d83a35f8.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/11.0.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -180,15 +162,6 @@
         revision="25.0.2"
         sha1="0e39662b49ef66950c0941aa5fd4c49346a7c341">
         <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-11.0.0_0b79ef605be721093ca5ea61aa8b6919cb6c59b1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/11.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="ef65e4780d67d06abddd6e2d15dd4e0519ad8d8a">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-11.0.0_3f1d5f744e6ec74d11cd09c1eca7c1ddf470bd1f.jar" />
     </item>
     <item
         is-multidex="false"
@@ -234,15 +207,6 @@
         revision="23.0.1"
         sha1="2018b324dbe57d9a1304a0b6a97ece59de258da6">
         <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gass-11.0.0_79c1e555d3c2997c55693ef457c11642cf5d87fc.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/11.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="aba37a3eec04e174dc59f00cf4bd7992061d847a">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-11.0.0_0b1eac32082d0d5061cd9c380a8bfa9ec86ddd6b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -408,15 +372,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/11.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="0e39662b49ef66950c0941aa5fd4c49346a7c341">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-11.0.0_0b79ef605be721093ca5ea61aa8b6919cb6c59b1.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/philippe/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
         jumboMode="false"
         optimize="true"
@@ -495,15 +450,6 @@
         revision="25.0.2"
         sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
         <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_38481a4e05eaabe1468b739382bf8a16ae731d97.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/11.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e72c498ef3e345135b6bfdf7fc83c6b905228ade">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-11.0.0_ccd722a67347382cc793f617d35d949a19ffc2c1.jar" />
     </item>
     <item
         is-multidex="false"
@@ -660,24 +606,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/11.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="6dfa77c356a9a8c13ad61253ed95ed3a746527e6">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-11.0.0_87d7b7dc547887eecab1fc87972e9068edeaf780.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/11.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="a611d7a00671ec4eb3050a21425fae955a38eb8a">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-11.0.0_59313628d6915cb8a9e764c9c735d7364cd03d33.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/philippe/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
         jumboMode="false"
         optimize="true"
@@ -729,15 +657,6 @@
         revision="25.0.2"
         sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
         <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.2.0_fa544c82826d98e6165dd1425b55f08b870c8f12.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/11.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="af26875652e085cd14713ff655bc3aa07960d459">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-connection-11.0.0_451123825b1e2dce8e73aebb06cb662ea23e2e99.jar" />
     </item>
     <item
         is-multidex="false"
@@ -882,15 +801,6 @@
         revision="23.0.1"
         sha1="98c1221c29c1a146edc6be342039cc242f9773c5">
         <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-clearcut-11.0.0_33a30e25dabbbf6d79b5afe574f5f2657dd008a0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/11.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d68bbf92de9721b02a31a3833abfdc90144c7e39">
-        <dex dex="/home/philippe/Documents/RN/app-politico/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-11.0.0_81d80346d893d61d584058a1bc995ffdc0e250a7.jar" />
     </item>
     <item
         is-multidex="false"

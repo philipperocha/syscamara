@@ -29,9 +29,11 @@ export default class CenaMais extends Component {
   async logOut(){
       try{
           await firebase.auth().signOut()
-        //   this.props.navigator.push({
-        //     id: 'Login'
-        //   })
+               //navigate('Login');
+
+          this.props.navigator.push({
+            id: 'login'
+          })
 
       }catch(error){
           console.log(error);
