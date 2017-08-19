@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
-//import {Navigator} from 'react-native-deprecated-custom-components';
 import firebase from './src/data/firebase';
 import{StackNavigator, TabNavigator, TabBarBottom} from 'react-navigation'
-
 import {View, Text} from 'react-native'
-
-//import CenaPrincipal from './src/components/CenaPrincipal';
 import CenaLogin from './src/components/CenaLogin';
 import {Root} from './src/components/CenaPrincipal';
-
-
 
 export default class PoliticoApp extends Component {
 
@@ -60,8 +54,3 @@ export default class PoliticoApp extends Component {
   }
 
 }
-
-const SimpleApp = StackNavigator({
-  Log: { screen: CenaLogin },
-  Princ: { screen: Root },
-});

@@ -94,7 +94,7 @@ export default class CenaPoliticos extends Component {
 			<View style={{ flex: 1, backgroundColor: '#f2f2f2' }}>
         
         <StatusBar backgroundColor='black'/>
-        <BarraNavegacao titulo='Políticos 2' corDeFundo='#004466' />
+        <BarraNavegacao titulo='Políticos' corDeFundo='#004466' />
 
         <ListView
           dataSource={this.state.dataSource}

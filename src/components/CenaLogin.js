@@ -4,10 +4,13 @@ import BarraNavegacao from './auxiliares/BarraNavegacao';
 
 import firebase from '../data/firebase';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import{StackNavigator, TabNavigator, TabBarBottom} from 'react-navigation'
 
 const FBSDK = require('react-native-fbsdk');
 const {
+    LoginManager,
     LoginButton,
     AccessToken
 } = FBSDK;
@@ -32,27 +35,35 @@ export default class CenaLogin extends Component{
 
     async signUp(){
         try{
+            if (this.state.email == '' || this.state.password == ''){
+                alert("É necessário email e senha para criação de um novo usuário!");
+                return;
+            }
             await firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
             this.setState({
                 response: 'Conta Criada!'
             })
-            //const { navigate } = this.props.navigation;
-            setTimeout(() => {
-                //navigate('principal');
-                this.props.navigator.push({
-                    id: 'principal'
-                })
-            }, 500)
+
+            this.props.navigator.push({
+                id: 'principal'
+            })
+
         }catch(error){
             this.setState({
                 response: error.toString()
             })
+            alert(error.toString());
         }
 
     }
 
     async login(){
         try{
+            if (this.state.email == '' || this.state.password == ''){
+                alert("É necessário email e senha para LogIn de usuário!");
+                return;
+            }
+
             await firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
             this.setState({
                 response: 'Usuário Logado!'
@@ -62,13 +73,6 @@ export default class CenaLogin extends Component{
                 id: 'principal'
             })
 
-            // //const { navigate } = this.props.navigation;
-            // setTimeout(() => {
-            //     //navigate('principal');
-            //     this.props.navigator.push({
-            //         id: 'principal'
-            //     })
-            // }, 500)
         }catch(error){
             this.setState({
                 response: error.toString()
@@ -76,11 +80,40 @@ export default class CenaLogin extends Component{
         }
     }
 
+    _fbAuth(){
+        LoginManager.logInWithReadPermissions(['public_profile', 'email']).then(
+            function(result){
+                if (result.isCancelled){
+                    alert('Login Cancelado!');
+                }else{
+                    AccessToken.getCurrentAccessToken().then((accessTokenData) => {
+                        const credential = firebase.auth.FacebookAuthProvider.credential(accessTokenData.accessToken);
+
+                        firebase.auth().signInWithCredential(credential).then((result) => {
+                            this.setState({
+                                response: 'Usuário Logado!'
+                            })
+                            
+                            this.props.navigator.push({
+                                id: 'principal'
+                            })
+
+                        }, (error) => {
+                            console.log(error);
+                        })
+                    }, (error => {
+                        console.log('Some error occured: ' + error);
+                    }))
+                }
+            }
+        )
+    }
+
     render(){
         return(
             
             <View style={styles.container}>
-            <Image source={require('../img/back-br.png')} style={styles.imgBackground}>
+            <Image source={require('../img/background-Brasil.png')} style={styles.imgBackground}>
                 <View style={styles.containerBarra}>
                     <StatusBar backgroundColor='black'/>
                     <BarraNavegacao titulo='Camara de Lagarto App' corDeFundo='#004466' />
@@ -106,26 +139,20 @@ export default class CenaLogin extends Component{
                         <TouchableHighlight onPress={this.signUp} style={[styles.loginButton, styles.button]} >
                             <Text style={styles.textButton}>Novo Cadastro</Text>
                         </TouchableHighlight>
-                    </View>
 
-                    <LoginButton
-                        publishPermissions={["publish_actions"]}
-                        onLoginFinished={
-                        (error, result) => {
-                        if (error) {
-                            alert("login has error: " + result.error);
-                        } else if (result.isCancelled) {
-                            alert("login is cancelled.");
-                        } else {
-                            AccessToken.getCurrentAccessToken().then(
-                            (data) => {
-                                alert(data.accessToken.toString())
-                            }
-                            )
-                        }
-                        }
-                    }
-                    onLogoutFinished={() => alert("logout.")}/>
+                        <TouchableHighlight onPress={this._fbAuth} style={[styles.button, {marginTop: 20, height: 40, backgroundColor: '#3b5998'}]} >
+                             <View style={{alignSelf: 'center', alignItems: 'center'}}>
+                                <Icon
+                                    name='facebook'
+                                    size={18}
+                                    color='white'
+                                    style={styles.btnIcon}
+                                >
+                                    <Text style={styles.btnText}>   Login com Facebook</Text>
+                                </Icon>
+                            </View> 
+                        </TouchableHighlight>
+                    </View>
                 </View>
             </Image>
             </View>
@@ -154,9 +181,10 @@ const styles = StyleSheet.create({
         //backgroundColor: '#f2f2f2',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        marginBottom: 40,
+        marginBottom: 20,
     },
     inputText:{
+        backgroundColor: '#FFFFFF',
         height: 40,
         width: 280,
         borderWidth: 1,
@@ -184,4 +212,14 @@ const styles = StyleSheet.create({
         marginTop: 30,
         marginBottom: 20,
     },
+    btnIcon: {
+        height: 25,
+        width: 180,
+    },
+    btnText: {
+        fontSize: 14,
+        color: 'white',
+        marginLeft: 30,
+        marginTop: 0,
+    }
 })
