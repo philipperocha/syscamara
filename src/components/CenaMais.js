@@ -6,12 +6,16 @@ import {
   Image,
   StyleSheet,
   TouchableHighlight,
-  ListView
+  ListView,
+  ScrollView,
 } from 'react-native';
+import { Tile, List, ListItem } from 'react-native-elements';
 
 import firebase from '../data/firebase';
 
 import BarraNavegacao from './auxiliares/BarraNavegacao';
+
+const iconeSair = require('../img/icons/exit.png');
 
 export default class CenaMais extends Component {
 
@@ -42,19 +46,38 @@ export default class CenaMais extends Component {
 
   render() {
     return (
-	    <View style={styles.container}>
-
-             <View style={styles.containerBarra}>
+        <View style={{ flex: 1, backgroundColor: '#f2f2f2' }}>
+            <View>
                 <StatusBar backgroundColor='black'/>
                 <BarraNavegacao titulo='Mais' corDeFundo='#004466'/>
-            </View>
-
-            <View style={styles.containerMenu}>
-                <Text>Caro usuáro <Text style={{fontSize: 14, fontWeight: 'bold'}}>{firebase.auth().currentUser.email}</Text>, deseja fazer LogOut?</Text>
-                <TouchableHighlight onPress={this.logOut.bind(this)} style={styles.button}>
-                    <Text style={styles.buttonText}> LogOut </Text>
-                </TouchableHighlight>
             </View> 
+            <ScrollView>
+                    <List>
+                        <ListItem style={{height: 80, justifyContent: 'center'}}
+                            roundAvatar
+                            title={firebase.auth().currentUser.displayName} 
+                            subtitle={firebase.auth().currentUser.email} 
+                            avatar={firebase.auth().currentUser.photoURL} 
+                            hideChevron
+                        />
+                    </List>
+                     <List>
+                        <ListItem style={{height: 260, justifyContent: 'center'}}
+                            roundAvatar
+                            title="Aplicativo criado em Aracaju-SE, 2017..."
+                            hideChevron
+                        />
+                    </List> 
+                    <List>
+                        <ListItem style={{height: 60, justifyContent: 'center'}}
+                            //roundAvatar
+                            title="Sair" 
+                            avatar={iconeSair}
+                            onPress={this.logOut.bind(this)}
+                            hideChevron
+                        />
+                    </List>
+            </ScrollView>
         </View>
     );
   }
