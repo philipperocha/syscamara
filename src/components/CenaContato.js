@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import {
   View,
+  Text,
   StatusBar,
   Image,
-  Text,
-  StyleSheet
+  StyleSheet,
+  TouchableHighlight,
+  ListView,
+  ScrollView,
 } from 'react-native';
+import { Tile, List, ListItem } from 'react-native-elements';
 
-//importar o componente barra navegação
 import BarraNavegacao from './auxiliares/BarraNavegacao';
 
-const detalheContato = require('../img/detalhe_contato.png');
+const iconeSair = require('../img/icons/exit.png');
 
 export default class CenaContato extends Component {
 
@@ -27,50 +30,76 @@ export default class CenaContato extends Component {
 
   render() {
     return (
-			<View style={{ flex: 1, backgroundColor: '#FFF' }}>
-        
-        <StatusBar backgroundColor='black'/>
-        <BarraNavegacao titulo='Contato' corDeFundo='#004466' />
-
-        <View style={styles.detalheContato}>
-          <Text style={styles.txtContato}>Fone: (79) 3631-5252</Text>
-          <Text style={styles.txtContato}>E-mail: atendimento@lagarto.se.leg.br</Text>
-          <Text style={styles.txtContato}>Endereço: Praça da Piedade, 97, Lagarto/SE</Text>
-          <Text style={styles.txtContato}>CEP: 49400-000</Text>
+        <View style={{ flex: 1, backgroundColor: '#f2f2f2' }}>
+            <View>
+                <StatusBar backgroundColor='black'/>
+                <BarraNavegacao titulo='Contato' corDeFundo='#004466'/>
+            </View> 
+            <ScrollView>
+                    <List>
+                        <ListItem style={{height: 60, justifyContent: 'center'}}
+                            roundAvatar
+                            title="Fone: (79)3631-5252" 
+                            subtitle={null} 
+                            avatar={null} 
+                            hideChevron
+                        />
+                    </List>
+                     <List>
+                        <ListItem style={{height: 60, justifyContent: 'center'}}
+                            roundAvatar
+                            title="Email: atendimento@lagarto.se.leg.br"
+                            hideChevron
+                        />
+                    </List> 
+                    <List>
+                        <ListItem style={{height: 60, justifyContent: 'center'}}
+                            //roundAvatar
+                            title="Endereço: Praça da Piedade, 97, Lagarto/SE"
+                            avatar={null}
+                            onPress={null}
+                            hideChevron
+                        />
+                    </List>
+                    <List>
+                        <ListItem style={{height: 60, justifyContent: 'center'}}
+                            //roundAvatar
+                            title="CEP: 49400-000"
+                            avatar={null}
+                            onPress={null}
+                            hideChevron
+                        />
+                    </List>
+            </ScrollView>
         </View>
-
-
-
-
-      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  cabecalho: {
-    flexDirection: 'row',
-    marginTop: 10
-  },
-  txtTitulo: {
-    fontSize: 22,
-    //color: '#B9C941',
-    color: 'black',
-    fontWeight: 'bold',
-    marginLeft: 10,
-    marginTop: 10
-  },
-  detalheContato: {
-    
-    marginTop: 20,
-    padding: 10
-  },
-  txtContato: {
-    fontSize: 16,
-    //marginLeft: 20
-  },
-  icon:{
-    width: 26,
-    height: 26,
-}
+    container: {
+        flex: 1,
+    },
+    containerBarra: {
+        flex: 2,
+    },
+    containerMenu: {
+        flex: 1,
+        alignItems: 'center'
+    },
+    button: {
+        height: 30,
+        width: 100,
+        backgroundColor: '#003566',
+        marginTop: 50,
+        justifyContent: 'center'
+    },
+    buttonText: {
+        color: '#FFF',
+        alignSelf: 'center'
+    },
+    icon:{
+        width: 26,
+        height: 26,
+    }
 });

@@ -4,28 +4,31 @@ import {
   StatusBar,
   Image,
   Text,
+  TouchableHighlight,
   StyleSheet,
   FlatList,
   ListView,
   ActivityIndicator,
 } from 'react-native';
 import { List, ListItem, SearchBar,  } from "react-native-elements";
-import Header from './auxiliares/Header';
-import Footer from './auxiliares/Footer';
 
 //importar o componente barra navegação
 import BarraNavegacao from './auxiliares/BarraNavegacao';
 
+import Header from './auxiliares/Header';
+import Footer from './auxiliares/Footer';
+
+
 import firebase from '../data/firebase';
 
-export default class CenaNoticias extends Component {
+export default class CenaSessoes extends Component {
 
   static navigationOptions = {
         tabBarVisible: true,
-        tabBarLabel: 'Noticias',
+        tabBarLabel: 'Sessões',
         tabBarIcon: ({tintColor}) => (
             <Image
-                source={require('../img/bottomBar/noticias.png')}
+                source={require('../img/bottomBar/sessoes.png')}
                 style={[styles.icon, {tintColor: tintColor}]}
             />
         )
@@ -34,7 +37,7 @@ export default class CenaNoticias extends Component {
   constructor(props) {
     super(props);
 
-    let fireRef = firebase.database().ref('Noticias');
+    let fireRef = firebase.database().ref('Sessoes');
 
     const dataSource = new ListView.DataSource({
       rowHasChanged: (row1, row2) => row1 !== row2,
@@ -47,23 +50,23 @@ export default class CenaNoticias extends Component {
     };
   }
 
-  _renderItem(noticias) {
+  _renderItem(sessoes) {
     return (
       <View>
         <ListItem
             roundAvatar
-            title={noticias.titulo}
-            subtitle={noticias.descricao}
-            avatar={noticias.foto}
+            title={sessoes.titulo}
+            subtitle={sessoes.descricao}
+            avatar={sessoes.foto}
             containerStyle={{ borderBottomWidth: 0 }}
-            onPress={() => this.onLearnMore(noticias)}
+            onPress={() => this.onLearnMore(sessoes)}
         />
       </View>
     );
   }
 
-  onLearnMore = (noticias) => {
-    this.props.navigation.navigate('Details', {...noticias});
+  onLearnMore = (sessoes) => {
+    this.props.navigation.navigate('Details', {...sessoes});
   }
 
   listenFor(fRef) {
@@ -93,24 +96,30 @@ export default class CenaNoticias extends Component {
     this.listenFor(this.state.fireRef);
   }
 
+  _handlePress() {
+    console.log('Button Pressed!');
+  }
+
+    
   render() {
     return (
-			<View style={{ flex: 1, backgroundColor: '#FFF' }}>
+			
+        <View style={{ flex: 1, backgroundColor: '#FFF' }}>
         
-        <StatusBar backgroundColor='black'/>
-        <BarraNavegacao titulo='Notícias' corDeFundo='#004466' />
+            <StatusBar backgroundColor='black'/>
+            <BarraNavegacao titulo='Sessões' corDeFundo='#004466' />
 
-        <ListView
-          dataSource={this.state.dataSource}
-          //enableEmptySections={true}
-          renderRow={this._renderItem.bind(this)}
-          renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
-          renderHeader={() => <Header />}
-          renderFooter={() => <Footer />}
-          style={styles.listView}
-        />
+            <ListView
+            dataSource={this.state.dataSource}
+            //enableEmptySections={true}
+            renderRow={this._renderItem.bind(this)}
+            renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
+            renderHeader={() => <Header />}
+            renderFooter={() => <Footer />}
+            style={styles.listView}
+            />
 
-      </View>
+        </View>
     );
   }
 }
@@ -128,7 +137,46 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginTop: 10
   },
-  separator: {
+  detalhePautas: {
+    marginTop: 20,
+    padding: 10
+  },
+  txtPautas: {
+    fontSize: 18
+  },
+
+
+  buttonTitle:{
+      fontSize: 20,
+      color: 'black',
+      fontWeight: 'bold',
+  },
+  buttonText:{
+      fontSize: 20,
+      color: 'white',
+  },
+  button:{
+        backgroundColor: '#848484',
+        borderWidth: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        //alignSelf: 'stretch',
+        height: 34,
+        width: 240,
+        borderRadius: 1,
+        margin: 6,
+  },
+
+  gridPautas:{
+    marginTop: 20,
+    padding: 10,
+    alignItems: 'center',
+  },
+  icon:{
+    width: 26,
+    height: 26,
+},
+ separator: {
     flex: 1,
     height: StyleSheet.hairlineWidth,
     backgroundColor: '#8E8E8E',
@@ -136,8 +184,5 @@ const styles = StyleSheet.create({
     marginLeft: "15%",
     marginRight: "5%",
   },
-  icon:{
-    width: 26,
-    height: 26,
-  }
+
 });

@@ -10,12 +10,13 @@ import {
 import{StackNavigator, TabNavigator, TabBarBottom} from 'react-navigation'
 
 import CenaNoticias from './CenaNoticias';
-import CenaPautas from './CenaPautas';
+import CenaSessoes from './CenaSessoes';
 import CenaPoliticos from './CenaPoliticos';
 import CenaContato from './CenaContato';
 import CenaMais from './CenaMais';
 import DetalhePolitico from './DetalhePolitico';
 import DetalheNoticia from './DetalheNoticia';
+import DetalheSessao from './DetalheSessao';
 
 //Cena Políticos
 export const CenaPoliticosStack = StackNavigator({
@@ -55,10 +56,29 @@ export const CenaNoticiasStack = StackNavigator({
   },
 });
 
+//Cena Sessões
+export const CenaSessoesStack = StackNavigator({
+  CenaSessoes: {
+    screen: CenaSessoes,
+    navigationOptions: {
+      title: 'Sessões',
+      header: null,
+    //   headerMode: 'screen',
+    //   header: { visible:false },
+    },
+  },
+  Details: {
+    screen: DetalheSessao,
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.titulo.toUpperCase()}`,
+    }),
+  },
+});
+
 export const Navegacao = TabNavigator({
   CenaPoliticosStack: {screen: CenaPoliticosStack},
   CenaNoticiasStack: {screen: CenaNoticiasStack},
-  CenaPautas: {screen: CenaPautas},
+  CenaSessoesStack: {screen: CenaSessoesStack},
   CenaContato: {screen: CenaContato},
   CenaMais: {screen: CenaMais},
 },{

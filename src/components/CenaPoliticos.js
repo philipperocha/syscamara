@@ -10,8 +10,6 @@ import { Avatar } from 'react-native-material-design';
 
 import firebase from '../data/firebase';
 
-const detalheVereadores = require('../img/detalhe_vereadores.png');
-
 
 export default class CenaPoliticos extends Component {
 

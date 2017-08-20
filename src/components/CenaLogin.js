@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {StatusBar, Image, FlatList, ActivityIndicator, AppRegistry, ListView, ToolbarAndroid, Text, View, StyleSheet, TextInput, TouchableHighlight} from 'react-native'
+import {StatusBar, Image, FlatList, ActivityIndicator, AppRegistry, ListView, ToolbarAndroid, Text, View, StyleSheet, TextInput, TouchableHighlight, ScrollView} from 'react-native'
 import BarraNavegacao from './auxiliares/BarraNavegacao';
 
 import firebase from '../data/firebase';
@@ -111,15 +111,19 @@ export default class CenaLogin extends Component{
 
     render(){
         return(
-            
-            <View style={styles.container}>
-            <Image source={require('../img/background-Brasil.png')} style={styles.imgBackground}>
+
+
+            <ScrollView style={styles.container}>
+
+            <Image source={require('../img/back3.png')} style={styles.imgBackground}>
+
                 <View style={styles.containerBarra}>
                     <StatusBar backgroundColor='black'/>
                     <BarraNavegacao titulo='Camara de Lagarto App' corDeFundo='#004466' />
                 </View>
                 <View style={styles.containerLogin}>
                     <View style={styles.containerInputs}>
+                        {/*<Image source={require('../img/logo.png')} style={{width: 160, height: 160}}/>*/}
                         <TextInput
                             placeholderTextColor="black"
                             placeholder="Email"
@@ -155,7 +159,7 @@ export default class CenaLogin extends Component{
                     </View>
                 </View>
             </Image>
-            </View>
+            </ScrollView>
             
         )
     }
@@ -167,6 +171,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignSelf: 'stretch',
         width: null,
+        height: 620,
     },
     container:{
         flex: 1,
@@ -176,11 +181,11 @@ const styles = StyleSheet.create({
     },
     containerLogin: {
         flex:1,
-        marginTop: 10,
+        marginTop: 0,
         marginHorizontal: 10,
         //backgroundColor: '#f2f2f2',
         alignItems: 'center',
-        justifyContent: 'flex-end',
+        justifyContent: 'flex-start',
         marginBottom: 20,
     },
     inputText:{
@@ -209,8 +214,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     containerInputs:{
-        marginTop: 30,
-        marginBottom: 20,
+        marginTop: 0,
+        marginBottom: 10,
     },
     btnIcon: {
         height: 25,
