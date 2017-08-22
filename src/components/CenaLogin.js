@@ -115,16 +115,17 @@ export default class CenaLogin extends Component{
 
             <ScrollView style={styles.container}>
 
-            <Image source={require('../img/back3.png')} style={styles.imgBackground}>
+            <Image source={require('../img/background.png')} style={styles.imgBackground}>
 
                 <View style={styles.containerBarra}>
                     <StatusBar backgroundColor='black'/>
-                    <BarraNavegacao titulo='Camara de Lagarto App' corDeFundo='#004466' />
+                    <BarraNavegacao titulo='SysCamara' corDeFundo='#004466' />
+                    <Image source={require('../img/SysCamara.png')} style={{width: 200, height: 200, marginTop: 60}}/>
                 </View>
                 <View style={styles.containerLogin}>
                     <View style={styles.containerInputs}>
-                        {/*<Image source={require('../img/logo.png')} style={{width: 160, height: 160}}/>*/}
-                        <TextInput
+                        
+                        {/*<TextInput
                             placeholderTextColor="black"
                             placeholder="Email"
                             style={styles.inputText}
@@ -142,7 +143,7 @@ export default class CenaLogin extends Component{
                         </TouchableHighlight>
                         <TouchableHighlight onPress={this.signUp} style={[styles.loginButton, styles.button]} >
                             <Text style={styles.textButton}>Novo Cadastro</Text>
-                        </TouchableHighlight>
+                        </TouchableHighlight>*/}
 
                         <TouchableHighlight onPress={this._fbAuth} style={[styles.button, {marginTop: 20, height: 40, backgroundColor: '#3b5998'}]} >
                              <View style={{alignSelf: 'center', alignItems: 'center'}}>
@@ -152,7 +153,7 @@ export default class CenaLogin extends Component{
                                     color='white'
                                     style={styles.btnIcon}
                                 >
-                                    <Text style={styles.btnText}>   Login com Facebook</Text>
+                                    <Text style={styles.btnText}>    Login com Facebook</Text>
                                 </Icon>
                             </View> 
                         </TouchableHighlight>
@@ -171,21 +172,22 @@ const styles = StyleSheet.create({
         flex: 1,
         alignSelf: 'stretch',
         width: null,
-        height: 620,
+        height: 615,
     },
     container:{
         flex: 1,
     },
     containerBarra: {
+        alignItems: 'center',
         flex: 1,
     },
     containerLogin: {
         flex:1,
         marginTop: 0,
-        marginHorizontal: 10,
+        marginHorizontal: 0,
         //backgroundColor: '#f2f2f2',
         alignItems: 'center',
-        justifyContent: 'flex-start',
+        justifyContent: 'flex-end',
         marginBottom: 20,
     },
     inputText:{
@@ -214,8 +216,9 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     containerInputs:{
+        alignItems: 'center',
         marginTop: 0,
-        marginBottom: 10,
+        marginBottom: 50,
     },
     btnIcon: {
         height: 25,
