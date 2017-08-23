@@ -119,8 +119,8 @@ export default class CenaLogin extends Component{
 
                 <View style={styles.containerBarra}>
                     <StatusBar backgroundColor='black'/>
-                    <BarraNavegacao titulo='SysCamara' corDeFundo='#004466' />
-                    <Image source={require('../img/SysCamara.png')} style={{width: 200, height: 200, marginTop: 60}}/>
+                    {/*<BarraNavegacao titulo='SysCamara' corDeFundo='#004466' />*/}
+                    <Image source={require('../img/SysCamara.png')} style={{width: 200, height: 200, marginTop: 100}}/>
                 </View>
                 <View style={styles.containerLogin}>
                     <View style={styles.containerInputs}>
@@ -144,7 +144,7 @@ export default class CenaLogin extends Component{
                         <TouchableHighlight onPress={this.signUp} style={[styles.loginButton, styles.button]} >
                             <Text style={styles.textButton}>Novo Cadastro</Text>
                         </TouchableHighlight>*/}
-
+                        <Text style={{fontSize: 14, color: '#d9d9d9', marginLeft: 15, marginRight: 15, textAlign: 'center'}}>Escolha abaixo a rede social que deseja utilizar para efetuar o login:</Text>
                         <TouchableHighlight onPress={this._fbAuth} style={[styles.button, {marginTop: 20, height: 40, backgroundColor: '#3b5998'}]} >
                              <View style={{alignSelf: 'center', alignItems: 'center'}}>
                                 <Icon
@@ -157,6 +157,7 @@ export default class CenaLogin extends Component{
                                 </Icon>
                             </View> 
                         </TouchableHighlight>
+                        <Text style={{fontSize: 12, color: '#007399', marginLeft: 15, marginRight: 15, textAlign: 'center', fontStyle: 'italic'}}>O aplicativo não postará nada em suas redes sociais sem a sua autorização.</Text>
                     </View>
                 </View>
             </Image>
