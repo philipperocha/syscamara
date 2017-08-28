@@ -6,8 +6,9 @@ import firebase from '../data/firebase';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import{StackNavigator, TabNavigator, TabBarBottom} from 'react-navigation'
-
+import{StackNavigator, TabNavigator, TabBarBottom} from 'react-navigation';
+import{GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
+ 
 const FBSDK = require('react-native-fbsdk');
 const {
     LoginManager,
@@ -89,6 +90,9 @@ export default class CenaLogin extends Component{
                     AccessToken.getCurrentAccessToken().then((accessTokenData) => {
                         const credential = firebase.auth.FacebookAuthProvider.credential(accessTokenData.accessToken);
 
+                        console.log('token -> ' + accessTokenData.accessToken);
+                        console.log(credential);
+
                         firebase.auth().signInWithCredential(credential).then((result) => {
                             this.setState({
                                 response: 'Usuário Logado!'
@@ -107,6 +111,39 @@ export default class CenaLogin extends Component{
                 }
             }
         )
+    }
+
+    _googleAuth(){
+
+        GoogleSignin.signIn().then(
+            (user) => {
+            console.log(user);
+
+            let credential = {token: user.idToken, secret: user.serverAuthCode, provider: 'google', providerId: 'google'}
+
+            firebase.auth().signInWithCredential(credential).then((result) => {
+                            
+                    this.props.navigator.push({
+                        id: 'principal'
+                    })
+
+                }, (error) => {
+                    console.log(error);
+            })
+
+
+        }
+        
+        ).catch((err) => {
+            console.log('WRONG SIGNIN', err)
+        }).done();
+    }
+
+    componentWillMount(){
+        GoogleSignin.hasPlayServices({autoResolve: true});
+        GoogleSignin.configure({
+            webClientId: '566860187383-ant0bjv496hmgdmj3t2hhk9qlqnh5e70.apps.googleusercontent.com'
+        });
     }
 
     render(){
@@ -145,7 +182,19 @@ export default class CenaLogin extends Component{
                             <Text style={styles.textButton}>Novo Cadastro</Text>
                         </TouchableHighlight>*/}
                         <Text style={{fontSize: 14, color: '#d9d9d9', marginLeft: 15, marginRight: 15, textAlign: 'center'}}>Escolha abaixo a rede social que deseja utilizar para efetuar o login:</Text>
-                        <TouchableHighlight onPress={this._fbAuth} style={[styles.button, {marginTop: 20, height: 40, backgroundColor: '#3b5998'}]} >
+                        <TouchableHighlight onPress={this._googleAuth} style={[styles.button, {marginTop: 20, height: 40, backgroundColor: '#b24d34'}]} >
+                             <View style={{alignSelf: 'center', alignItems: 'center'}}>
+                                <Icon
+                                    name='google'
+                                    size={18}
+                                    color='white'
+                                    style={styles.btnIcon}
+                                >
+                                    <Text style={[styles.btnText, {fontWeight: 'bold'}]}>    Login com Google</Text>
+                                </Icon>
+                            </View> 
+                        </TouchableHighlight>
+                        <TouchableHighlight onPress={this._fbAuth} style={[styles.button, {marginTop: 10, height: 40, backgroundColor: '#3b5998'}]} >
                              <View style={{alignSelf: 'center', alignItems: 'center'}}>
                                 <Icon
                                     name='facebook'
@@ -153,7 +202,7 @@ export default class CenaLogin extends Component{
                                     color='white'
                                     style={styles.btnIcon}
                                 >
-                                    <Text style={styles.btnText}>    Login com Facebook</Text>
+                                    <Text style={[styles.btnText, {fontWeight: 'bold'}]}>    Login com Facebook</Text>
                                 </Icon>
                             </View> 
                         </TouchableHighlight>

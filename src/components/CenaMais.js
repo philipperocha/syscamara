@@ -13,6 +13,15 @@ import { Tile, List, ListItem } from 'react-native-elements';
 
 import firebase from '../data/firebase';
 
+import{GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
+
+const FBSDK = require('react-native-fbsdk');
+const {
+    LoginManager,
+    LoginButton,
+    AccessToken
+} = FBSDK;
+
 import BarraNavegacao from './auxiliares/BarraNavegacao';
 
 const iconeSair = require('../img/icons/exit.png');
@@ -32,12 +41,47 @@ export default class CenaMais extends Component {
 
   async logOut(){
       try{
-          await firebase.auth().signOut()
-               //navigate('Login');
 
-          this.props.navigator.push({
-            id: 'login'
-          })
+        var user = firebase.auth().currentUser;
+
+        if (user != null) {
+            user.providerData.forEach(function (profile) {
+
+                console.log('Provider ID -> ' + profile.providerId.toString());
+
+                if (profile.providerId.toString().indexOf('google') !== -1){
+
+                    GoogleSignin.signOut().then(() => {
+                        console.log('LogOut do usuário google com sucesso!');
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+                }
+
+                if (profile.providerId.toString().indexOf('facebook') !== -1){
+                    
+                    try{
+                        LoginManager.logOut();
+                        console.log('LogOut do usuário facebook com sucesso!')
+                    }catch(err){
+                        console.log(err);
+                    }
+                }
+                // console.log("  Sign-in provider: "+profile.providerId);
+                // console.log("  Provider-specific UID: "+profile.uid);
+                // console.log("  Name: "+profile.displayName);
+                // console.log("  Email: "+profile.email);
+                // console.log("  Photo URL: "+profile.photoURL);
+            });
+        }
+
+        await firebase.auth().signOut()
+            //navigate('Login');
+
+        this.props.navigator.push({
+        id: 'login'
+        })
 
       }catch(error){
           console.log(error);
