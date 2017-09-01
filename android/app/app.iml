@@ -87,6 +87,7 @@
     <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="okio-1.9.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-auth-11.0.0" level="project" />
     <orderEntry type="library" exported="" name="imagepipeline-base-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="textlayoutbuilder-1.0.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-basement-11.0.0" level="project" />
@@ -116,6 +117,7 @@
     <orderEntry type="library" exported="" name="support-v4-25.2.0" level="project" />
     <orderEntry type="library" exported="" name="support-compat-25.2.0" level="project" />
     <orderEntry type="library" exported="" name="okhttp-ws-3.4.1" level="project" />
+    <orderEntry type="library" exported="" name="play-services-auth-base-11.0.0" level="project" />
     <orderEntry type="library" exported="" name="okhttp-3.4.1" level="project" />
     <orderEntry type="library" exported="" name="support-media-compat-25.2.0" level="project" />
     <orderEntry type="library" exported="" name="react-native-0.44.2" level="project" />
@@ -128,6 +130,7 @@
     <orderEntry type="module" module-name="react-native-fbsdk" exported="" />
     <orderEntry type="module" module-name="react-native-firebase" exported="" />
     <orderEntry type="module" module-name="react-native-vector-icons" exported="" />
+    <orderEntry type="module" module-name="react-native-google-signin" exported="" />
   </component>
 </module>
 
