@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "566860187383-na25epfur2dgjqgns1cnu9m8ekihlb05.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.politicoapp",
+            "certificate_hash": "f7f791da847da68f24224b5933f1634eb991e2de"
+          }
+        },
+        {
+          "client_id": "566860187383-qqpeagojv54elphusr13tir84nbt0je5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.politicoapp",
+            "certificate_hash": "143c882fe1d7e54e031316dba3cfe2e486e602ca"
+          }
+        },
+        {
           "client_id": "566860187383-ant0bjv496hmgdmj3t2hhk9qlqnh5e70.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +45,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566860187383-ant0bjv496hmgdmj3t2hhk9qlqnh5e70.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

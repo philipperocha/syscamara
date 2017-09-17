@@ -39,7 +39,7 @@ export default class CenaMais extends Component {
         )
   }
 
-  async logOut(){
+  logOut(){
       try{
 
         var user = firebase.auth().currentUser;
@@ -52,6 +52,7 @@ export default class CenaMais extends Component {
                 if (profile.providerId.toString().indexOf('google') !== -1){
 
                     GoogleSignin.signOut().then(() => {
+                        alert('LogOut efetuado com sucesso!');
                         console.log('LogOut do usuário google com sucesso!');
                     })
                     .catch((err) => {
@@ -63,6 +64,7 @@ export default class CenaMais extends Component {
                     
                     try{
                         LoginManager.logOut();
+                        alert("LogOut efetuado com sucesso!")
                         console.log('LogOut do usuário facebook com sucesso!')
                     }catch(err){
                         console.log(err);
@@ -76,17 +78,29 @@ export default class CenaMais extends Component {
             });
         }
 
-        await firebase.auth().signOut()
+        firebase.auth().signOut();
             //navigate('Login');
 
-        this.props.navigator.push({
-        id: 'login'
-        })
+        // this.props.navigator.push({
+        // id: 'login'
+        // })
 
       }catch(error){
           console.log(error);
       }
-  }
+    }
+
+    _fbLogOut(){
+        try{
+            LoginManager.logOut();
+            firebase.auth().signOut();
+            //this.setState({ logged: false});
+            alert("LogOut com sucesso!");
+        }catch(error){
+            alert(error);
+            console.log(error);
+        }
+    }
 
   render() {
     return (
@@ -117,7 +131,7 @@ export default class CenaMais extends Component {
                             //roundAvatar
                             title="Sair" 
                             avatar={iconeSair}
-                            onPress={this.logOut.bind(this)}
+                            onPress={this.logOut}
                             hideChevron
                         />
                     </List>

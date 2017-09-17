@@ -26,6 +26,7 @@ export default class CenaLogin extends Component{
         super(props)
 
         this.state = {
+            logged: false,
             email: '',
             password: '',
             response: '',
@@ -89,28 +90,34 @@ export default class CenaLogin extends Component{
                 }else{
                     AccessToken.getCurrentAccessToken().then((accessTokenData) => {
                         const credential = firebase.auth.FacebookAuthProvider.credential(accessTokenData.accessToken);
-
-                        console.log('token -> ' + accessTokenData.accessToken);
-                        console.log(credential);
-
                         firebase.auth().signInWithCredential(credential).then((result) => {
-                            this.setState({
-                                response: 'Usuário Logado!'
-                            })
-                            
-                            this.props.navigator.push({
-                                id: 'principal'
-                            })
-
+                            console.log(result);
+                            console.log(firebase.auth().currentUser);
+                            // this.setState({
+                            //     response: 'Usuário Logado!',
+                            //     logged: true
+                            // })
                         }, (error) => {
                             console.log(error);
                         })
                     }, (error => {
-                        console.log('Some error occured: ' + error);
+                        console.log('Erro: ' + error);
                     }))
                 }
             }
         )
+    }
+
+    _fbLogOut(){
+        try{
+            LoginManager.logOut();
+            firebase.auth().signOut();
+            this.setState({ logged: false});
+            alert("LogOut com sucesso!")
+        }catch(error){
+            alert(error);
+            console.log(error);
+        }
     }
 
     _googleAuth(){
@@ -119,13 +126,24 @@ export default class CenaLogin extends Component{
             (user) => {
             console.log(user);
 
-            let credential = {token: user.idToken, secret: user.serverAuthCode, provider: 'google', providerId: 'google'}
+            console.log(user.name);
+
+            // GoogleSignin.getAccessToken(user)
+            // .then((token) => {
+            //     console.log(token);
+            // })
+
+            const credential = firebase.auth.GoogleAuthProvider.credential(user.idToken);
+            // console.log('token google -> ' + user.accessToken);
+            
+
+            //const credential = {token: user.idToken, secret: user.serverAuthCode, provider: 'google', providerId: 'google'}
 
             firebase.auth().signInWithCredential(credential).then((result) => {
-                            
-                    this.props.navigator.push({
-                        id: 'principal'
-                    })
+                    console.log(result);
+                    // this.props.navigator.push({
+                    //     id: 'principal'
+                    // })
 
                 }, (error) => {
                     console.log(error);
@@ -146,41 +164,21 @@ export default class CenaLogin extends Component{
         });
     }
 
+
     render(){
         return(
-
-
-            <ScrollView style={styles.container}>
-
             <Image source={require('../img/background.png')} style={styles.imgBackground}>
+            <View style={styles.container}>
 
-                <View style={styles.containerBarra}>
+                <View style={styles.containerLogo}>
                     <StatusBar backgroundColor='black'/>
                     {/*<BarraNavegacao titulo='SysCamara' corDeFundo='#004466' />*/}
-                    <Image source={require('../img/SysCamara.png')} style={{width: 200, height: 200, marginTop: 100}}/>
+                    <Image source={require('../img/SysCamara.png')} style={{width: 200, height: 200, marginTop: 60}}/>
                 </View>
+
                 <View style={styles.containerLogin}>
-                    <View style={styles.containerInputs}>
-                        
-                        {/*<TextInput
-                            placeholderTextColor="black"
-                            placeholder="Email"
-                            style={styles.inputText}
-                            onChangeText={(email) => this.setState({email})}
-                        />
-                        <TextInput
-                            placeholderTextColor="black"
-                            placeholder="Senha"
-                            style={styles.inputText}
-                            password={true}
-                            onChangeText={(password) => this.setState({password})}
-                        />
-                        <TouchableHighlight onPress={this.login} style={[styles.loginButton, styles.button]} >
-                        <Text style={styles.textButton}>Login</Text>
-                        </TouchableHighlight>
-                        <TouchableHighlight onPress={this.signUp} style={[styles.loginButton, styles.button]} >
-                            <Text style={styles.textButton}>Novo Cadastro</Text>
-                        </TouchableHighlight>*/}
+                    <View style={{alignItems: 'center', marginBottom: 40}}>
+
                         <Text style={{fontSize: 14, color: '#d9d9d9', marginLeft: 15, marginRight: 15, textAlign: 'center'}}>Escolha abaixo a rede social que deseja utilizar para efetuar o login:</Text>
                         <TouchableHighlight onPress={this._googleAuth} style={[styles.button, {marginTop: 20, height: 40, backgroundColor: '#b24d34'}]} >
                              <View style={{alignSelf: 'center', alignItems: 'center'}}>
@@ -209,9 +207,8 @@ export default class CenaLogin extends Component{
                         <Text style={{fontSize: 12, color: '#007399', marginLeft: 15, marginRight: 15, textAlign: 'center', fontStyle: 'italic'}}>O aplicativo não postará nada em suas redes sociais sem a sua autorização.</Text>
                     </View>
                 </View>
+                </View>
             </Image>
-            </ScrollView>
-            
         )
     }
 
@@ -220,25 +217,25 @@ export default class CenaLogin extends Component{
 const styles = StyleSheet.create({
     imgBackground:{
         flex: 1,
-        alignSelf: 'stretch',
+        resizeMode: 'stretch',
+        justifyContent: 'center', 
+        alignItems: 'center',
+        height: null,
         width: null,
-        height: 615,
+        //alignSelf: 'stretch',
     },
     container:{
         flex: 1,
     },
-    containerBarra: {
+    containerLogo: {
         alignItems: 'center',
         flex: 1,
     },
     containerLogin: {
-        flex:1,
-        marginTop: 0,
-        marginHorizontal: 0,
-        //backgroundColor: '#f2f2f2',
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-end',
-        marginBottom: 20,
+        marginBottom: 0,
     },
     inputText:{
         backgroundColor: '#FFFFFF',
