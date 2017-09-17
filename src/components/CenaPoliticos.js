@@ -89,15 +89,15 @@ export default class CenaPoliticos extends Component {
 			<View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
         
         <StatusBar backgroundColor='black'/>
-        <BarraNavegacao titulo='Políticos' corDeFundo='#004466' />
+        <BarraNavegacao titulo='Políticos' corDeFundo='#F2F2F2' />
 
         <ListView
           dataSource={this.state.dataSource}
           //enableEmptySections={true}
           renderRow={this._renderItem.bind(this)}
           renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
-          renderHeader={() => <Header />}
-          renderFooter={() => <Footer />}
+          //renderHeader={() => <Header />}
+          //renderFooter={() => <Footer />}
           style={styles.listView}
         />
 
@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
   },
   listView: {
     //flex: 1,
+    marginTop: 20
   },
   separator: {
     flex: 1,

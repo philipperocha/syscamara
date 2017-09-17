@@ -86,7 +86,7 @@ export const Navegacao = TabNavigator({
         showIcon: true,
         swipeEnabled: true,
         style: {
-            backgroundColor: '#004466',
+            backgroundColor: '#F2F2F2',
             height: 60,
         },
         tabStyle: {
@@ -99,7 +99,7 @@ export const Navegacao = TabNavigator({
         },
         labelStyle: {
             fontSize: 11,
-            color: '#D8D8D8',
+            color: '#1C1C1C',
         }
     },
     tabBarComponent: TabBarBottom,

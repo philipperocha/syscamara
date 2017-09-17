@@ -42,7 +42,16 @@ const styles = StyleSheet.create({
 		backgroundColor: '#004466',
 		padding: 10,
 		height: 50,
-		flexDirection: 'row'
+		flexDirection: 'row',
+		
+    shadowColor: '#D8D8D8',
+    shadowOffset: {
+      width: 0,
+      height: 1
+    },
+    shadowRadius: 2,
+    shadowOpacity: .80,
+		elevation: 8
 	},
 	titulo: {
 		top: 0,
@@ -51,6 +60,6 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		textAlign: 'center',
 		//color: '#000'
-		color: 'white'
+		color: '#1C1C1C'
 	}
 });
