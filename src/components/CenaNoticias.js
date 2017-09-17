@@ -15,6 +15,7 @@ import Footer from './auxiliares/Footer';
 
 //importar o componente barra navegação
 import BarraNavegacao from './auxiliares/BarraNavegacao';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import firebase from '../data/firebase';
 
@@ -24,10 +25,7 @@ export default class CenaNoticias extends Component {
         tabBarVisible: true,
         tabBarLabel: 'Noticias',
         tabBarIcon: ({tintColor}) => (
-            <Image
-                source={require('../img/bottomBar/noticias.png')}
-                style={[styles.icon, {tintColor: tintColor}]}
-            />
+           <Icon name="newspaper-o" size={22} color={tintColor} />
         )
   }
 
@@ -95,7 +93,7 @@ export default class CenaNoticias extends Component {
 
   render() {
     return (
-			<View style={{ flex: 1, backgroundColor: '#FFF' }}>
+			<View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
         
         <StatusBar backgroundColor='black'/>
         <BarraNavegacao titulo='Notícias' corDeFundo='#004466' />

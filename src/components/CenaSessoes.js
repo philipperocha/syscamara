@@ -18,7 +18,7 @@ import BarraNavegacao from './auxiliares/BarraNavegacao';
 import Header from './auxiliares/Header';
 import Footer from './auxiliares/Footer';
 
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 import firebase from '../data/firebase';
 
 export default class CenaSessoes extends Component {
@@ -27,10 +27,7 @@ export default class CenaSessoes extends Component {
         tabBarVisible: true,
         tabBarLabel: 'Sessões',
         tabBarIcon: ({tintColor}) => (
-            <Image
-                source={require('../img/bottomBar/sessoes.png')}
-                style={[styles.icon, {tintColor: tintColor}]}
-            />
+            <Icon name="university" size={20} color={tintColor} />
         )
   }
 
@@ -104,7 +101,7 @@ export default class CenaSessoes extends Component {
   render() {
     return (
 			
-        <View style={{ flex: 1, backgroundColor: '#FFF' }}>
+        <View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
         
             <StatusBar backgroundColor='black'/>
             <BarraNavegacao titulo='Sessões' corDeFundo='#004466' />

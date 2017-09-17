@@ -9,7 +9,7 @@ import Footer from './auxiliares/Footer';
 import { Avatar } from 'react-native-material-design';
 
 import firebase from '../data/firebase';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class CenaPoliticos extends Component {
 
@@ -17,10 +17,7 @@ export default class CenaPoliticos extends Component {
         tabBarVisible: true,
         tabBarLabel: 'Politicos',
         tabBarIcon: ({tintColor}) => (
-            <Image
-                source={require('../img/bottomBar/politico.png')}
-                style={[styles.icon, {tintColor: tintColor}]}
-            />
+          <Icon name="address-book-o" size={22} color={tintColor} />
         )
   }
 
@@ -89,7 +86,7 @@ export default class CenaPoliticos extends Component {
 
   render() {
     return (
-			<View style={{ flex: 1, backgroundColor: '#f2f2f2' }}>
+			<View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
         
         <StatusBar backgroundColor='black'/>
         <BarraNavegacao titulo='Políticos' corDeFundo='#004466' />

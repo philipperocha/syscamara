@@ -23,6 +23,7 @@ const {
 } = FBSDK;
 
 import BarraNavegacao from './auxiliares/BarraNavegacao';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const iconeSair = require('../img/icons/exit.png');
 
@@ -30,12 +31,9 @@ export default class CenaMais extends Component {
 
   static navigationOptions = {
         tabBarVisible: true,
-        tabBarLabel: 'Mais',
+        tabBarLabel: 'Perfil',
         tabBarIcon: ({tintColor}) => (
-            <Image
-                source={require('../img/bottomBar/mais.png')}
-                style={[styles.icon, {tintColor: tintColor}]}
-            />
+            <Icon name="user" size={22} color={tintColor} />
         )
   }
 
@@ -104,10 +102,10 @@ export default class CenaMais extends Component {
 
   render() {
     return (
-        <View style={{ flex: 1, backgroundColor: '#f2f2f2' }}>
+        <View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
             <View>
                 <StatusBar backgroundColor='black'/>
-                <BarraNavegacao titulo='Mais' corDeFundo='#004466'/>
+                <BarraNavegacao titulo='Perfil' corDeFundo='#004466'/>
             </View> 
             <ScrollView>
                     <List>

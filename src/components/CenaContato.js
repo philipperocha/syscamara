@@ -30,7 +30,7 @@ export default class CenaContato extends Component {
 
   render() {
     return (
-        <View style={{ flex: 1, backgroundColor: '#f2f2f2' }}>
+        <View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
             <View>
                 <StatusBar backgroundColor='black'/>
                 <BarraNavegacao titulo='Contato' corDeFundo='#004466'/>

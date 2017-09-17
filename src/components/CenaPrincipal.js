@@ -98,8 +98,8 @@ export const Navegacao = TabNavigator({
             marginTop: 1.5
         },
         labelStyle: {
-            fontSize: 12,
-            color: 'white',
+            fontSize: 11,
+            color: '#D8D8D8',
         }
     },
     tabBarComponent: TabBarBottom,
