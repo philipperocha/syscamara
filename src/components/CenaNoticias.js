@@ -96,7 +96,6 @@ export default class CenaNoticias extends Component {
 			<View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
         
         <StatusBar backgroundColor='black'/>
-        <BarraNavegacao titulo='Notícias' corDeFundo='#F2F2F2' />
 
         <ListView
           dataSource={this.state.dataSource}

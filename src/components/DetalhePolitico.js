@@ -21,8 +21,8 @@ class DetalhePolitico extends Component {
     console.log(foto);
 
     return (
-      <ScrollView>
-        <View style={{alignItems: 'center', marginTop: 10, marginBottom: 0 }}>
+      <ScrollView style={{backgroundColor: 'green'}}>
+        <View style={{alignItems: 'center', marginTop: -30, marginBottom: 0 }}>
             <Tile
               imageSrc={{ uri: foto}}
               featured

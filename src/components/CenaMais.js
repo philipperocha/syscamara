@@ -105,7 +105,6 @@ export default class CenaMais extends Component {
         <View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
             <View>
                 <StatusBar backgroundColor='black'/>
-                <BarraNavegacao titulo='Perfil' corDeFundo='#F2F2F2'/>
             </View> 
             <ScrollView>
                     <List>

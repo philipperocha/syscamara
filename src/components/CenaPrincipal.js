@@ -24,15 +24,15 @@ export const CenaPoliticosStack = StackNavigator({
     screen: CenaPoliticos,
     navigationOptions: {
       title: 'Politicos',
-      header: null,
-    //   headerMode: 'screen',
-    //   header: { visible:false },
+      //header: null,
+      headerMode: 'screen',
     },
   },
   Details: {
     screen: DetalhePolitico,
     navigationOptions: ({ navigation }) => ({
       title: `${navigation.state.params.name.toUpperCase()}`,
+      headerStyle: styles.transparente
     }),
   },
 });
@@ -43,9 +43,7 @@ export const CenaNoticiasStack = StackNavigator({
     screen: CenaNoticias,
     navigationOptions: {
       title: 'Noticias',
-      header: null,
-    //   headerMode: 'screen',
-    //   header: { visible:false },
+      headerMode: 'screen',
     },
   },
   Details: {
@@ -62,9 +60,8 @@ export const CenaSessoesStack = StackNavigator({
     screen: CenaSessoes,
     navigationOptions: {
       title: 'Sessões',
-      header: null,
-    //   headerMode: 'screen',
-    //   header: { visible:false },
+      headerMode: 'screen',
+
     },
   },
   Details: {
@@ -75,11 +72,22 @@ export const CenaSessoesStack = StackNavigator({
   },
 });
 
+//Cena Sessões
+export const CenaPerfilStack = StackNavigator({
+  CenaMais: {
+    screen: CenaMais,
+    navigationOptions: {
+      title: 'Perfil',
+      headerMode: 'screen',
+    },
+  }
+});
+
 export const Navegacao = TabNavigator({
   CenaNoticiasStack: {screen: CenaNoticiasStack},
   CenaPoliticosStack: {screen: CenaPoliticosStack},
   CenaSessoesStack: {screen: CenaSessoesStack},
-  CenaMais: {screen: CenaMais},
+  CenaPerfilStack: {screen: CenaPerfilStack},
 },{
     tabBarOptions:{
         activeTintColor: 'dodgerblue',
@@ -139,3 +147,9 @@ export const Root = StackNavigator({
 //         return(<Navegacao/>)
 //     }
 // }
+
+const styles = StyleSheet.create({
+  transparente:{
+    backgroundColor: 'rgba(0,0,0,0)'
+  }
+});
