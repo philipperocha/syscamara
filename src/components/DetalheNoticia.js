@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Image, View, StyleSheet, Text ,ScrollView } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class DetalheNoticia extends Component {
 
@@ -8,10 +9,7 @@ class DetalheNoticia extends Component {
         tabBarVisible: true,
         tabBarLabel: 'Noticias',
         tabBarIcon: ({tintColor}) => (
-            <Image
-                source={require('../img/bottomBar/noticias.png')}
-                style={[styles.icon, {tintColor: tintColor}]}
-            />
+            <Icon name="newspaper-o" size={22} color={tintColor} />
         )
   }
 

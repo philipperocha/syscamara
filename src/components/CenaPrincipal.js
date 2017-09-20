@@ -32,7 +32,8 @@ export const CenaPoliticosStack = StackNavigator({
     screen: DetalhePolitico,
     navigationOptions: ({ navigation }) => ({
       title: `${navigation.state.params.name.toUpperCase()}`,
-      headerStyle: styles.transparente
+      headerStyle: styles.transparente,
+      headerTintColor: '#E6E6E6'
     }),
   },
 });
@@ -95,7 +96,7 @@ export const Navegacao = TabNavigator({
         swipeEnabled: true,
         style: {
             backgroundColor: '#F2F2F2',
-            height: 60,
+            height: 50,
         },
         tabStyle: {
             // height: 80,
@@ -150,6 +151,12 @@ export const Root = StackNavigator({
 
 const styles = StyleSheet.create({
   transparente:{
-    backgroundColor: 'rgba(0,0,0,0)'
+    position: 'absolute',
+    backgroundColor: 'transparent',
+    zIndex: 100,
+    top: 0,
+    left: 0,
+    right: 0
+    //backgroundColor: 'rgba(0,0,0,0)'
   }
 });
