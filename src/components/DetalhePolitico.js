@@ -4,6 +4,7 @@ import { Tile, List, ListItem } from 'react-native-elements';
 import LikeButton from './auxiliares/LikeButton';
 import IconButton from './auxiliares/IconButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import firebase from '../data/firebase';
  
 class DetalhePolitico extends Component {
 
@@ -16,9 +17,7 @@ class DetalhePolitico extends Component {
   }
 
   render() {
-    const { foto, name, partido } = this.props.navigation.state.params;
-
-    console.log(foto);
+    const { foto, name, partido, _key } = this.props.navigation.state.params;
 
     return (
 
@@ -36,7 +35,7 @@ class DetalhePolitico extends Component {
         </Image>
         <View style={styles.followBar}>
           <View style={styles.likeButton}>
-            <LikeButton />
+            <LikeButton currentUser={firebase.auth().currentUser.uid} currentPolitico={_key}/>
           </View>
           <View style={styles.socialNetworks}>
             <View style={{flexDirection: 'row'}}>
