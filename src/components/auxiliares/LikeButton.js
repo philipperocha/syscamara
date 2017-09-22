@@ -31,7 +31,6 @@ export default class LikeButton extends Component {
 	}
 
 	handlePress() {
-
 		if (!this.state.liked){
 		 	this.likePolitico();
 		}else{
@@ -82,7 +81,7 @@ export default class LikeButton extends Component {
 					<IconButton onPress={this.handlePress.bind(this)} icon={icon} color={iconColor} size={40} />
 				</View>
 				<View style={{justifyContent: 'center', marginLeft: 10}}>
-					<Text>{numberOfLikes}</Text>
+					<Text style={{fontSize: 14, color: '#151515'}}>{numberOfLikes}</Text>
 				</View>
 			</View>
 		)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Image, View, Text, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, Image, View, Text, ScrollView, Dimensions, Linking } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 import LikeButton from './auxiliares/LikeButton';
 import IconButton from './auxiliares/IconButton';
@@ -8,12 +8,66 @@ import firebase from '../data/firebase';
  
 class DetalhePolitico extends Component {
 
-    static navigationOptions = {
+  static navigationOptions = {
         tabBarVisible: true,
         tabBarLabel: 'Politicos',
         tabBarIcon: ({tintColor}) => (
             <Icon name="address-book-o" size={22} color={tintColor} />
         )
+  }
+
+  constructor(props) {
+		super(props);
+
+    const keyPolitico = this.props.navigation.state.params._key;
+		let fireRef = firebase.database().ref('Politicos/' + keyPolitico + '/redesSociais');
+
+		this.state = {
+      currentRef: fireRef,
+			currentFacebook: '',
+			currentTwitter: '',
+      currentInstagram: ''
+
+		};
+	}
+
+  listenFor(){
+    this.state.currentRef.on('value', (dataSnapshot) => {
+      this.setState({
+				currentFacebook: dataSnapshot.val().facebook,
+        currentTwitter: dataSnapshot.val().twitter,
+        currentInstagram: dataSnapshot.val().instagram
+			});
+		});
+  }
+  
+  componentDidMount(){
+      this.listenFor();
+  }
+
+  facebook(){
+    const url = this.state.currentFacebook;
+    this.redeSocial(url);
+  }
+
+  twitter(){
+    const url = this.state.currentTwitter;
+    this.redeSocial(url);
+  }
+
+  instagram(){
+    const url = this.state.currentInstagram;
+    this.redeSocial(url);
+  }
+
+  redeSocial(url){
+    Linking.canOpenURL(url).then(supported => {
+      if (!supported) {
+        console.log('Can\'t handle url: ' + url);
+      } else {
+        return Linking.openURL(url);
+      }
+    }).catch(err => console.error('An error occurred', err));
   }
 
   render() {
@@ -39,9 +93,9 @@ class DetalhePolitico extends Component {
           </View>
           <View style={styles.socialNetworks}>
             <View style={{flexDirection: 'row'}}>
-              <IconButton icon={'logo-facebook'} color={'#3b5998'} size={32}/>
-              <IconButton icon={'logo-instagram'} color={'#B40486'} style={{marginLeft: 12}} size={32} />
-              <IconButton icon={'logo-twitter'} color={'#58ACFA'} style={{marginLeft: 12}} size={32} />
+              <IconButton onPress={this.facebook.bind(this)} icon={'logo-facebook'} color={'#3b5998'} size={32}/>
+              <IconButton onPress={this.instagram.bind(this)} icon={'logo-instagram'} color={'#B40486'} style={{marginLeft: 12}} size={32} />
+              <IconButton onPress={this.twitter.bind(this)} icon={'logo-twitter'} color={'#58ACFA'} style={{marginLeft: 12}} size={32} />
             </View>
           </View>
         </View>
