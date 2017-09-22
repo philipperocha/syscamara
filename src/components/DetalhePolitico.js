@@ -77,7 +77,7 @@ class DetalhePolitico extends Component {
 
       <ScrollView style={styles.container}>
 
-        <Image style={styles.backProfile} source={require('../img/profileBack.jpg')}>
+        <Image style={styles.backProfile} source={require('../img/back.jpg')}>
           <View style={styles.header}>
             <View style={styles.profilePicWrap}>
               <Image style={styles.profilePic} source={{uri: foto}}/>
@@ -101,7 +101,7 @@ class DetalhePolitico extends Component {
         </View>
 
         <View style={styles.ProfileDatails}>
-          <Text style={{color: '#1C1C1C'}}>{textoDefault}</Text>
+          <Text style={{color: '#1C1C1C', textAlign: 'justify'}}>{textoDefault}</Text>
         </View>
         
       </ScrollView>
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'rgba(0,0,0,0.1)',
     marginTop: 0
   },
   profilePicWrap: {
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     height: 200,
     //borderRadius: 100,
     borderColor: 'rgba(0,0,0,0.2)',
-    borderWidth: 16,
+    borderWidth: 12,
     marginTop: 36
   },
   profilePic: {
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     flexDirection: 'row',
     //justifyContent: 'center',
-    width: (Dimensions.get('window').width / 2) - 20
+    width: (Dimensions.get('window').width / 2)
   },
   socialNetworks: {
     justifyContent: 'center',
@@ -174,13 +174,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   nome:{
+    marginTop: 4,
     fontSize: 18,
-    color: '#F2F2F2',
+    color: '#404040',
     fontWeight : 'bold'
   },
   partido: {
     fontSize: 14,
-    color: '#F2F2F2',
+    color: '#3b5998',
     fontStyle: 'italic'
   },
   icon:{
@@ -189,6 +190,6 @@ const styles = StyleSheet.create({
 }
 });
 
-const textoDefault = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+const textoDefault = 'Esta seção será utilizada para exibir informações sobre o Político. Normalmente são detalhadas informações como formação, data de nascimento, mandatos, partido, entre outros. Nesta seção também poderá ser incluído um link para contato com o Político, ou um campo para envio de mensagens';
 
 export default DetalhePolitico;

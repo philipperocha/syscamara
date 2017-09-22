@@ -33,7 +33,8 @@ export const CenaPoliticosStack = StackNavigator({
     navigationOptions: ({ navigation }) => ({
       title: `${navigation.state.params.name.toUpperCase()}`,
       headerStyle: styles.transparente,
-      headerTintColor: '#E6E6E6'
+      //headerTintColor: '#E6E6E6'
+      headerTintColor: '#404040'
     }),
   },
 });

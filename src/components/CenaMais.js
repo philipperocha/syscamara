@@ -50,7 +50,6 @@ export default class CenaMais extends Component {
                 if (profile.providerId.toString().indexOf('google') !== -1){
 
                     GoogleSignin.signOut().then(() => {
-                        alert('LogOut efetuado com sucesso!');
                         console.log('LogOut do usuário google com sucesso!');
                     })
                     .catch((err) => {
@@ -62,7 +61,6 @@ export default class CenaMais extends Component {
                     
                     try{
                         LoginManager.logOut();
-                        alert("LogOut efetuado com sucesso!")
                         console.log('LogOut do usuário facebook com sucesso!')
                     }catch(err){
                         console.log(err);
@@ -93,7 +91,6 @@ export default class CenaMais extends Component {
             LoginManager.logOut();
             firebase.auth().signOut();
             //this.setState({ logged: false});
-            alert("LogOut com sucesso!");
         }catch(error){
             alert(error);
             console.log(error);
@@ -116,13 +113,9 @@ export default class CenaMais extends Component {
                             hideChevron
                         />
                     </List>
-                     <List>
-                        <ListItem style={{height: 260, justifyContent: 'center'}}
-                            roundAvatar
-                            title="Aplicativo criado em Aracaju-SE, 2017..."
-                            hideChevron
-                        />
-                    </List> 
+                    <View style={styles.detailsApp}>
+                        <Text style={styles.detailsAppText}>Este aplicativo foi criado em Aracaju-SE, 2017, pela NuvemHost.IN. Tem como finalidade exibir notícias sobre o meio político, assim como Câmaras Municipais. Por meio do SysCamara é possível curtir um político, assim como uma Notícia postada no Feed de Notícias. Outra importante funcionalidade é o acesso às pautas e resultados das Sessões, bem como votação nos projetos de lei.</Text>
+                    </View>
                     <List>
                         <ListItem style={{height: 60, justifyContent: 'center'}}
                             //roundAvatar
@@ -159,6 +152,19 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#FFF',
         alignSelf: 'center'
+    },
+    detailsApp: {
+        marginTop: 12,
+        marginBottom: 12,
+        backgroundColor: 'white',
+        borderWidth: 0.5,
+        borderColor: '#A0A0A0'
+    },
+    detailsAppText: {
+        marginTop: 16,
+        marginBottom: 22,
+        marginLeft: 12,
+        marginRight: 4
     },
     icon:{
         width: 26,
