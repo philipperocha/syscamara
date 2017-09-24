@@ -8,7 +8,8 @@ import {
   FlatList,
   ListView,
   ActivityIndicator,
-  TouchableNativeFeedback
+  TouchableNativeFeedback,
+  Dimensions
 } from 'react-native';
 import { List, ListItem, SearchBar,  } from "react-native-elements";
 import Header from './auxiliares/Header';
@@ -17,8 +18,12 @@ import Footer from './auxiliares/Footer';
 //importar o componente barra navegação
 import BarraNavegacao from './auxiliares/BarraNavegacao';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ViewMoreText from 'react-native-view-more-text';
 
 import firebase from '../data/firebase';
+
+import LikeButtonNews from './auxiliares/LikeButtonNews';
+import IconButton from './auxiliares/IconButton';
 
 export default class CenaNoticias extends Component {
 
@@ -48,30 +53,35 @@ export default class CenaNoticias extends Component {
   }
 
   _renderItem(noticias) {
-    //this.setState({noticias: noticias});
     return (
-      <TouchableNativeFeedback onPress={() => this.onLearnMore(noticias)}  underlayColor="#D9D9D9">
-          <View style={styles.container}>
-              <Image style={styles.noticiasImage} resizeMode='cover' source={{ uri: noticias.foto }}/>
-              <View style={styles.containerPanel}>
-                  <Text style={styles.title} numberOfLines={2}>{noticias.titulo}</Text>
-                  <Text style={styles.subtitle} numberOfLines={2}>{noticias.descricao}</Text>
-                  <Text style={styles.date}>{noticias.data}</Text>
-              </View>
+    //   <TouchableNativeFeedback onPress={() => this.onLearnMore(noticias)}  underlayColor="#D9D9D9">
 
-          </View>
-      </TouchableNativeFeedback>
+    //   </TouchableNativeFeedback>
 
-      // <View>
-      //   <ListItem
-      //       roundAvatar
-      //       title={noticias.titulo}
-      //       subtitle={noticias.descricao}
-      //       avatar={noticias.foto}
-      //       containerStyle={{ borderBottomWidth: 0 }}
-      //       onPress={() => this.onLearnMore(noticias)}
-      //   />
-      // </View>
+        <View style={styles.containerPanel}>
+            
+            <Text style={styles.title} numberOfLines={2}>{noticias.titulo}</Text>
+            <Text style={styles.date}>{noticias.data}</Text>
+            <Image style={styles.noticiasImage} source={{ uri: noticias.foto }}/>
+
+            <View style={{marginLeft: 8}}>
+                <ViewMoreText numberOfLines={3} renderViewMore={this.renderViewMore} renderViewLess={this.renderViewLess}>
+                    <Text style={styles.subtitle}>
+                        {noticias.descricao}
+                    </Text>
+                </ViewMoreText>
+            </View>
+
+            <View style={styles.followBar}>
+                <View style={styles.likeButton}>
+                    <LikeButtonNews currentUser={firebase.auth().currentUser.uid} currentNoticia={noticias._key}/>
+                </View>
+            </View>
+
+            {/*<Text style={styles.subtitle} numberOfLines={2}>{noticias.descricao}</Text>*/}
+            
+        </View>
+        
     );
   }
 
@@ -109,7 +119,7 @@ export default class CenaNoticias extends Component {
 
   render() {
     return (
-			<View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
+	  <View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
         
         <StatusBar backgroundColor='black'/>
 
@@ -126,6 +136,19 @@ export default class CenaNoticias extends Component {
       </View>
     );
   }
+
+        renderViewMore(onPress){
+            return(
+                <Text style={styles.showMore} onPress={onPress}>Mostrar Mais</Text>
+            )
+        };
+
+        renderViewLess(onPress){
+            return(
+                <Text style={styles.showMore} onPress={onPress}>Mostrar Menos</Text>
+            )
+        };
+
 }
 
 const styles = StyleSheet.create({
@@ -145,9 +168,9 @@ const styles = StyleSheet.create({
     flex: 1,
     height: StyleSheet.hairlineWidth,
     backgroundColor: '#8E8E8E',
-    width: "90%",
-    marginLeft: "5%",
-    marginRight: "5%",
+    width: "100%",
+    marginLeft: "0%",
+    marginRight: "0%",
   },
   icon:{
     width: 26,
@@ -156,33 +179,61 @@ const styles = StyleSheet.create({
   listView:{
     marginTop: 20
   },
-      container: {
-        flex: 1, 
-        flexDirection: 'row', 
-        padding: 10
-    },
-        noticiasImage: {
-        width: 80,
-        height: 80,
-        margin: 2,
+
+    noticiasImage: {
+        
+        marginTop: 4,
+        marginBottom: 4,
+        flex: 1,
+        width: null,
+        height: 180,
+        //margin: 2,
         backgroundColor: 'gray'
     },
-        containerPanel: {
+    containerPanel: {
         flex: 1,
         flexDirection: 'column',
-        paddingLeft: 8
+        paddingLeft: 0,
+        marginBottom: 12,
+        marginTop: 12,
     },
-        title: {
-        fontSize: 16,
+    title: {
+        marginLeft: 8,
+        fontSize: 18,
         fontWeight: 'bold',
         color: 'black'
     },
     subtitle: {
-        fontSize: 14
+        fontSize: 16,
+        color: '#333333'
     },
     date: {
-        fontSize: 11,
+        marginLeft: 8,
+        fontSize: 12,
         fontWeight: 'bold',
+        fontStyle: 'italic',
         color: '#805500'
-    }
+    },
+    showMore: {
+        textAlign: 'right',
+        marginRight: 10,
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#006600'
+    },
+
+    followBar:{
+        flex: 1,
+        backgroundColor: '#F2F2F2',
+        flexDirection: 'row',
+        borderWidth: 0,
+        height: 50,
+        //justifyContent: 'center'
+    },
+    likeButton: {
+        marginLeft: 20,
+        flexDirection: 'row',
+        //justifyContent: 'center',
+        width: (Dimensions.get('window').width / 2)
+    },
 });

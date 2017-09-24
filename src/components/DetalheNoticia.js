@@ -14,40 +14,20 @@ class DetalheNoticia extends Component {
   }
 
   render() {
-    const { titulo, foto, descricao } = this.props.navigation.state.params;
+    const { titulo, foto, descricao, data } = this.props.navigation.state.params;
 
     return (
-      <ScrollView>
-        <View style={{alignItems: 'center', marginTop: 10, marginBottom: 0 }}>
-          <Tile
-            imageSrc={{ uri: foto}}
-            //featured
-            //title={`${titulo.toUpperCase()}`}
-            //caption={descricao}
-            //contentContainerStyle={{height: 100}}
-            width={200}
-            height={260}
-          >
-          </Tile>
-        </View>
-        <View style={{alignItems: 'center', marginTop: 0, marginBottom: 0 }}>
-          <View >
-              <Text style={styles.title}>{titulo}</Text>
-            </View>
-           <View style={{alignItems: 'center', marginTop: 12, marginBottom: 0, marginLeft: 10 }}>
-              <Text style={styles.descricao}>{descricao}</Text>
-            </View>
-        </View>
+        <View style={styles.container}>
+            <Image style={styles.newsImage} source={{ uri: foto }}/>
+            <ScrollView automaticallyAdjustContentInsets={false} >
+                <View style={styles.containerPanel}>
+                    <Text style={styles.title}>{titulo}</Text>
+                    <Text style={styles.content}>{descricao}</Text>
+                    <Text style={styles.date}>{data}</Text>
+                </View>
+            </ScrollView>
 
-        {/* <List>
-          <ListItem
-            title="Descrição"
-            rightTitle={descricao}
-            hideChevron
-          />
-        </List> */}
-
-      </ScrollView>
+        </View>
     );
   }
 }
@@ -64,7 +44,31 @@ const styles = StyleSheet.create({
   icon:{
     width: 26,
     height: 26,
-  }
+  },
+
+      container: {
+        flex: 1
+    },
+    newsImage: {
+        backgroundColor: 'gray',
+        flex: 1
+    },
+    containerPanel: {
+        flex: 1,
+        flexDirection: 'column',
+        padding: 16
+    },
+
+    content: {
+        fontSize: 18,
+        paddingTop: 10
+    },
+    date: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: '#805500',
+        paddingTop: 10
+    }
 });
 
 export default DetalheNoticia;
