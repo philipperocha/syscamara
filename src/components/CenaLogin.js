@@ -180,7 +180,7 @@ export default class CenaLogin extends Component{
                     <View style={{alignItems: 'center', marginBottom: 40}}>
 
                         <Text style={{fontSize: 14, color: '#d9d9d9', marginLeft: 15, marginRight: 15, textAlign: 'center'}}>Escolha abaixo a rede social que deseja utilizar para efetuar o login:</Text>
-                        <TouchableHighlight onPress={this._googleAuth} style={[styles.button, {marginTop: 20, height: 40, backgroundColor: '#b24d34'}]} >
+                        <TouchableHighlight onPress={this._googleAuth} style={[styles.button, {marginTop: 10, height: 40, backgroundColor: '#b24d34'}]} >
                              <View style={{alignSelf: 'center', alignItems: 'center'}}>
                                 <Icon
                                     name='google'
@@ -204,7 +204,7 @@ export default class CenaLogin extends Component{
                                 </Icon>
                             </View> 
                         </TouchableHighlight>
-                        <Text style={{fontSize: 12, color: '#007399', marginLeft: 15, marginRight: 15, textAlign: 'center', fontStyle: 'italic'}}>O aplicativo não postará nada em suas redes sociais sem a sua autorização.</Text>
+                        <Text style={{fontSize: 12, color: '#d9d9d9' /*color: '#007399'*/, marginLeft: 15, marginRight: 15, textAlign: 'center', fontStyle: 'italic'}}>O aplicativo não postará nada em suas redes sociais sem a sua autorização.</Text>
                     </View>
                 </View>
                 </View>

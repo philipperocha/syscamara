@@ -13,7 +13,7 @@ import CenaNoticias from './CenaNoticias';
 import CenaFeedNoticias from './CenaFeedNoticias';
 import CenaSessoes from './CenaSessoes';
 import CenaPoliticos from './CenaPoliticos';
-import CenaContato from './CenaContato';
+import CenaProjetos from './CenaProjetos';
 import CenaMais from './CenaMais';
 import DetalhePolitico from './DetalhePolitico';
 import DetalheNoticia from './DetalheNoticia';
@@ -41,20 +41,15 @@ export const CenaPoliticosStack = StackNavigator({
 });
 
 //Cena Notícias
-export const CenaNoticiasStack = StackNavigator({
-  CenaNoticias: {
+export const CenaFeedNoticiasStack = StackNavigator({
+  CenaFeedNoticias: {
     screen: CenaFeedNoticias,
     navigationOptions: {
       title: 'Noticias',
       headerMode: 'screen',
     },
   },
-  // Details: {
-  //   screen: DetalheNoticia,
-  //   navigationOptions: ({ navigation }) => ({
-  //     title: `${navigation.state.params.titulo.toUpperCase()}`,
-  //   }),
-  // },
+
 });
 
 //Cena Sessões
@@ -75,7 +70,7 @@ export const CenaSessoesStack = StackNavigator({
   },
 });
 
-//Cena Sessões
+//Cena Perfil
 export const CenaPerfilStack = StackNavigator({
   CenaMais: {
     screen: CenaMais,
@@ -86,10 +81,22 @@ export const CenaPerfilStack = StackNavigator({
   }
 });
 
+//Cena Projetos
+export const CenaProjetosStack = StackNavigator({
+  CenaProjetos: {
+    screen: CenaProjetos,
+    navigationOptions: {
+      title: 'Projetos de Lei',
+      headerMode: 'screen',
+    },
+  }
+});
+
 export const Navegacao = TabNavigator({
-  CenaNoticiasStack: {screen: CenaNoticiasStack},
+  CenaFeedNoticiasStack: {screen: CenaFeedNoticiasStack},
   CenaPoliticosStack: {screen: CenaPoliticosStack},
   CenaSessoesStack: {screen: CenaSessoesStack},
+  CenaProjetosStack: {screen: CenaProjetosStack},
   CenaPerfilStack: {screen: CenaPerfilStack},
 },{
     tabBarOptions:{
@@ -98,7 +105,7 @@ export const Navegacao = TabNavigator({
         swipeEnabled: true,
         style: {
             backgroundColor: '#F2F2F2',
-            height: 50,
+            height: 56,
         },
         tabStyle: {
             // height: 80,

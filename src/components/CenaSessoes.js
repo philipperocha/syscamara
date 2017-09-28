@@ -9,14 +9,9 @@ import {
   FlatList,
   ListView,
   ActivityIndicator,
+  TouchableNativeFeedback
 } from 'react-native';
 import { List, ListItem, SearchBar,  } from "react-native-elements";
-
-//importar o componente barra navegação
-import BarraNavegacao from './auxiliares/BarraNavegacao';
-
-import Header from './auxiliares/Header';
-import Footer from './auxiliares/Footer';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import firebase from '../data/firebase';
@@ -49,16 +44,28 @@ export default class CenaSessoes extends Component {
 
   _renderItem(sessoes) {
     return (
-      <View>
-        <ListItem
-            roundAvatar
-            title={sessoes.titulo}
-            subtitle={sessoes.descricao}
-            avatar={sessoes.foto}
-            containerStyle={{ borderBottomWidth: 0 }}
-            onPress={() => this.onLearnMore(sessoes)}
-        />
-      </View>
+      <TouchableNativeFeedback onPress={() => this.onLearnMore(sessoes)}  underlayColor="#D9D9D9">
+          <View style={styles.container}>
+              {/*<Image style={styles.sessoesImage} resizeMode='cover' source={{ uri: sessoes.foto }}/>*/}
+              <View style={styles.containerPanel}>
+                  <Text style={styles.title} numberOfLines={2}>{sessoes.titulo}</Text>
+                  <Text style={styles.subtitle} numberOfLines={2}>{sessoes.descricao}</Text>
+                  <Text style={styles.date}>{sessoes.data}</Text>
+              </View>
+
+          </View>
+      </TouchableNativeFeedback>
+
+      // <View>
+      //   <ListItem
+      //       roundAvatar
+      //       title={sessoes.titulo}
+      //       subtitle={sessoes.descricao}
+      //       avatar={sessoes.foto}
+      //       containerStyle={{ borderBottomWidth: 0 }}
+      //       onPress={() => this.onLearnMore(sessoes)}
+      //   />
+      // </View>
     );
   }
 
@@ -78,6 +85,7 @@ export default class CenaSessoes extends Component {
           titulo: child.val().titulo,
           descricao: child.val().descricao,
           foto: child.val().foto,
+          data: child.val().data,
           _key: child.key
         });
       });
@@ -176,12 +184,51 @@ const styles = StyleSheet.create({
     flex: 1,
     height: StyleSheet.hairlineWidth,
     backgroundColor: '#8E8E8E',
-    width: "80%",
-    marginLeft: "15%",
-    marginRight: "5%",
+    width: "100%",
+    marginLeft: "0%",
+    marginRight: "0%",
   },
   listView:{
     marginTop: 20
-  }
+  },
+
+  container: {
+        flex: 1, 
+        flexDirection: 'row', 
+        padding: 0,
+        marginTop: 4,
+        marginBottom: 12
+    },
+        sessoesImage: {
+        width: 80,
+        height: 80,
+        margin: 2,
+        backgroundColor: 'gray'
+    },
+        containerPanel: {
+        flex: 1,
+        flexDirection: 'column',
+        paddingLeft: 0,
+        
+    },
+        title: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: 'black',
+        marginLeft: 8,
+    },
+    subtitle: {
+        fontSize: 14,
+        color: '#805500',
+        marginLeft: 8
+    },
+    date: {
+        fontSize: 12,
+        //fontWeight: 'bold',
+        marginLeft: 8,
+        textAlign: 'right',
+        fontStyle: 'italic',
+        marginRight: 10,
+    }
 
 });

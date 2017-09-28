@@ -3,7 +3,7 @@ import { Image, View, StyleSheet, Text ,ScrollView } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-class DetalheNoticia extends Component {
+class DetalheSessao extends Component {
 
   static navigationOptions = {
         tabBarVisible: true,
@@ -14,29 +14,22 @@ class DetalheNoticia extends Component {
   }
 
   render() {
-    const { titulo, foto, descricao } = this.props.navigation.state.params;
+    const { titulo, foto, descricao, data } = this.props.navigation.state.params;
 
     return (
       <ScrollView>
-        <View style={{alignItems: 'center', marginTop: 10, marginBottom: 0 }}>
-          <Tile
-            imageSrc={{ uri: foto}}
-            //featured
-            //title={`${titulo.toUpperCase()}`}
-            //caption={descricao}
-            //contentContainerStyle={{height: 100}}
-            width={200}
-            height={260}
-          >
-          </Tile>
-        </View>
-        <View style={{alignItems: 'center', marginTop: 0, marginBottom: 0 }}>
-          <View >
-              <Text style={styles.title}>{titulo}</Text>
+        <View style={styles.container}>
+
+            <View style={styles.content}>
+                <Text style={styles.title}>{titulo}</Text>
+                <Text style={styles.descricao}>{descricao}</Text>
+                <Text style={styles.data}>{data}</Text>
             </View>
-           <View style={{alignItems: 'center', marginTop: 12, marginBottom: 0, marginLeft: 10 }}>
-              <Text style={styles.descricao}>{descricao}</Text>
+
+            <View style={styles.downloads}>
+                
             </View>
+
         </View>
 
         {/* <List>
@@ -53,18 +46,46 @@ class DetalheNoticia extends Component {
 }
 
 const styles = StyleSheet.create({
+  container:{
+    alignItems: 'center'
+  },
+  content: {
+    marginTop: 12,
+    marginLeft: 10,
+    marginRight: 10,
+    backgroundColor: '#F2F2F2',
+    borderWidth: 0.5,
+  },
+  downloads:{
+    marginTop: 12,
+    marginLeft: 10,
+    marginRight: 10,
+    backgroundColor: '#F2F2F2',
+    borderWidth: 0.5,
+  },
   title:{
-    fontSize: 20,
+    marginTop: 4,
+    fontSize: 16,
     color: 'black',
     fontWeight: 'bold',
+    textAlign: 'center'
   },
   descricao:{
     fontSize: 16,
+    textAlign: 'center'
+  },
+  data:{
+    marginBottom: 4,
+    color: '#805500',
+    fontSize: 14,
+    textAlign: 'center',
+    fontStyle: 'italic',
   },
   icon:{
     width: 26,
     height: 26,
-  }
+  },
+
 });
 
-export default DetalheNoticia;
+export default DetalheSessao;

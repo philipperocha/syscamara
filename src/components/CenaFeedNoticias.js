@@ -63,8 +63,14 @@ export default class CenaNoticias extends Component {
             <Text style={styles.title} numberOfLines={2}>{noticias.titulo}</Text>
             <Text style={styles.date}>{noticias.data}</Text>
             <Image style={styles.noticiasImage} source={{ uri: noticias.foto }}/>
+            
+            <View style={styles.followBar}>
+                <View style={styles.likeButton}>
+                    <LikeButtonNews currentUser={firebase.auth().currentUser.uid} currentNoticia={noticias._key}/>
+                </View>
+            </View>
 
-            <View style={{marginLeft: 8}}>
+            <View style={{marginLeft: 8, marginBottom: 6}}>
                 <ViewMoreText numberOfLines={3} renderViewMore={this.renderViewMore} renderViewLess={this.renderViewLess}>
                     <Text style={styles.subtitle}>
                         {noticias.descricao}
@@ -72,11 +78,7 @@ export default class CenaNoticias extends Component {
                 </ViewMoreText>
             </View>
 
-            <View style={styles.followBar}>
-                <View style={styles.likeButton}>
-                    <LikeButtonNews currentUser={firebase.auth().currentUser.uid} currentNoticia={noticias._key}/>
-                </View>
-            </View>
+
 
             {/*<Text style={styles.subtitle} numberOfLines={2}>{noticias.descricao}</Text>*/}
             
@@ -217,9 +219,10 @@ const styles = StyleSheet.create({
     showMore: {
         textAlign: 'right',
         marginRight: 10,
-        fontSize: 16,
-        fontWeight: 'bold',
-        color: '#006600'
+        fontSize: 14,
+        //fontWeight: 'bold',
+        fontStyle: 'italic',
+        color: '#999999'
     },
 
     followBar:{
@@ -227,7 +230,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F2F2F2',
         flexDirection: 'row',
         borderWidth: 0,
-        height: 50,
+        height: 40,
         //justifyContent: 'center'
     },
     likeButton: {
