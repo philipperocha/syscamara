@@ -37,7 +37,6 @@ export default class CenaSessoes extends Component {
 
     this.state = {
       dataSource: dataSource, // dataSource for our list
-      newVereador: "", // The name of the new task
       fireRef: fireRef,
     };
   }
