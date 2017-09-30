@@ -54,17 +54,6 @@ export default class CenaSessoes extends Component {
 
           </View>
       </TouchableNativeFeedback>
-
-      // <View>
-      //   <ListItem
-      //       roundAvatar
-      //       title={sessoes.titulo}
-      //       subtitle={sessoes.descricao}
-      //       avatar={sessoes.foto}
-      //       containerStyle={{ borderBottomWidth: 0 }}
-      //       onPress={() => this.onLearnMore(sessoes)}
-      //   />
-      // </View>
     );
   }
 
@@ -113,13 +102,11 @@ export default class CenaSessoes extends Component {
             <StatusBar backgroundColor='black'/>
 
             <ListView
-            dataSource={this.state.dataSource}
-            //enableEmptySections={true}
-            renderRow={this._renderItem.bind(this)}
-            renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
-            //renderHeader={() => <Header />}
-            //renderFooter={() => <Footer />}
-            style={styles.listView}
+              dataSource={this.state.dataSource}
+              enableEmptySections={true}
+              renderRow={this._renderItem.bind(this)}
+              renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
+              style={styles.listView}
             />
 
         </View>

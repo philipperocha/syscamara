@@ -18,6 +18,7 @@ import CenaMais from './CenaMais';
 import DetalhePolitico from './DetalhePolitico';
 import DetalheNoticia from './DetalheNoticia';
 import DetalheSessao from './DetalheSessao';
+import DetalheProjeto from './DetalheProjeto';
 
 //Cena Políticos
 export const CenaPoliticosStack = StackNavigator({
@@ -89,7 +90,13 @@ export const CenaProjetosStack = StackNavigator({
       title: 'Projetos de Lei',
       headerMode: 'screen',
     },
-  }
+  },
+  Details: {
+      screen: DetalheProjeto,
+      navigationOptions: ({ navigation }) => ({
+        title: `${navigation.state.params.codigo.toUpperCase()}`,
+      }),
+  },
 });
 
 export const Navegacao = TabNavigator({
