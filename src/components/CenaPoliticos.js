@@ -32,9 +32,11 @@ export default class CenaPoliticos extends Component {
     });
 
     this.state = {
+      data: null,
       dataSource: dataSource, // dataSource for our list
       newVereador: "", // The name of the new task
       fireRef: fireRef,
+      text: ''
     };
   }
 
@@ -75,6 +77,7 @@ export default class CenaPoliticos extends Component {
 
       // Update the state with the new tasks
       this.setState({
+        data: data,
         dataSource: this.state.dataSource.cloneWithRows(data),
       });
     });
@@ -90,20 +93,43 @@ export default class CenaPoliticos extends Component {
         
         <StatusBar backgroundColor='black'/>
 
+        <View style={{marginTop: 20, marginHorizontal: 10, marginLeft: 20, flexDirection: 'row' }}>
+          <Icon name="search" size={22} />
+          <TextInput
+            style={styles.textInput}
+            onChangeText={(text) => this.filterText(text)}
+            value={this.state.text}
+            underlineColorAndroid='transparent'
+          />
+        </View >
+
         <ListView
           dataSource={this.state.dataSource}
-          //enableEmptySections={true}
+          enableEmptySections={true}
           renderRow={this._renderItem.bind(this)}
           renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
-          //renderHeader={() => <Header />}
-          //renderFooter={() => <Footer />}
           style={styles.listView}
         />
 
       </View>
     );
   }
+
+  filterText(text){
+    const newData = this.state.data.filter(function(item){
+      const itemData = item.name.toUpperCase();
+      const textData = text.toUpperCase();
+      return itemData.indexOf(textData) > -1
+    })
+    this.setState({
+      dataSource: this.state.dataSource.cloneWithRows(newData),
+      text: text
+    })
+  }
+
 }
+
+
 
 const styles = StyleSheet.create({
   cabecalho: {
@@ -128,7 +154,7 @@ const styles = StyleSheet.create({
   },
   listView: {
     //flex: 1,
-    marginTop: 20
+    marginTop: 10
   },
   separator: {
     flex: 1,
@@ -141,5 +167,13 @@ const styles = StyleSheet.create({
   icon:{
     width: 26,
     height: 26,
-}
+  },
+  textInput:{
+    height: 30,
+    width: "90%",
+    //borderWidth: 0.5,
+    marginLeft: 10,
+    //borderColor: 'black',
+
+  }
 });
