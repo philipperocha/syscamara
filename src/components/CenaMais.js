@@ -9,7 +9,7 @@ import {
   ListView,
   ScrollView,
 } from 'react-native';
-import { Tile, List, ListItem } from 'react-native-elements';
+import { Tile, List, ListItem, Avatar } from 'react-native-elements';
 
 import firebase from '../data/firebase';
 
@@ -98,33 +98,46 @@ export default class CenaMais extends Component {
     }
 
   render() {
+      const usuario = firebase.auth().currentUser.displayName;
+      const email = firebase.auth().currentUser.email;
+      const foto = firebase.auth().currentUser.photoURL;
+      const sobre = 'Este aplicativo foi criado em Aracaju-SE, 2017, pela NuvemHost.IN. Tem como finalidade exibir notícias sobre o meio político, assim como Câmaras Municipais. Por meio do SysCamara é possível curtir um político, assim como uma Notícia postada no Feed de Notícias. Outra importante funcionalidade é o acesso às pautas e resultados das Sessões, bem como votação nos projetos de lei.';
     return (
         <View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
             <View>
                 <StatusBar backgroundColor='black'/>
             </View> 
             <ScrollView>
-                    <List>
-                        <ListItem style={{height: 80, justifyContent: 'center'}}
+                    <View style={{marginTop: 18}}>
+                        <ListItem
                             roundAvatar
-                            title={firebase.auth().currentUser.displayName} 
-                            subtitle={firebase.auth().currentUser.email} 
-                            avatar={firebase.auth().currentUser.photoURL} 
+                            title={<Text style={{color: 'black', fontSize: 14, fontWeight: 'bold', marginLeft: 24}}>{usuario}</Text>} 
+                            subtitle={<Text style={{fontSize: 14, fontStyle: 'italic', marginLeft: 24, marginBottom: 8}}>{email}</Text>}
+                            avatar={<Avatar
+                                    medium
+                                    rounded
+                                    source={{uri: foto}}
+                                    onPress={() => console.log("Works!")}
+                                    activeOpacity={0.7}
+                                    />}
+                            containerStyle={{ borderBottomWidth: 0 }}
                             hideChevron
+                            style={{marginVertical: 4, height: 80, backgroundColor: 'white', justifyContent: 'center', borderBottomWidth: 0.5, borderTopWidth: 0.5}}
                         />
-                    </List>
-                    <View style={styles.detailsApp}>
-                        <Text style={styles.detailsAppText}>Este aplicativo foi criado em Aracaju-SE, 2017, pela NuvemHost.IN. Tem como finalidade exibir notícias sobre o meio político, assim como Câmaras Municipais. Por meio do SysCamara é possível curtir um político, assim como uma Notícia postada no Feed de Notícias. Outra importante funcionalidade é o acesso às pautas e resultados das Sessões, bem como votação nos projetos de lei.</Text>
                     </View>
-                    <List>
-                        <ListItem style={{height: 60, justifyContent: 'center'}}
+                    <View style={styles.detailsApp}>
+                        <Text style={styles.detailsAppText}>{sobre}</Text>
+                    </View>
+                    <View>
+                        <ListItem
                             //roundAvatar
                             title="Sair" 
                             avatar={iconeSair}
                             onPress={this.logOut}
                             hideChevron
+                            style={{marginVertical: 4, height: 60, backgroundColor: 'white', justifyContent: 'center', borderBottomWidth: 0.5, borderTopWidth: 0.5}}
                         />
-                    </List>
+                    </View>
             </ScrollView>
         </View>
     );
@@ -158,7 +171,6 @@ const styles = StyleSheet.create({
         marginBottom: 12,
         backgroundColor: 'white',
         borderWidth: 0.5,
-        borderColor: '#A0A0A0'
     },
     detailsAppText: {
         marginTop: 16,

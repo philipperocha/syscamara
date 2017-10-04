@@ -90,7 +90,7 @@ class DetalheSessao2 extends Component {
               </View>
 
               <View style={styles.dadosProfileMesa}>
-                  <Text style={{color: '#262626', fontSize: 16, fontWeight: 'bold'}}> {arquivo.name}</Text>
+                  <Text style={{color: '#262626', fontSize: 14, fontWeight: 'bold'}}> {arquivo.name}</Text>
                   <Text style={{fontSize: 14, fontStyle: 'italic'}}> {arquivo.funcao} - {arquivo.partido}</Text>
               </View>
           </View>
@@ -319,25 +319,24 @@ const styles = StyleSheet.create({
   },
     title: {
         fontSize: 14,
-        fontStyle: 'italic',
+        //fontStyle: 'italic',
         //fontWeight: 'bold',
         color: 'black',
         textAlign: 'center'
     },
     descricao: {
         fontSize: 14,
-        color: '#805500',
         marginLeft: 8,
         textAlign: 'center'
     },
     data: {
-        fontSize: 12,
+        fontSize: 14,
+        color: '#88592b',
         //fontWeight: 'bold',
         marginLeft: 8,
         textAlign: 'center',
         fontStyle: 'italic',
         marginRight: 10,
-        
     },
 
   icon:{
@@ -366,7 +365,8 @@ const styles = StyleSheet.create({
   },
   fileDate: {
       flex: 1,
-      fontSize: 12,
+      color: '#88592b',
+      fontSize: 14,
       textAlign: 'left',
       fontStyle: 'italic',
   },

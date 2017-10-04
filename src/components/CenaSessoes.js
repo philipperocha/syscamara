@@ -197,24 +197,25 @@ const styles = StyleSheet.create({
         paddingLeft: 0,
         
     },
-        title: {
-        fontSize: 16,
+    title: {
+        fontSize: 14,
         fontWeight: 'bold',
         color: 'black',
-        marginLeft: 8,
+        marginHorizontal: 8
     },
     subtitle: {
         fontSize: 14,
-        color: '#805500',
-        marginLeft: 8
+        marginHorizontal: 8
     },
     date: {
-        fontSize: 12,
+        color: '#88592b',
+        fontSize: 14,
         //fontWeight: 'bold',
-        marginLeft: 8,
+        marginHorizontal: 10,
         textAlign: 'right',
         fontStyle: 'italic',
-        marginRight: 10,
-    }
+    },
+
+
 
 });

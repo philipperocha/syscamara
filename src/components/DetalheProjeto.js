@@ -28,7 +28,7 @@ class DetalheProjeto extends Component {
                         <Image style={styles.profilePic} source={{uri: fotoPolitico}}/>
                     </View>
                     <View style={styles.profileDetails}>
-                      <Text style={[styles.profile,{fontWeight : 'bold', fontSize: 16}]}>{titulo}</Text>
+                      <Text style={[styles.title]}>{titulo}</Text>
                       <Text style={styles.profile}>Código: {codigo}</Text>
                       <Text style={styles.profile}>Autor: {politico} / {partido}</Text>
                     </View>
@@ -70,10 +70,8 @@ const styles = StyleSheet.create({
     //alignItems: 'center',
     justifyContent: 'flex-start',
     //padding: 8,
-    marginTop: 20,
-    marginBottom: 20,
-    marginLeft: 8,
-    marginRight: 8,
+    marginVertical: 20,
+    marginHorizontal: 8,
     backgroundColor: '#F2F2F2',
     //borderWidth: 0.5,
   },
@@ -82,13 +80,12 @@ const styles = StyleSheet.create({
     height: 90,
     //borderRadius: 100,
     //borderColor: 'rgba(0,0,0,0.2)',
-    borderColor: 'black',
+    borderColor: '#595959',
     borderWidth: 2,
+    borderRadius: 2,
   },
   profileDetails:{
     flex: 1,
-    borderColor: 'black',
-    marginLeft: 8,
   },
   profilePic: {
     flex: 1,
@@ -103,6 +100,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#F2F2F2',
     flexDirection: 'row',
     borderWidth: 0.5,
+    borderRightWidth: 0,
+    borderLeftWidth: 0,
     //width: "90%",
     height: 50,
     //justifyContent: 'center'
@@ -125,11 +124,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   profile:{
-    marginTop: 0,
     fontSize: 14,
-    //color: '#404040',
-    color: 'black',
-    //fontWeight : 'bold'
+    marginLeft: 8,
   },
   icon:{
     width: 26,
@@ -137,9 +133,14 @@ const styles = StyleSheet.create({
   },
 
   descricaoProjeto: {
-    fontSize: 16,
-    color: '#333333'
-  }
+    fontSize: 14,
+  },
+      title: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: 'black',
+        marginLeft: 8,
+    },
 });
 
 export default DetalheProjeto;

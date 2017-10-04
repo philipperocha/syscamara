@@ -71,13 +71,13 @@ class DetalhePolitico extends Component {
   }
 
   render() {
-    const { foto, name, partido, _key } = this.props.navigation.state.params;
+    const { foto, name, descricao, partido, _key } = this.props.navigation.state.params;
 
     return (
 
       <ScrollView style={styles.container}>
 
-        <Image style={styles.backProfile} source={require('../img/back.jpg')}>
+        <Image style={styles.backProfile} source={require('../img/back.png')}>
           <View style={styles.header}>
             <View style={styles.profilePicWrap}>
               <Image style={styles.profilePic} source={{uri: foto}}/>
@@ -101,7 +101,7 @@ class DetalhePolitico extends Component {
         </View>
 
         <View style={styles.ProfileDatails}>
-          <Text style={{color: '#1C1C1C', textAlign: 'justify'}}>{textoDefault}</Text>
+          <Text style={styles.descricao}>{descricao}</Text>
         </View>
         
       </ScrollView>
@@ -175,21 +175,22 @@ const styles = StyleSheet.create({
   },
   nome:{
     marginTop: 4,
-    fontSize: 18,
-    color: '#404040',
+    fontSize: 14,
+    color: 'black',
     fontWeight : 'bold'
   },
   partido: {
     fontSize: 14,
-    color: '#3b5998',
+    color: 'black',
     fontStyle: 'italic'
+  },
+  descricao: {
+    textAlign: 'justify'
   },
   icon:{
     width: 26,
     height: 26,
 }
 });
-
-const textoDefault = 'Esta seção será utilizada para exibir informações sobre o Político. Normalmente são detalhadas informações como formação, data de nascimento, mandatos, partido, entre outros. Nesta seção também poderá ser incluído um link para contato com o Político, ou um campo para envio de mensagens';
 
 export default DetalhePolitico;

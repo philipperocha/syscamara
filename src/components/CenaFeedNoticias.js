@@ -55,9 +55,7 @@ export default class CenaNoticias extends Component {
   _renderItem(noticias) {
     return (
     //   <TouchableNativeFeedback onPress={() => this.onLearnMore(noticias)}  underlayColor="#D9D9D9">
-
     //   </TouchableNativeFeedback>
-
         <View style={styles.containerPanel}>
             
             <Text style={styles.title} numberOfLines={2}>{noticias.titulo}</Text>
@@ -70,18 +68,14 @@ export default class CenaNoticias extends Component {
                 </View>
             </View>
 
-            <View style={{marginLeft: 8, marginBottom: 6}}>
+            <View style={{marginHorizontal: 8, marginBottom: 6}}>
                 <ViewMoreText numberOfLines={3} renderViewMore={this.renderViewMore} renderViewLess={this.renderViewLess}>
                     <Text style={styles.subtitle}>
                         {noticias.descricao}
                     </Text>
                 </ViewMoreText>
             </View>
-
-
-
             {/*<Text style={styles.subtitle} numberOfLines={2}>{noticias.descricao}</Text>*/}
-            
         </View>
         
     );
@@ -139,17 +133,17 @@ export default class CenaNoticias extends Component {
     );
   }
 
-        renderViewMore(onPress){
-            return(
-                <Text style={styles.showMore} onPress={onPress}>Mostrar Mais</Text>
-            )
-        };
+  renderViewMore(onPress){
+      return(
+          <Text style={styles.showMore} onPress={onPress}>Mostrar Mais</Text>
+      )
+  };
 
-        renderViewLess(onPress){
-            return(
-                <Text style={styles.showMore} onPress={onPress}>Mostrar Menos</Text>
-            )
-        };
+  renderViewLess(onPress){
+      return(
+          <Text style={styles.showMore} onPress={onPress}>Mostrar Menos</Text>
+      )
+  };
 
 }
 
@@ -200,29 +194,26 @@ const styles = StyleSheet.create({
         marginTop: 12,
     },
     title: {
-        marginLeft: 8,
-        fontSize: 18,
+        marginHorizontal: 8,
+        fontSize: 14,
         fontWeight: 'bold',
         color: 'black'
     },
     subtitle: {
-        fontSize: 16,
-        color: '#333333'
+        fontSize: 14,
     },
     date: {
         marginLeft: 8,
-        fontSize: 12,
-        fontWeight: 'bold',
+        fontSize: 14,
         fontStyle: 'italic',
-        color: '#805500'
+        color: '#88592b',
     },
     showMore: {
         textAlign: 'right',
         marginRight: 10,
         fontSize: 14,
-        //fontWeight: 'bold',
         fontStyle: 'italic',
-        color: '#999999'
+        color: '#88592b',
     },
 
     followBar:{

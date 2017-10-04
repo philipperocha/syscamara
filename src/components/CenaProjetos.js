@@ -194,24 +194,22 @@ const styles = StyleSheet.create({
     },
     title: {
         textAlign: 'center',
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: 'bold',
         color: 'black',
         marginLeft: 8,
     },
     subtitle: {
         fontSize: 14,
-        //color: '#805500',
         marginLeft: 8
     },
     politicoPartido: {
         fontSize: 14,
-        //fontWeight: 'bold',
         marginLeft: 8,
         textAlign: 'center',
         fontStyle: 'italic',
         marginRight: 10,
-        color: '#805500',
+        color: '#88592b',
     }
 
 });

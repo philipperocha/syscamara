@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { View, StatusBar, Image, Text, StyleSheet, FlatList, ActivityIndicator, AppRegistry, TextInput, ListView, ToolbarAndroid,} from 'react-native';
-import { List, ListItem, Separator, SearchBar,  } from "react-native-elements";
+import { List, ListItem, Separator, SearchBar, Avatar } from "react-native-elements";
 import FloatingActionButton from 'react-native-action-button';
 import BarraNavegacao from './auxiliares/BarraNavegacao';
 import Header from './auxiliares/Header';
 import Footer from './auxiliares/Footer';
-//import Avatar from './auxiliares/Avatar';
-import { Avatar } from 'react-native-material-design';
 
 import firebase from '../data/firebase';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -45,15 +43,24 @@ export default class CenaPoliticos extends Component {
       <View>
         <ListItem
             roundAvatar
-            title={politicos.name}
-            subtitle={politicos.partido}
-            avatar={politicos.foto}
+            title={<Text style={{color: 'black', fontSize: 14, fontWeight: 'bold', marginLeft: 24}}>{politicos.name}</Text>}
+            subtitle={<Text style={{fontSize: 14, fontStyle: 'italic', marginLeft: 24, marginBottom: 8}}>{politicos.partido}</Text>}
+            avatar={<Avatar
+                      medium
+                      rounded
+                      source={{uri: politicos.foto}}
+                      onPress={() => console.log("Works!")}
+                      activeOpacity={0.7}
+                    />}
             containerStyle={{ borderBottomWidth: 0 }}
             onPress={() => this.onLearnMore(politicos)}
+            style={{marginVertical: 4, height: 54}}
         />
       </View>
     );
   }
+
+
 
   onLearnMore = (politicos) => {
     this.props.navigation.navigate('Details', {...politicos});
@@ -71,6 +78,7 @@ export default class CenaPoliticos extends Component {
           name: child.val().name,
           partido: child.val().partido,
           foto: child.val().foto,
+          descricao: child.val().descricao,
           _key: child.key
         });
       });
@@ -100,6 +108,8 @@ export default class CenaPoliticos extends Component {
             onChangeText={(text) => this.filterText(text)}
             value={this.state.text}
             underlineColorAndroid='transparent'
+            placeholder='Buscar pelo nome do político'
+            //placeholderStyle={{fontStyle: 'italic'}}
           />
         </View >
 
@@ -160,8 +170,8 @@ const styles = StyleSheet.create({
     flex: 1,
     height: StyleSheet.hairlineWidth,
     backgroundColor: '#8E8E8E',
-    width: "80%",
-    marginLeft: "15%",
+    width: "75%",
+    marginLeft: "20%",
     marginRight: "5%",
   },
   icon:{
