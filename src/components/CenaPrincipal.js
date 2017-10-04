@@ -17,7 +17,7 @@ import CenaProjetos from './CenaProjetos';
 import CenaMais from './CenaMais';
 import DetalhePolitico from './DetalhePolitico';
 import DetalheNoticia from './DetalheNoticia';
-import DetalheSessao from './DetalheSessao';
+import DetalheSessao from './DetalheSessao2';
 import DetalheProjeto from './DetalheProjeto';
 
 //Cena Políticos
