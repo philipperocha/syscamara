@@ -9,6 +9,8 @@ import Footer from './auxiliares/Footer';
 import firebase from '../data/firebase';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import customStyles from './auxiliares/customStyles'
+
 export default class CenaPoliticos extends Component {
 
   static navigationOptions = {
@@ -43,8 +45,8 @@ export default class CenaPoliticos extends Component {
       <View>
         <ListItem
             roundAvatar
-            title={<Text style={{color: 'black', fontSize: 14, fontWeight: 'bold', marginLeft: 24}}>{politicos.name}</Text>}
-            subtitle={<Text style={{fontSize: 14, fontStyle: 'italic', marginLeft: 24, marginBottom: 8}}>{politicos.partido}</Text>}
+            title={<Text style={[customStyles.renderItemTitle, {marginLeft: 24}]}>{politicos.name}</Text>}
+            subtitle={<Text style={[customStyles.renderItemSubtitle,{marginLeft: 24, marginBottom: 8}]}>{politicos.partido}</Text>}
             avatar={<Avatar
                       medium
                       rounded
@@ -54,7 +56,7 @@ export default class CenaPoliticos extends Component {
                     />}
             containerStyle={{ borderBottomWidth: 0 }}
             onPress={() => this.onLearnMore(politicos)}
-            style={{marginVertical: 4, height: 54}}
+            style={{marginVertical: 8, height: 54}}
         />
       </View>
     );
@@ -104,7 +106,7 @@ export default class CenaPoliticos extends Component {
         <View style={{marginTop: 20, marginHorizontal: 10, marginLeft: 20, flexDirection: 'row' }}>
           <Icon name="search" size={22} />
           <TextInput
-            style={styles.textInput}
+            style={[customStyles.buscar, styles.textInput]}
             onChangeText={(text) => this.filterText(text)}
             value={this.state.text}
             underlineColorAndroid='transparent'
@@ -169,10 +171,11 @@ const styles = StyleSheet.create({
   separator: {
     flex: 1,
     height: StyleSheet.hairlineWidth,
-    backgroundColor: '#8E8E8E',
-    width: "75%",
-    marginLeft: "20%",
-    marginRight: "5%",
+    backgroundColor: '#bfbfbf',
+    //width: "80%",
+    marginLeft: 70,
+    marginRight: 25
+    //marginRight: "5%",
   },
   icon:{
     width: 26,
