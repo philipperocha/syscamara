@@ -14,6 +14,8 @@ import { Tile, List, ListItem } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import firebase from '../data/firebase';
 
+import customStyles from './auxiliares/customStyles'
+
 export default class CenaProjetos extends Component {
 
   static navigationOptions = {
@@ -45,9 +47,9 @@ export default class CenaProjetos extends Component {
           <View style={styles.container}>
               {/*<Image style={styles.sessoesImage} resizeMode='cover' source={{ uri: sessoes.foto }}/>*/}
               <View style={styles.containerPanel}>
-                  <Text style={styles.title} numberOfLines={2}>{projeto.codigo + ": " + projeto.titulo}</Text>
-                  <Text style={styles.politicoPartido}>{projeto.politico + ' - ' + projeto.partido}</Text>
-                  <Text style={styles.subtitle} numberOfLines={2}>{projeto.descricao}</Text>
+                  <Text style={[customStyles.titulo, {marginLeft: 8}]} numberOfLines={2}>{projeto.codigo + ": " + projeto.titulo}</Text>
+                  {/* <Text style={[customStyles.descricao, {marginLeft: 8, textAlign: 'center'}]}>{projeto.politico + ' - ' + projeto.partido}</Text> */}
+                  <Text style={[customStyles.descricao, {marginLeft: 8}]} numberOfLines={2}>{projeto.descricao}</Text>
               </View>
 
           </View>
@@ -177,8 +179,9 @@ const styles = StyleSheet.create({
         flex: 1, 
         flexDirection: 'row', 
         padding: 0,
-        marginTop: 4,
-        marginBottom: 12
+        marginVertical: 20,
+        // marginTop: 12,
+        // marginBottom: 18
     },
         sessoesImage: {
         width: 80,
@@ -192,24 +195,9 @@ const styles = StyleSheet.create({
         paddingLeft: 0,
         
     },
-    title: {
-        textAlign: 'center',
-        fontSize: 14,
-        fontWeight: 'bold',
-        color: 'black',
-        marginLeft: 8,
-    },
     subtitle: {
         fontSize: 14,
         marginLeft: 8
-    },
-    politicoPartido: {
-        fontSize: 14,
-        marginLeft: 8,
-        textAlign: 'center',
-        fontStyle: 'italic',
-        marginRight: 10,
-        color: '#88592b',
     }
 
 });
