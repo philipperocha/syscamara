@@ -25,6 +25,8 @@ import firebase from '../data/firebase';
 import LikeButtonNews from './auxiliares/LikeButtonNews';
 import IconButton from './auxiliares/IconButton';
 
+import customStyles from './auxiliares/customStyles'
+
 export default class CenaNoticias extends Component {
 
   static navigationOptions = {
@@ -58,8 +60,8 @@ export default class CenaNoticias extends Component {
     //   </TouchableNativeFeedback>
         <View style={styles.containerPanel}>
             
-            <Text style={styles.title} numberOfLines={2}>{noticias.titulo}</Text>
-            <Text style={styles.date}>{noticias.data}</Text>
+            
+            <Text style={[customStyles.data, {marginLeft: 8}]}>{noticias.data}</Text>
             <Image style={styles.noticiasImage} source={{ uri: noticias.foto }}/>
             
             <View style={styles.followBar}>
@@ -69,8 +71,9 @@ export default class CenaNoticias extends Component {
             </View>
 
             <View style={{marginHorizontal: 8, marginBottom: 6}}>
+                <Text style={[customStyles.titulo, {textAlign: 'center', marginBottom: 10}]}>{noticias.titulo}</Text>
                 <ViewMoreText numberOfLines={3} renderViewMore={this.renderViewMore} renderViewLess={this.renderViewLess}>
-                    <Text style={styles.subtitle}>
+                    <Text style={customStyles.descricao}>
                         {noticias.descricao}
                     </Text>
                 </ViewMoreText>
@@ -135,13 +138,15 @@ export default class CenaNoticias extends Component {
 
   renderViewMore(onPress){
       return(
-          <Text style={styles.showMore} onPress={onPress}>Mostrar Mais</Text>
+          <Text style={[customStyles.mostrarMais, {textAlign: 'right', marginRight: 10, marginTop: 8}]} 
+            onPress={onPress}>Mostrar Mais</Text>
       )
   };
 
   renderViewLess(onPress){
       return(
-          <Text style={styles.showMore} onPress={onPress}>Mostrar Menos</Text>
+          <Text style={[customStyles.mostrarMais, {textAlign: 'right', marginRight: 10, marginTop: 8}]} 
+            onPress={onPress}>Mostrar Menos</Text>
       )
   };
 
