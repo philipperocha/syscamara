@@ -16,6 +16,8 @@ import { List, ListItem, SearchBar,  } from "react-native-elements";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import firebase from '../data/firebase';
 
+import customStyles from './auxiliares/customStyles'
+
 export default class CenaSessoes extends Component {
 
   static navigationOptions = {
@@ -47,9 +49,9 @@ export default class CenaSessoes extends Component {
           <View style={styles.container}>
               {/*<Image style={styles.sessoesImage} resizeMode='cover' source={{ uri: sessoes.foto }}/>*/}
               <View style={styles.containerPanel}>
-                  <Text style={styles.title} numberOfLines={2}>{sessoes.titulo}</Text>
-                  <Text style={styles.subtitle} numberOfLines={2}>{sessoes.descricao}</Text>
-                  <Text style={styles.date}>{sessoes.data}</Text>
+                  <Text style={[customStyles.titulo, {marginHorizontal: 8}]}>{sessoes.titulo}</Text>
+                  <Text style={[customStyles.descricao, {marginHorizontal: 8}]}>{sessoes.descricao}</Text>
+                  <Text style={[customStyles.data, {marginHorizontal: 10, textAlign: 'right'}]}>{sessoes.data} </Text>
               </View>
 
           </View>
@@ -191,31 +193,11 @@ const styles = StyleSheet.create({
         margin: 2,
         backgroundColor: 'gray'
     },
-        containerPanel: {
+    containerPanel: {
         flex: 1,
         flexDirection: 'column',
         paddingLeft: 0,
         
     },
-    title: {
-        fontSize: 14,
-        fontWeight: 'bold',
-        color: 'black',
-        marginHorizontal: 8
-    },
-    subtitle: {
-        fontSize: 14,
-        marginHorizontal: 8
-    },
-    date: {
-        color: '#88592b',
-        fontSize: 14,
-        //fontWeight: 'bold',
-        marginHorizontal: 10,
-        textAlign: 'right',
-        fontStyle: 'italic',
-    },
-
-
 
 });
