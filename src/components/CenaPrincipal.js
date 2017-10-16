@@ -14,7 +14,7 @@ import CenaFeedNoticias from './CenaFeedNoticias';
 import CenaSessoes from './CenaSessoes';
 import CenaPoliticos from './CenaPoliticos';
 import CenaProjetos from './CenaProjetos';
-import CenaMais from './CenaMais';
+import CenaPerfil from './CenaPerfil';
 import DetalhePolitico from './DetalhePolitico';
 import DetalheNoticia from './DetalheNoticia';
 import DetalheSessao from './DetalheSessao2';
@@ -73,8 +73,8 @@ export const CenaSessoesStack = StackNavigator({
 
 //Cena Perfil
 export const CenaPerfilStack = StackNavigator({
-  CenaMais: {
-    screen: CenaMais,
+  CenaPerfil: {
+    screen: CenaPerfil,
     navigationOptions: {
       title: 'Perfil',
       headerMode: 'screen',

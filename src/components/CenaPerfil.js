@@ -27,7 +27,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const iconeSair = require('../img/icons/exit.png');
 
-export default class CenaMais extends Component {
+import customStyles from './auxiliares/customStyles'
+
+export default class CenaPerfil extends Component {
 
   static navigationOptions = {
         tabBarVisible: true,
@@ -98,10 +100,11 @@ export default class CenaMais extends Component {
     }
 
   render() {
-      const usuario = firebase.auth().currentUser.displayName;
-      const email = firebase.auth().currentUser.email;
-      const foto = firebase.auth().currentUser.photoURL;
-      const sobre = 'Este aplicativo foi criado em Aracaju-SE, 2017, pela NuvemHost.IN. Tem como finalidade exibir notícias sobre o meio político, assim como Câmaras Municipais. Por meio do SysCamara é possível curtir um político, assim como uma Notícia postada no Feed de Notícias. Outra importante funcionalidade é o acesso às pautas e resultados das Sessões, bem como votação nos projetos de lei.';
+    const usuario = firebase.auth().currentUser.displayName;
+    const email = firebase.auth().currentUser.email;
+    const foto = firebase.auth().currentUser.photoURL;
+    const sobre = 'Este aplicativo foi criado em Aracaju-SE, 2017, pela NuvemHost.IN. Tem como finalidade exibir notícias sobre o meio político, assim como Câmaras Municipais. Por meio do SysCamara é possível curtir um político, assim como uma Notícia postada no Feed de Notícias. Outra importante funcionalidade é o acesso às pautas e resultados das Sessões, bem como votação nos projetos de lei.';
+    
     return (
         <View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
             <View>
@@ -111,8 +114,8 @@ export default class CenaMais extends Component {
                     <View style={{marginTop: 18}}>
                         <ListItem
                             roundAvatar
-                            title={<Text style={{color: 'black', fontSize: 14, fontWeight: 'bold', marginLeft: 24}}>{usuario}</Text>} 
-                            subtitle={<Text style={{fontSize: 14, fontStyle: 'italic', marginLeft: 24, marginBottom: 8}}>{email}</Text>}
+                            title={<Text style={[customStyles.renderItemTitle, {marginLeft: 24}]}>{usuario}</Text>} 
+                            subtitle={<Text style={[customStyles.renderItemSubtitle, {marginLeft: 24, marginBottom: 8}]}>{email}</Text>}
                             avatar={<Avatar
                                     medium
                                     rounded
@@ -126,12 +129,12 @@ export default class CenaMais extends Component {
                         />
                     </View>
                     <View style={styles.detailsApp}>
-                        <Text style={styles.detailsAppText}>{sobre}</Text>
+                        <Text style={[customStyles.descricao, styles.detailsAppText]}>{sobre}</Text>
                     </View>
                     <View>
                         <ListItem
                             //roundAvatar
-                            title="Sair" 
+                            title={<Text style={[customStyles.descricao, {marginLeft: 10}]}>Sair</Text>}
                             avatar={iconeSair}
                             onPress={this.logOut}
                             hideChevron
