@@ -5,6 +5,8 @@ import LikeButton from './auxiliares/LikeButton';
 import IconButton from './auxiliares/IconButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import firebase from '../data/firebase';
+
+import customStyles from './auxiliares/customStyles'
  
 class DetalhePolitico extends Component {
 
@@ -83,8 +85,8 @@ class DetalhePolitico extends Component {
               <Image style={styles.profilePic} source={{uri: foto}}/>
 
             </View>
-              <Text style={styles.nome}>{name}</Text>
-              <Text style={styles.partido}>{partido}</Text>
+              <Text style={[customStyles.titulo, {marginTop: 6}]}>{name}</Text>
+              <Text style={customStyles.descricao}>{partido}</Text>
           </View>
         </Image>
         <View style={styles.followBar}>
@@ -101,7 +103,7 @@ class DetalhePolitico extends Component {
         </View>
 
         <View style={styles.ProfileDatails}>
-          <Text style={styles.descricao}>{descricao}</Text>
+          <Text style={customStyles.descricao}>{descricao}</Text>
         </View>
         
       </ScrollView>
@@ -168,24 +170,10 @@ const styles = StyleSheet.create({
   },
   ProfileDatails: {
     backgroundColor: '#F2F2F2',
-    marginLeft: 20,
+    marginLeft: 10,
     marginTop: 20,
-    marginRight: 20,
+    marginRight: 10,
     marginBottom: 20,
-  },
-  nome:{
-    marginTop: 4,
-    fontSize: 14,
-    color: 'black',
-    fontWeight : 'bold'
-  },
-  partido: {
-    fontSize: 14,
-    color: 'black',
-    fontStyle: 'italic'
-  },
-  descricao: {
-    textAlign: 'justify'
   },
   icon:{
     width: 26,

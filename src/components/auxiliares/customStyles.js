@@ -12,6 +12,7 @@ const exoExtraLightItalic = 'Exo-ExtraLightItalic';
 
 const fonteTitulo = exoMedium;
 const fonteDescricao = exoExtraLight;
+const fonteDescricaoItalic = exoExtraLightItalic;
 const fonteMostrarMais = exoExtraLightItalic;
 const fonteData = exoLightItalic;
 const fonteRenderItemTitle = exoMedium;
@@ -26,6 +27,11 @@ export default customStyles = StyleSheet.create({
     },
     descricao: {
         fontFamily: fonteDescricao,
+        fontSize: 16,
+        color: 'black',
+    },
+    descricaoItalic: {
+        fontFamily: fonteDescricaoItalic,
         fontSize: 16,
         color: 'black',
     },

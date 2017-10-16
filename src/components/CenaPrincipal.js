@@ -17,7 +17,7 @@ import CenaProjetos from './CenaProjetos';
 import CenaPerfil from './CenaPerfil';
 import DetalhePolitico from './DetalhePolitico';
 import DetalheNoticia from './DetalheNoticia';
-import DetalheSessao from './DetalheSessao2';
+import DetalheSessao from './DetalheSessao';
 import DetalheProjeto from './DetalheProjeto';
 
 //Cena Políticos
@@ -33,7 +33,7 @@ export const CenaPoliticosStack = StackNavigator({
   Details: {
     screen: DetalhePolitico,
     navigationOptions: ({ navigation }) => ({
-      title: `${navigation.state.params.name.toUpperCase()}`,
+      //title: `${navigation.state.params.name.toUpperCase()}`,
       headerStyle: styles.transparente,
       //headerTintColor: '#E6E6E6'
       headerTintColor: '#404040'

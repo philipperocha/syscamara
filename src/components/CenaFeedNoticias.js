@@ -71,7 +71,7 @@ export default class CenaNoticias extends Component {
             </View>
 
             <View style={{marginHorizontal: 8, marginBottom: 6}}>
-                <Text style={[customStyles.titulo, {textAlign: 'center', marginBottom: 10}]}>{noticias.titulo}</Text>
+                <Text style={[customStyles.titulo, {textAlign: 'center', marginBottom: 6, marginTop: 2}]}>{noticias.titulo}</Text>
                 <ViewMoreText numberOfLines={3} renderViewMore={this.renderViewMore} renderViewLess={this.renderViewLess}>
                     <Text style={customStyles.descricao}>
                         {noticias.descricao}
