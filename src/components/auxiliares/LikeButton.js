@@ -3,6 +3,8 @@ import {StyleSheet, View, Text} from 'react-native';
 import IconButton from './IconButton';
 import firebase from '../../data/firebase';
 
+import customStyles from './customStyles';
+
 export default class LikeButton extends Component {
 
 	constructor(props) {
@@ -73,15 +75,15 @@ export default class LikeButton extends Component {
 
 	render() {
 		const icon = this.state.liked ? heartIcon : heartIconOutline;
-		const iconColor = this.state.liked ? redHeart : superLightGray;
+		const iconColor = this.state.liked ? redHeart : lightGray;
 		let numberOfLikes = this.state.likedValue;
 		return (
 			<View style={styles.likeButton}>
 				<View style={{justifyContent: 'center'}}>
 					<IconButton onPress={this.handlePress.bind(this)} icon={icon} color={iconColor} size={40} />
 				</View>
-				<View style={{justifyContent: 'center', marginLeft: 10}}>
-					<Text style={{fontSize: 14, color: '#151515'}}>{numberOfLikes}</Text>
+				<View style={{justifyContent: 'center', marginLeft: 6}}>
+					<Text style={customStyles.descricao}>{numberOfLikes}</Text>
 				</View>
 			</View>
 		)

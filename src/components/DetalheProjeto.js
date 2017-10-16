@@ -5,7 +5,9 @@ import LikeButtonProjetos from './auxiliares/LikeButtonProjetos';
 import IconButton from './auxiliares/IconButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import firebase from '../data/firebase';
- 
+
+import customStyles from './auxiliares/customStyles'
+
 class DetalheProjeto extends Component {
 
     static navigationOptions = {
@@ -28,9 +30,9 @@ class DetalheProjeto extends Component {
                         <Image style={styles.profilePic} source={{uri: fotoPolitico}}/>
                     </View>
                     <View style={styles.profileDetails}>
-                      <Text style={[styles.title]}>{titulo}</Text>
-                      <Text style={styles.profile}>Código: {codigo}</Text>
-                      <Text style={styles.profile}>Autor: {politico} / {partido}</Text>
+                      <Text style={[customStyles.titulo, {marginLeft: 8}]}>{titulo}</Text>
+                      <Text style={[customStyles.descricao, {marginLeft: 8}]}>Código: {codigo}</Text>
+                      <Text style={[customStyles.descricao, {marginLeft: 8}]}>Autor: {politico} / {partido}</Text>
                     </View>
                 </View>
 
@@ -41,7 +43,7 @@ class DetalheProjeto extends Component {
                 </View>
 
                 <View style={styles.descricao}>
-                    <Text style={styles.descricaoProjeto}>{descricao}</Text>
+                    <Text style={customStyles.descricao}>{descricao}</Text>
                 </View>
 
             </ScrollView>
@@ -71,7 +73,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     //padding: 8,
     marginVertical: 20,
-    marginHorizontal: 8,
+    marginLeft: 10,
+    marginRight: 8,
     backgroundColor: '#F2F2F2',
     //borderWidth: 0.5,
   },
@@ -123,24 +126,14 @@ const styles = StyleSheet.create({
     marginRight: 8,
     marginBottom: 20,
   },
-  profile:{
-    fontSize: 14,
-    marginLeft: 8,
-  },
   icon:{
     width: 26,
     height: 26,
   },
-
   descricaoProjeto: {
     fontSize: 14,
   },
-      title: {
-        fontSize: 14,
-        fontWeight: 'bold',
-        color: 'black',
-        marginLeft: 8,
-    },
+
 });
 
 export default DetalheProjeto;
