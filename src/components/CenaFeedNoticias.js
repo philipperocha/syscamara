@@ -31,7 +31,7 @@ export default class CenaNoticias extends Component {
 
   static navigationOptions = {
         tabBarVisible: true,
-        tabBarLabel: 'Noticias',
+        tabBarLabel: <Text style={[customStyles.bottomBarTitle, {textAlign: 'center', marginBottom: 4, marginTop: -8}]}>Notícias</Text>,
         tabBarIcon: ({tintColor}) => (
            <Icon name="newspaper-o" size={22} color={tintColor} />
         )

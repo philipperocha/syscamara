@@ -15,7 +15,7 @@ export default class CenaPoliticos extends Component {
 
   static navigationOptions = {
         tabBarVisible: true,
-        tabBarLabel: 'Politicos',
+        tabBarLabel: <Text style={[customStyles.bottomBarTitle, {textAlign: 'center', marginBottom: 4, marginTop: -6}]}>Políticos</Text>,
         tabBarIcon: ({tintColor}) => (
           <Icon name="address-book-o" size={22} color={tintColor} />
         )

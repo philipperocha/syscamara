@@ -18,6 +18,7 @@ const fonteData = exoLightItalic;
 const fonteRenderItemTitle = exoMedium;
 const fonteRenderItemSubtitle = exoExtraLight;
 const fonteBuscar = exoLight;
+const fonteBottomBarTitle = exoExtraLight;
 
 export default customStyles = StyleSheet.create({
     titulo: {
@@ -60,4 +61,9 @@ export default customStyles = StyleSheet.create({
         fontSize: 14,
         color: 'black',
     },
+    bottomBarTitle:{
+        fontFamily: fonteBottomBarTitle,
+        fontSize: 12,
+        color: 'black',
+    }
 });

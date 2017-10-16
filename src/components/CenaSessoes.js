@@ -22,7 +22,7 @@ export default class CenaSessoes extends Component {
 
   static navigationOptions = {
         tabBarVisible: true,
-        tabBarLabel: 'Sessões',
+        tabBarLabel: <Text style={[customStyles.bottomBarTitle, {textAlign: 'center', marginBottom: 4, marginTop: -8}]}>Sessões</Text>,
         tabBarIcon: ({tintColor}) => (
             <Icon name="university" size={20} color={tintColor} />
         )

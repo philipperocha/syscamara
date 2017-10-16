@@ -33,7 +33,7 @@ export default class CenaPerfil extends Component {
 
   static navigationOptions = {
         tabBarVisible: true,
-        tabBarLabel: 'Perfil',
+        tabBarLabel: <Text style={[customStyles.bottomBarTitle, {textAlign: 'center', marginBottom: 4, marginTop: -8}]}>Perfil</Text>,
         tabBarIcon: ({tintColor}) => (
             <Icon name="user" size={22} color={tintColor} />
         )

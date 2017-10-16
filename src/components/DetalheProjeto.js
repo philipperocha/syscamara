@@ -12,7 +12,7 @@ class DetalheProjeto extends Component {
 
     static navigationOptions = {
         tabBarVisible: true,
-        tabBarLabel: 'Projetos',
+        tabBarLabel: <Text style={[customStyles.bottomBarTitle, {textAlign: 'center', marginBottom: 4, marginTop: -12}]}>Projetos</Text>,
         tabBarIcon: ({tintColor}) => (
             <Icon name="pencil-square-o" size={22} color={tintColor} />
         )
