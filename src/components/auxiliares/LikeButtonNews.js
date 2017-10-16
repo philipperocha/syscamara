@@ -81,14 +81,14 @@ export default class LikeButtonNews extends Component {
 
 	render() {
 		const icon = this.state.liked ? heartIcon : heartIconOutline;
-		const iconColor = this.state.liked ? redHeart : lightGray;
+		const iconColor = this.state.liked ? redHeart : midLightGray;
 		let numberOfLikes = this.state.likedValue;
 		return (
 			<View style={styles.likeButton}>
 				<View style={{justifyContent: 'center'}}>
 					<IconButton onPress={this.handlePress.bind(this)} icon={icon} color={iconColor} size={34} />
 				</View>
-				<View style={{justifyContent: 'center', marginLeft: 6}}>
+				<View style={{justifyContent: 'center', marginLeft: 2}}>
 					<Text style={customStyles.descricao}>{numberOfLikes}</Text>
 				</View>
 			</View>
@@ -99,6 +99,7 @@ export default class LikeButtonNews extends Component {
 const whiteColor = '#FFFFFF';
 const blackColor = '#000000';
 const superLightGray = '#D3D3D3';
+const midLightGray = '#bfbfbf';
 const lightGray = '#696969';
 const redHeart = '#DC143C';
 const yellowColor = '#fdf200';

@@ -9,6 +9,8 @@ import {
 
 import{StackNavigator, TabNavigator, TabBarBottom} from 'react-navigation'
 
+import customStyles from './auxiliares/customStyles'
+
 import CenaNoticias from './CenaNoticias';
 import CenaFeedNoticias from './CenaFeedNoticias';
 import CenaSessoes from './CenaSessoes';
@@ -26,7 +28,7 @@ export const CenaPoliticosStack = StackNavigator({
     screen: CenaPoliticos,
     navigationOptions: {
       title: 'Politicos',
-      //header: null,
+      header: null,
       headerMode: 'screen',
     },
   },
@@ -47,6 +49,7 @@ export const CenaFeedNoticiasStack = StackNavigator({
     screen: CenaFeedNoticias,
     navigationOptions: {
       title: 'Noticias',
+      header: null,
       headerMode: 'screen',
     },
   },
@@ -59,6 +62,7 @@ export const CenaSessoesStack = StackNavigator({
     screen: CenaSessoes,
     navigationOptions: {
       title: 'Sessões',
+      header: null,
       headerMode: 'screen',
 
     },
@@ -66,7 +70,7 @@ export const CenaSessoesStack = StackNavigator({
   Details: {
     screen: DetalheSessao,
     navigationOptions: ({ navigation }) => ({
-      title: `${navigation.state.params.titulo.toUpperCase()}`,
+      headerTitle: <Text style={customStyles.titulo}>{navigation.state.params.descricao.toUpperCase()}</Text>,
     }),
   },
 });
@@ -77,6 +81,7 @@ export const CenaPerfilStack = StackNavigator({
     screen: CenaPerfil,
     navigationOptions: {
       title: 'Perfil',
+      header: null,
       headerMode: 'screen',
     },
   }
@@ -88,13 +93,14 @@ export const CenaProjetosStack = StackNavigator({
     screen: CenaProjetos,
     navigationOptions: {
       title: 'Projetos de Lei',
+      header: null,
       headerMode: 'screen',
     },
   },
   Details: {
       screen: DetalheProjeto,
       navigationOptions: ({ navigation }) => ({
-        title: `${navigation.state.params.codigo.toUpperCase()}`,
+        headerTitle: <Text style={customStyles.titulo}>{navigation.state.params.codigo.toUpperCase()}</Text>,
       }),
   },
 });
@@ -174,5 +180,5 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0
     //backgroundColor: 'rgba(0,0,0,0)'
-  }
+  },
 });
