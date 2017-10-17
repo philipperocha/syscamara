@@ -108,8 +108,8 @@ export const CenaProjetosStack = StackNavigator({
 export const Navegacao = TabNavigator({
   CenaFeedNoticiasStack: {screen: CenaFeedNoticiasStack},
   CenaPoliticosStack: {screen: CenaPoliticosStack},
-  CenaSessoesStack: {screen: CenaSessoesStack},
   CenaProjetosStack: {screen: CenaProjetosStack},
+  CenaSessoesStack: {screen: CenaSessoesStack},
   CenaPerfilStack: {screen: CenaPerfilStack},
 },{
     tabBarOptions:{
