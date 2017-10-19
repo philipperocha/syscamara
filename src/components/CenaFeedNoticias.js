@@ -112,7 +112,11 @@ export default class CenaNoticias extends Component {
     });
   }
 
-  componentDidMount() {
+  // componentDidMount() {
+  //   this.listenFor(this.state.fireRef);
+  // }
+
+  componentWillMount() {
     this.listenFor(this.state.fireRef);
   }
 

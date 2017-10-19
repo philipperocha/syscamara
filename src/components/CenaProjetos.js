@@ -8,9 +8,10 @@ import {
   TouchableHighlight,
   ListView,
   ScrollView,
+  Modal,
   TouchableNativeFeedback
 } from 'react-native';
-import { Tile, List, ListItem } from 'react-native-elements';
+import { Tile, List, ListItem, CheckBox } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import firebase from '../data/firebase';
 
@@ -38,6 +39,13 @@ export default class CenaProjetos extends Component {
     this.state = {
       dataSource: dataSource, // dataSource for our list
       fireRef: fireRef,
+
+      checkedResolucao: false,
+      checkedEmenda: false,
+      checkedPL: false,
+      modalVisible: false,
+      listaFiltro: [],
+      data: null
     };
   }
 
@@ -76,12 +84,14 @@ export default class CenaProjetos extends Component {
           fotoPolitico: child.val().fotoPolitico,
           partido: child.val().partido,
           politico: child.val().politico,
+          tipo: child.val().tipo,
           _key: child.key
         });
       });
 
       // Update the state with the new tasks
       this.setState({
+        data: data,
         dataSource: this.state.dataSource.cloneWithRows(data),
       });
     });
@@ -91,12 +101,54 @@ export default class CenaProjetos extends Component {
     this.listenFor(this.state.fireRef);
   }
 
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
+  }
+
+  filtrar(valor){
+        var newData =[];
+        if (valor.length == 0){
+            newData = this.state.data.filter(function(item){
+                const itemData = item.tipo.toUpperCase();
+                return itemData.indexOf('') > -1;
+            })
+        }else{
+            for (var i=0; i<valor.length; i++){
+                const tempData = this.state.data.filter(function(item){
+                    const itemData = item.tipo.toUpperCase();
+                    return itemData.indexOf(valor[i].toUpperCase()) > -1;
+                })
+                newData = newData.concat(tempData);
+            }
+        }
+    
+        this.setState({
+            dataSource: this.state.dataSource.cloneWithRows(newData),
+        })
+  }
+
   render() {
     return (
 			
         <View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
         
             <StatusBar backgroundColor='black'/>
+
+            <View style={{flexDirection:'row', marginTop: 12, marginBottom: 8, marginHorizontal: 12}}>
+              <TouchableHighlight style={[styles.filterButton, {flex: 1}]}
+                                  underlayColor= "transparent"
+                                  onPress={() => {}}>
+                <Icon name={'search'} size={30} color={'transparent'} />
+              </TouchableHighlight>
+              <Text style={[customStyles.titulo,{flex: 9, textAlign: 'center'}]}>PROJETOS</Text>
+              <TouchableHighlight style={[styles.filterButton, {flex: 1}]}
+                                  underlayColor= "transparent"
+                                  onPress={() => {
+                                  this.setModalVisible(true)
+                                  }}>
+                <Icon name={'filter'} size={30} color={'green'} />
+              </TouchableHighlight>
+            </View>
 
             <ListView
               dataSource={this.state.dataSource}
@@ -106,6 +158,74 @@ export default class CenaProjetos extends Component {
               style={styles.listView}
             />
 
+          <Modal animationType="slide" transparent={false} visible={this.state.modalVisible} onRequestClose={() => {console.log("Modal has been closed.")}} >
+              
+            <View style={{marginVertical: 16}}>
+                <Text style={[customStyles.titulo,{textAlign: 'center'}]}>FILTRAR PROJETOS</Text>
+
+                <View style={{marginTop: 20}}>
+                    <CheckBox title={'Projeto de Lei'} checked={this.state.checkedPL}
+                      //textStyle={customStyles.titulo}
+                      fontFamily={'Exo-ExtraLight'}
+                      onPress={() => {
+                        this.setState({checkedPL: !this.state.checkedPL});
+                        if (!this.state.checkedPL)
+                            this.state.listaFiltro.push('Projeto de Lei');
+                        else{
+                            var array = [];
+                            for (var i=0; i<this.state.listaFiltro.length; i++){
+                                if (this.state.listaFiltro[i] != 'Projeto de Lei')
+                                    array.push(this.state.listaFiltro[i]);
+                            }
+                            this.setState({listaFiltro: array});
+                        }
+                      }} 
+                    />
+                    <CheckBox title={'Resolução'} checked={this.state.checkedResolucao}
+                      fontFamily={'Exo-ExtraLight'}
+                      onPress={() => {
+                        this.setState({checkedResolucao: !this.state.checkedResolucao});
+                        if (!this.state.checkedResolucao)
+                            this.state.listaFiltro.push('Resolução');
+                        else{
+                            var array = [];
+                            for (var i=0; i<this.state.listaFiltro.length; i++){
+                                if (this.state.listaFiltro[i] != 'Resolução')
+                                    array.push(this.state.listaFiltro[i]);
+                            }
+                            this.setState({listaFiltro: array});
+                        }
+                      }} 
+                    />
+                    <CheckBox title={'Emenda Constitucional'} checked={this.state.checkedEmenda}
+                      fontFamily={'Exo-ExtraLight'}
+                      onPress={() => {
+                        this.setState({checkedEmenda: !this.state.checkedEmenda});
+                        if (!this.state.checkedEmenda)
+                            this.state.listaFiltro.push('Emenda Constitucional');
+                        else{
+                            var array = [];
+                            for (var i=0; i<this.state.listaFiltro.length; i++){
+                                if (this.state.listaFiltro[i] != "Emenda Constitucional")
+                                  array.push(this.state.listaFiltro[i]);
+                            }
+                            this.setState({listaFiltro: array});
+                        }
+                      }} 
+                    />
+
+                    <View style={{alignItems: 'center'}}>
+                        <TouchableHighlight style={[styles.button, {marginTop: 10, height: 40}]}
+                                    onPress={() => {
+                                        this.setModalVisible(!this.state.modalVisible);
+                                        this.filtrar(this.state.listaFiltro);
+                                    }}>
+                            <Text style={[customStyles.renderItemTitle, {color: 'white', textAlign: 'center'}]}>Voltar</Text>
+                        </TouchableHighlight>
+                    </View>
+                </View>
+            </View>
+          </Modal>
         </View>
     );
   }
@@ -143,16 +263,27 @@ const styles = StyleSheet.create({
       color: 'white',
   },
   button:{
-        backgroundColor: '#848484',
-        borderWidth: 1,
+        backgroundColor: '#00802b',
+        borderWidth: 2,
+        borderColor: '#00802b',
         alignItems: 'center',
         justifyContent: 'center',
         //alignSelf: 'stretch',
         height: 34,
-        width: 240,
-        borderRadius: 1,
+        width: 120,
+        borderRadius: 4,
         margin: 6,
   },
+  filterButton:{
+    borderWidth: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    //alignSelf: 'stretch',
+    height: 34,
+    width: 34,
+    borderRadius: 1,
+    margin: 0,
+},
 
   gridPautas:{
     marginTop: 20,
@@ -172,7 +303,7 @@ const styles = StyleSheet.create({
     marginRight: "0%",
   },
   listView:{
-    marginTop: 20
+    marginTop: 0
   },
 
   container: {
