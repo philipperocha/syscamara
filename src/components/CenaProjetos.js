@@ -146,7 +146,7 @@ export default class CenaProjetos extends Component {
                                   onPress={() => {
                                   this.setModalVisible(true)
                                   }}>
-                <Icon name={'filter'} size={30} color={'green'} />
+                <Icon name={'filter'} size={34} color={'green'} />
               </TouchableHighlight>
             </View>
 

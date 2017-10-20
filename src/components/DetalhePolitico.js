@@ -95,9 +95,9 @@ class DetalhePolitico extends Component {
           </View>
           <View style={styles.socialNetworks}>
             <View style={{flexDirection: 'row'}}>
-              <IconButton onPress={this.facebook.bind(this)} icon={'logo-facebook'} color={'#3b5998'} size={32}/>
-              <IconButton onPress={this.instagram.bind(this)} icon={'logo-instagram'} color={'#B40486'} style={{marginLeft: 12}} size={32} />
-              <IconButton onPress={this.twitter.bind(this)} icon={'logo-twitter'} color={'#58ACFA'} style={{marginLeft: 12}} size={32} />
+              <IconButton onPress={this.facebook.bind(this)} icon={'facebook-official'} color={'#3b5998'} size={32}/>
+              <IconButton onPress={this.instagram.bind(this)} icon={'instagram'} color={'#B40486'} style={{marginLeft: 12}} size={32} />
+              <IconButton onPress={this.twitter.bind(this)} icon={'twitter'} color={'#58ACFA'} style={{marginLeft: 12}} size={32} />
             </View>
           </View>
         </View>

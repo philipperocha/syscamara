@@ -86,7 +86,7 @@ export default class LikeButtonNews extends Component {
 		return (
 			<View style={styles.likeButton}>
 				<View style={{justifyContent: 'center'}}>
-					<IconButton onPress={this.handlePress.bind(this)} icon={icon} color={iconColor} size={34} />
+					<IconButton onPress={this.handlePress.bind(this)} icon={icon} color={iconColor} size={32} />
 				</View>
 				<View style={{justifyContent: 'center', marginLeft: 2}}>
 					<Text style={customStyles.descricao}>{numberOfLikes}</Text>
@@ -105,17 +105,8 @@ const redHeart = '#DC143C';
 const yellowColor = '#fdf200';
 const modalBackground = 'rgba(52,52,52,0.6)';
 
-const closeIcon = 'md-close';
-const menuIcon = 'md-menu';
-const searchIcon = 'md-search';
-const addIcon = 'md-add';
-const locationIcon = 'md-compass';
-const commentIcon = 'md-chatbubbles';
-const moreIcon = 'md-more';
-const imagesIcon = 'md-images';
-const checkmarkIcon = 'md-checkmark';
-const heartIcon = 'md-heart';
-const heartIconOutline = 'md-heart-outline';
+const heartIcon = 'heart';
+const heartIconOutline = 'heart-o';
 
 const styles = StyleSheet.create({
   likeButton: {

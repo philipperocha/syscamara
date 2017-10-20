@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {TouchableHighlight, Modal, StyleSheet, View, Text, Dimensions} from 'react-native';
 import IconButton from './IconButton';
 import firebase from '../../data/firebase';
 
@@ -22,8 +22,14 @@ export default class LikeButtonProjetos extends Component {
 			likedValue: 0,
 			hatedValue: 0,
 			fireRef: fireRef,
-			fireRef2: fireRef2
+			fireRef2: fireRef2,
+
+			modalVisible: false,
 		};
+	}
+
+	setModalVisible(visible) {
+		this.setState({modalVisible: visible});
 	}
 
 	likeProjeto() {
@@ -75,6 +81,11 @@ export default class LikeButtonProjetos extends Component {
 		this.state.fireRef2.child(this.state.keyUserFB).remove();
 
 		this.setState({hated: !this.state.hated});
+	}
+
+	showModal(){
+		//alert('Em construcao!');
+		this.setModalVisible(true);
 	}
 
 	listenFor(fRef) {
@@ -142,21 +153,63 @@ export default class LikeButtonProjetos extends Component {
 
 		let numberOfLikes = this.state.likedValue;
 		let numberOfHates = this.state.hatedValue;
+		let percent = 0;
+		if (numberOfHates + numberOfLikes > 0){
+			percent = ((numberOfLikes / (numberOfHates + numberOfLikes)) * 100).toFixed(2);
+		}
+
+		const telaWidth = Dimensions.get('window').width;
+		const telaHeight = Dimensions.get('window').height;
+		const largura = (telaWidth - (telaWidth*0.1));
+		const altura = (telaHeight - (telaHeight*0.5));
+
 		return (
 			<View style={styles.likeButton}>
 				<View style={{justifyContent: 'center'}}>
-					<IconButton onPress={this.handlePress.bind(this)} icon={icon} color={iconColor} size={34} />
+					<IconButton onPress={this.handlePress.bind(this)} icon={icon} color={iconColor} size={32} />
 				</View>
 				<View style={{justifyContent: 'center', marginLeft: 6}}>
 					<Text style={customStyles.descricao}>{numberOfLikes}</Text>
 				</View>
 
 				<View style={{justifyContent: 'center', marginLeft: 36}}>
-					<IconButton onPress={this.handlePressHate.bind(this)} icon={iconHate} color={iconHateColor} size={34} />
+					<IconButton onPress={this.handlePressHate.bind(this)} icon={iconHate} color={iconHateColor} size={32} />
 				</View>
 				<View style={{justifyContent: 'center', marginLeft: 6}}>
 					<Text style={customStyles.descricao}>{numberOfHates}</Text>
 				</View>
+
+				<View style={{justifyContent: 'center', marginLeft: 60}}>
+					<IconButton onPress={this.showModal.bind(this)} icon={chart} color={'#595959'} size={32} />
+				</View>
+				<View style={{justifyContent: 'center', marginLeft: 6}}>
+					<Text style={customStyles.descricao}>{percent} %</Text>
+				</View>
+
+                <Modal animationType="fade" transparent={true} visible={this.state.modalVisible} onRequestClose={() => {console.log("Modal has been closed.")}} 
+				>
+					<View style={{flex:1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}} >
+						<View style={{backgroundColor: '#f2f2f2',justifyContent: 'space-between',height: altura, width: largura, borderWidth: 1, borderRadius: 8, borderColor:'#666666'}}>
+							<View style={{flexDirection: 'column', justifyContent: 'center', marginHorizontal: 10, marginTop: 26}}>
+								<Text style={[customStyles.titulo, {textAlign: 'center'}]}>PERCENTUAL DE APROVAÇÃO</Text>
+							</View>
+							<View style={{flexDirection: 'column', justifyContent: 'center', marginHorizontal: 10, marginVertical: 16}}>
+								<Text style={customStyles.descricao}>Total de votos: {(numberOfHates + numberOfLikes)}</Text>
+								<Text style={customStyles.descricao}>Votos favoráveis: {numberOfLikes}</Text>
+								<Text style={customStyles.descricao}>Votos contra: {numberOfHates}</Text>
+								<Text style={customStyles.descricao}>Percentual de aprovação: {percent} %</Text>
+							</View>
+							<View style={{justifyContent: 'flex-end',alignItems: 'center', marginBottom: 16}}>
+								<TouchableHighlight style={[styles.button, {marginTop: 10, height: 40}]}
+											onPress={() => {
+												this.setModalVisible(!this.state.modalVisible);
+											}}>
+									<Text style={[customStyles.renderItemTitle, {color: 'white', textAlign: 'center'}]}>Fechar</Text>
+								</TouchableHighlight>
+							</View>
+						</View>
+					</View>
+                </Modal>
 			</View>
 		)
 	}
@@ -171,26 +224,28 @@ const redHeart = '#DC143C';
 const yellowColor = '#fdf200';
 const modalBackground = 'rgba(52,52,52,0.6)';
 
-const closeIcon = 'md-close';
-const menuIcon = 'md-menu';
-const searchIcon = 'md-search';
-const addIcon = 'md-add';
-const locationIcon = 'md-compass';
-const commentIcon = 'md-chatbubbles';
-const moreIcon = 'md-more';
-const imagesIcon = 'md-images';
-const checkmarkIcon = 'md-checkmark';
-const heartIcon = 'md-heart';
-const heartIconOutline = 'md-heart-outline';
-const thumbsDownOut = 'ios-thumbs-down-outline';
-const thumbsDown = 'ios-thumbs-down';
-const thumbsUpOut = 'ios-thumbs-up-outline';
-const thumbsUp = 'ios-thumbs-up';
+const thumbsDownOut = 'thumbs-o-down';
+const thumbsDown = 'thumbs-down';
+const thumbsUpOut = 'thumbs-o-up';
+const thumbsUp = 'thumbs-up';
+const chart = 'line-chart';
 
 const styles = StyleSheet.create({
   likeButton: {
-    
     marginLeft: 0,
     flexDirection: 'row',
-  }
+  },
+  button:{
+    backgroundColor: '#00802b',
+    borderWidth: 2,
+    borderColor: '#00802b',
+    alignItems: 'center',
+    justifyContent: 'center',
+    //alignSelf: 'stretch',
+    height: 34,
+    width: 120,
+    borderRadius: 4,
+    margin: 6,
+},
 });
+
