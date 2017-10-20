@@ -79,6 +79,7 @@ export default class CenaProjetos extends Component {
       dataSnapshot.forEach((child) => {
         data.push({
           codigo: child.val().codigo,
+          background: child.val().background,
           titulo: child.val().titulo,
           descricao: child.val().descricao,
           fotoPolitico: child.val().fotoPolitico,

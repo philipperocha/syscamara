@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Image, View, Text, ScrollView, Dimensions, Linking } from 'react-native';
+import { StyleSheet, Image, View, Text, ScrollView, Dimensions, Linking} from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 import LikeButtonProjetos from './auxiliares/LikeButtonProjetos';
 import IconButton from './auxiliares/IconButton';
@@ -19,20 +19,23 @@ class DetalheProjeto extends Component {
     }
 
     render() {
-        const { codigo, titulo, descricao, fotoPolitico, politico, partido, _key } = this.props.navigation.state.params;
+        const { codigo, titulo, descricao, fotoPolitico, background, politico, partido, _key } = this.props.navigation.state.params;
 
         return (
 
             <ScrollView style={styles.container}>
 
+                <View>
+                  <Image style={styles.backPic} source={{uri: background}}/>
+                  <Text style={[customStyles.titulo, {marginLeft: 8, marginTop: 12, marginBottom: 6, textAlign: 'center'}]}>{titulo}</Text>
+                </View>
                 <View style={styles.header}>
                     <View style={styles.profilePicWrap}>
                         <Image style={styles.profilePic} source={{uri: fotoPolitico}}/>
                     </View>
                     <View style={styles.profileDetails}>
-                      <Text style={[customStyles.titulo, {marginLeft: 8}]}>{titulo}</Text>
-                      <Text style={[customStyles.descricao, {marginLeft: 8}]}>Código: {codigo}</Text>
-                      <Text style={[customStyles.descricao, {marginLeft: 8}]}>Autor: {politico} / {partido}</Text>
+                      <Text style={[customStyles.descricao, {marginLeft: 8}]}>Autor: {politico}</Text>
+                      <Text style={[customStyles.descricao, {marginLeft: 8}]}>Partido: {partido}</Text>
                     </View>
                 </View>
 
@@ -50,6 +53,11 @@ class DetalheProjeto extends Component {
         );
   }
 }
+
+const telaWidth = Dimensions.get('window').width;
+const telaHeight = Dimensions.get('window').height;
+const largura = (telaWidth - (telaWidth*0.1));
+const altura = (telaHeight - (telaHeight*0.5));
 
 const styles = StyleSheet.create({
   container:{
@@ -72,20 +80,26 @@ const styles = StyleSheet.create({
     //alignItems: 'center',
     justifyContent: 'flex-start',
     //padding: 8,
-    marginVertical: 20,
+    marginTop: 10,
+    marginBottom: 10,
     marginLeft: 10,
     marginRight: 8,
     backgroundColor: '#F2F2F2',
     //borderWidth: 0.5,
   },
   profilePicWrap: {
-    width: 70,
-    height: 90,
+    width: 35,
+    height: 45,
     //borderRadius: 100,
     //borderColor: 'rgba(0,0,0,0.2)',
     borderColor: '#595959',
-    borderWidth: 2,
-    borderRadius: 2,
+    borderWidth: 1,
+    borderRadius: 1,
+  },
+  backPic:{
+    width: telaWidth,
+    height: telaWidth/1.7,
+    resizeMode: 'stretch',
   },
   profileDetails:{
     flex: 1,
@@ -111,7 +125,7 @@ const styles = StyleSheet.create({
 
   },
   likeButton: {
-    marginLeft: 20,
+    marginLeft: 10,
     flexDirection: 'row',
     //justifyContent: 'center',
     width: (Dimensions.get('window').width / 2)
