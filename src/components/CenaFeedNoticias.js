@@ -61,7 +61,7 @@ export default class CenaNoticias extends Component {
         <View style={styles.containerPanel}>
             
             
-            <Text style={[customStyles.data, {marginLeft: 8}]}>{noticias.data}</Text>
+            <Text style={[customStyles.data, {marginLeft: 8, marginTop: 4}]}>{noticias.data}</Text>
             <Image style={styles.noticiasImage} source={{ uri: noticias.foto }}/>
             
             <View style={styles.followBar}>
@@ -122,10 +122,12 @@ export default class CenaNoticias extends Component {
 
   render() {
     return (
-	  <View style={{ flex: 1, backgroundColor: '#F2F2F2' }}>
+	  <View style={{ flex: 1, backgroundColor: '#999999' }}>
         
         <StatusBar backgroundColor='black'/>
 
+        {/* <View style={{height: 36, backgroundColor: '#f2f2f2'}}></View> */}
+        
         <ListView
           dataSource={this.state.dataSource}
           //enableEmptySections={true}
@@ -171,8 +173,9 @@ const styles = StyleSheet.create({
   },
   separator: {
     flex: 1,
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: '#8E8E8E',
+    height: StyleSheet.hairlineWidth * 10,
+    //backgroundColor: '#8E8E8E',
+    backgroundColor: 'transparent',
     width: "100%",
     marginLeft: "0%",
     marginRight: "0%",
@@ -182,7 +185,7 @@ const styles = StyleSheet.create({
     height: 26,
   },
   listView:{
-    marginTop: 20
+    marginTop: 4
   },
 
     noticiasImage: {
@@ -196,11 +199,16 @@ const styles = StyleSheet.create({
         backgroundColor: 'gray'
     },
     containerPanel: {
+        backgroundColor: '#f2f2f2',
         flex: 1,
         flexDirection: 'column',
         paddingLeft: 0,
-        marginBottom: 12,
-        marginTop: 12,
+        marginBottom: 1,
+        marginTop: 0,
+
+        borderBottomWidth: 10,
+        borderRadius: 4,
+        //borderBottomColor: 'transparent',
     },
     title: {
         marginHorizontal: 8,

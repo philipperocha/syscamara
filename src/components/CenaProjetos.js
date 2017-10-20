@@ -311,8 +311,8 @@ const styles = StyleSheet.create({
         flex: 1, 
         flexDirection: 'row', 
         padding: 0,
-        marginTop: 8,
-        marginBottom: 24
+        marginTop: 12,
+        marginBottom: 30
     },
         sessoesImage: {
         width: 80,

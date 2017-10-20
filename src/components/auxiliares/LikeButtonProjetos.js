@@ -189,7 +189,7 @@ export default class LikeButtonProjetos extends Component {
                 <Modal animationType="fade" transparent={true} visible={this.state.modalVisible} onRequestClose={() => {console.log("Modal has been closed.")}} 
 				>
 					<View style={{flex:1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}} >
-						<View style={{backgroundColor: '#f2f2f2',justifyContent: 'space-between',height: altura, width: largura, borderWidth: 1, borderRadius: 8, borderColor:'#666666'}}>
+						<View style={{backgroundColor: '#e6e6e6',justifyContent: 'space-between',height: altura, width: largura, borderWidth: 1, borderRadius: 8, borderColor:'#666666'}}>
 							<View style={{flexDirection: 'column', justifyContent: 'center', marginHorizontal: 10, marginTop: 26}}>
 								<Text style={[customStyles.titulo, {textAlign: 'center'}]}>PERCENTUAL DE APROVAÇÃO</Text>
 							</View>
