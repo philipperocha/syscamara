@@ -28,7 +28,7 @@ export default class SessoesView extends Component {
         super(props, context);
         
         this.state = {
-          active: 'Projetos',
+          active: 'Sessões',
         };
       }
     

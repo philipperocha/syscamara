@@ -54,7 +54,7 @@ export default class HomeView extends Component {
 
             <Toolbar
               leftElement="menu"
-              centerElement={this.state.active}
+              centerElement={''}
               onLeftElementPress={() => this.navigate()}
             />
 
@@ -65,8 +65,8 @@ export default class HomeView extends Component {
                 <View style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                   <Image source={require('../src/img/logo.png')} style={[{width: 140, height: 140}]}/>
                 </View>
-                <Text style={[styles.welcome,{color: 'white', fontWeight:'bold', fontSize: 14}]}>
-                  Bem Vindo à Câmara Municipal de Lagarto!!!
+                <Text style={[styles.welcome,{color: 'white',fontSize: 22}]}>
+                  Bem Vindo ao aplicativo da Câmara Municipal de Lagarto!!!
                 </Text>
               </View>
 
