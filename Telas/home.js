@@ -5,14 +5,16 @@ import {
   Text,
   StatusBar,
   View,
-  Image
+  Image,
+  Dimensions,
+  TouchableHighlight
 } from 'react-native';
 import { COLOR, ThemeProvider, Toolbar } from 'react-native-material-ui';
 import Container from '../Container';
 
 const uiTheme = {
   palette: {
-    primaryColor: COLOR.green500,
+    primaryColor: COLOR.transparent,
     accentColor: COLOR.pink500,
   },
   toolbar: {
@@ -46,20 +48,60 @@ export default class HomeView extends Component {
       <ThemeProvider uiTheme={uiTheme}>
         <Container>
           <StatusBar backgroundColor="rgba(0, 0, 0, 0.2)" translucent />
-          <Toolbar
-            leftElement="menu"
-            centerElement={this.state.active}
-            onLeftElementPress={() => this.navigate()}
-          />
+
 
           <Image source={require('../src/img/background.png')} style={[styles.imgBackground,{}]}>
+
+            <Toolbar
+              leftElement="menu"
+              centerElement={this.state.active}
+              onLeftElementPress={() => this.navigate()}
+            />
+
             <View style={styles.container}>
-              <Text style={[styles.welcome,{color: 'white', fontWeight:'bold', fontSize: 14}]}>
-                Bem Vindo ao SysCamara!!!
-              </Text>
-              <Text style={[styles.welcome,{color: 'red', fontWeight:'bold', fontSize: 18}]}>
-                Aqui será o BackGround Personalizado pra cada Câmara!!!
-              </Text>
+
+              <View style={{flex: 2, justifyContent: 'center'}}>
+
+                <View style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                  <Image source={require('../src/img/logo.png')} style={[{width: 140, height: 140}]}/>
+                </View>
+                <Text style={[styles.welcome,{color: 'white', fontWeight:'bold', fontSize: 14}]}>
+                  Bem Vindo à Câmara Municipal de Lagarto!!!
+                </Text>
+              </View>
+
+              <View style={{flex: 1, justifyContent: 'flex-end'}}>
+                <View style={styles.containerButon}>
+                  <View>
+                    <TouchableHighlight onPress={() => console.log('apertou')} 
+                      style={[styles.button, {borderRightWidth: 2, borderBottomWidth: 2}]} >
+                      <View style={{flex: 1, justifyContent: 'center'}}>
+                        <Text style={styles.buttonText}>Notícias</Text>
+                      </View>
+                    </TouchableHighlight>
+                    <TouchableHighlight onPress={() => console.log('apertou')} 
+                      style={[styles.button, {borderRightWidth: 2, borderTopWidth: 2}]} >
+                      <View style={{flex: 1, justifyContent: 'center'}}>
+                        <Text style={styles.buttonText}>Políticos</Text>
+                      </View>
+                    </TouchableHighlight>
+                  </View>
+                  <View>
+                    <TouchableHighlight onPress={() => console.log('apertou')} 
+                      style={[styles.button, {borderLeftWidth: 2, borderBottomWidth: 2}]} >
+                      <View style={{flex: 1, justifyContent: 'center'}}>
+                        <Text style={styles.buttonText}>Projetos</Text>
+                      </View>
+                    </TouchableHighlight>
+                    <TouchableHighlight onPress={() => console.log('apertou')} 
+                      style={[styles.button, {borderLeftWidth: 2, borderTopWidth: 2}]} >
+                      <View style={{flex: 1, justifyContent: 'center'}}>
+                        <Text style={styles.buttonText}>Sessões</Text>
+                      </View>
+                    </TouchableHighlight>
+                  </View>
+                </View>
+              </View>
             </View>
           </Image>
 
@@ -98,4 +140,22 @@ const styles = StyleSheet.create({
     width: null,
     //alignSelf: 'stretch',
   },
+  button:{
+    height: (Dimensions.get('window').height / 8),
+    width: (Dimensions.get('window').width / 2),
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    paddingVertical: 0,
+    marginHorizontal: 0,
+    borderRadius: 0,
+    marginBottom: 0,
+    borderWidth: 4,
+    borderColor: 'rgba(255,255,255, 0.15)',
+  },
+  containerButon: {
+    flexDirection: 'row',
+  },
+  buttonText:{
+    color: 'white',
+    textAlign: 'center'
+  }
 });

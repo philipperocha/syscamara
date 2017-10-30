@@ -56,11 +56,7 @@ export default class CenaNoticias extends Component {
 
   _renderItem(noticias) {
     return (
-    //   <TouchableNativeFeedback onPress={() => this.onLearnMore(noticias)}  underlayColor="#D9D9D9">
-    //   </TouchableNativeFeedback>
         <View style={styles.containerPanel}>
-            
-            
             <Text style={[customStyles.data, {marginLeft: 8, marginTop: 4}]}>{noticias.data}</Text>
             <Image style={styles.noticiasImage} source={{ uri: noticias.foto }}/>
             
@@ -78,9 +74,7 @@ export default class CenaNoticias extends Component {
                     </Text>
                 </ViewMoreText>
             </View>
-            {/*<Text style={styles.subtitle} numberOfLines={2}>{noticias.descricao}</Text>*/}
         </View>
-        
     );
   }
 
@@ -89,11 +83,7 @@ export default class CenaNoticias extends Component {
   }
 
   listenFor(fRef) {
-    // listen for changes to the tasks reference, when it updates we'll get a
-    // dataSnapshot from firebase
-
     fRef.on('value', (dataSnapshot) => {
-      // transform the children to an array
       var data = [];
       dataSnapshot.forEach((child) => {
         data.push({
@@ -105,7 +95,6 @@ export default class CenaNoticias extends Component {
         });
       });
 
-      // Update the state with the new tasks
       this.setState({
         dataSource: this.state.dataSource.cloneWithRows(data),
       });
