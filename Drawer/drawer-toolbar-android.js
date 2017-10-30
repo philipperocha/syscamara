@@ -11,7 +11,7 @@ import Container from '../Container';
 
 const uiTheme = {
     palette: {
-        primaryColor: COLOR.green500,
+        primaryColor: COLOR.grey800,
         accentColor: COLOR.pink500,
       },
     toolbar: {

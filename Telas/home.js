@@ -61,12 +61,14 @@ export default class HomeView extends Component {
             <View style={styles.container}>
 
               <View style={{flex: 2, justifyContent: 'center'}}>
-
-                <View style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                <Text style={[styles.welcome,{color: 'white',fontSize: 18}]}>
+                  Bem Vindo,
+                </Text>
+                <View style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: 20}}>
                   <Image source={require('../src/img/logo.png')} style={[{width: 140, height: 140}]}/>
                 </View>
-                <Text style={[styles.welcome,{color: 'white',fontSize: 22}]}>
-                  Bem Vindo ao aplicativo da Câmara Municipal de Lagarto!!!
+                <Text style={[styles.welcome,{color: 'white',fontSize: 22, fontWeight: 'bold'}]}>
+                  Câmara Municipal de Lagarto
                 </Text>
               </View>
 

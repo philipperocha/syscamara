@@ -19,7 +19,7 @@ const {
 
 const uiTheme = {
   palette: {
-    primaryColor: COLOR.green500,
+    primaryColor: COLOR.grey800,
     accentColor: COLOR.pink500,
   },
   toolbar: {
@@ -190,7 +190,8 @@ detailsApp: {
     marginTop: 12,
     marginBottom: 12,
     backgroundColor: 'white',
-    borderWidth: 0.5,
+    borderTopWidth: 0.5,
+    borderBottomWidth: 0.5,
 },
 detailsAppText: {
     marginTop: 16,
