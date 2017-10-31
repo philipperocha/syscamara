@@ -173,7 +173,8 @@ export default class LoginView extends Component{
                 <View style={styles.containerLogo}>
                     <StatusBar backgroundColor='black'/>
                     {/*<BarraNavegacao titulo='SysCamara' corDeFundo='#004466' />*/}
-                    <Image source={require('../src/img/SysCamara.png')} style={{width: 200, height: 200, marginTop: 60}}/>
+                    <Image source={require('../src/img/logo.png')} style={{width: 150, height: 150, marginTop: 60}}/>
+                    <Text style={{fontSize: 16, color: '#d9d9d9', marginLeft: 15, marginRight: 15, textAlign: 'center'}}>Câmara Municipal de Lagarto</Text>
                 </View>
 
                 <View style={styles.containerLogin}>
