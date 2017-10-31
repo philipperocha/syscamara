@@ -43,6 +43,13 @@ export default class HomeView extends Component {
         this.props.navigation.navigate('DrawerOpen'); // open drawer
         }
 
+    goTo(setActive, setNavigate){
+      
+        this.setState({ active: setActive });
+        this.props.navigation.navigate(setNavigate);
+      
+    }
+
   render() {
     return (
       <ThemeProvider uiTheme={uiTheme}>
@@ -75,13 +82,13 @@ export default class HomeView extends Component {
               <View style={{flex: 1, justifyContent: 'flex-end'}}>
                 <View style={styles.containerButon}>
                   <View>
-                    <TouchableHighlight onPress={() => console.log('apertou')} 
+                    <TouchableHighlight onPress={() => this.goTo('noticias','Noticias')} 
                       style={[styles.button, {borderRightWidth: 2, borderBottomWidth: 2}]} >
                       <View style={{flex: 1, justifyContent: 'center'}}>
                         <Text style={styles.buttonText}>Notícias</Text>
                       </View>
                     </TouchableHighlight>
-                    <TouchableHighlight onPress={() => console.log('apertou')} 
+                    <TouchableHighlight onPress={() => this.goTo('politicos','Politicos')}
                       style={[styles.button, {borderRightWidth: 2, borderTopWidth: 2}]} >
                       <View style={{flex: 1, justifyContent: 'center'}}>
                         <Text style={styles.buttonText}>Políticos</Text>
@@ -89,13 +96,13 @@ export default class HomeView extends Component {
                     </TouchableHighlight>
                   </View>
                   <View>
-                    <TouchableHighlight onPress={() => console.log('apertou')} 
+                    <TouchableHighlight onPress={() => this.goTo('projetos','Projetos')}
                       style={[styles.button, {borderLeftWidth: 2, borderBottomWidth: 2}]} >
                       <View style={{flex: 1, justifyContent: 'center'}}>
                         <Text style={styles.buttonText}>Projetos</Text>
                       </View>
                     </TouchableHighlight>
-                    <TouchableHighlight onPress={() => console.log('apertou')} 
+                    <TouchableHighlight onPress={() => this.goTo('sessoes','Sessoes')}
                       style={[styles.button, {borderLeftWidth: 2, borderTopWidth: 2}]} >
                       <View style={{flex: 1, justifyContent: 'center'}}>
                         <Text style={styles.buttonText}>Sessões</Text>

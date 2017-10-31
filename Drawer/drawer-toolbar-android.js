@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { COLOR, ThemeProvider, Toolbar, Drawer, Avatar } from 'react-native-material-ui';
 import Container from '../Container';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const uiTheme = {
     palette: {
@@ -31,7 +32,7 @@ export default class DrawerMenu extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-        active: 'people',
+        active: 'home',
       };
   }
 
@@ -78,7 +79,8 @@ export default class DrawerMenu extends Component {
                             divider
                             items={[
                                 {
-                                    icon: 'bookmark-border', value: 'Home',
+                                icon: <Icon name='home' size={24} color='black' />,
+                                    value: 'Home',
                                     active: this.state.active == 'home',
                                     onPress: () => {
                                         this.setState({ active: 'home' });
@@ -86,7 +88,8 @@ export default class DrawerMenu extends Component {
                                       },
                                   },
                                 {
-                                    icon: 'today', value: 'Noticias',
+                                icon: <Icon name='newspaper-o' size={20} color='black' />, 
+                                    value: 'Noticias',
                                     active: this.state.active == 'noticias',
                                     onPress: () => {
                                         this.setState({ active: 'noticias' });
@@ -94,7 +97,8 @@ export default class DrawerMenu extends Component {
                                       },
                                   },
                                 {
-                                    icon: 'people', value: 'Politicos',
+                                    icon: <Icon name='users' size={20} color='black' />,
+                                    value: 'Politicos',
                                     active: this.state.active == 'politicos',
                                     onPress: () => {
                                         this.setState({ active: 'politicos' });
@@ -102,7 +106,8 @@ export default class DrawerMenu extends Component {
                                       },
                                   },
                                   {
-                                    icon: 'file-download', value: 'Sessoes',
+                                  icon: <Icon name='university' size={20} color='black' />,
+                                    value: 'Sessoes',
                                     active: this.state.active == 'sessoes',
                                     onPress: () => {
                                         this.setState({ active: 'sessoes' });
@@ -110,7 +115,8 @@ export default class DrawerMenu extends Component {
                                       },
                                   },
                                   {
-                                    icon: 'euro-symbol', value: 'Projetos',
+                                  icon: <Icon name='pencil-square-o' size={24} color='black' />,
+                                    value: 'Projetos',
                                     active: this.state.active == 'projetos',
                                     onPress: () => {
                                         this.setState({ active: 'projetos' });
@@ -123,7 +129,8 @@ export default class DrawerMenu extends Component {
                             title="Configurações"
                             items={[
                                 {
-                                    icon: 'settings', value: 'Perfil',
+                                    icon: <Icon name='cog' size={24} color='black' />,
+                                    value: 'Perfil',
                                     active: this.state.active == 'perfil',
                                     onPress: () => {
                                         this.setState({ active: 'perfil' });
