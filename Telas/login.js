@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import{StackNavigator, TabNavigator, TabBarBottom} from 'react-navigation';
 import{GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
+import customStyles from '../src/components/auxiliares/customStyles';
  
 const FBSDK = require('react-native-fbsdk');
 const {
@@ -174,13 +175,13 @@ export default class LoginView extends Component{
                     <StatusBar backgroundColor='black'/>
                     {/*<BarraNavegacao titulo='SysCamara' corDeFundo='#004466' />*/}
                     <Image source={require('../src/img/logo.png')} style={{width: 150, height: 150, marginTop: 60}}/>
-                    <Text style={{fontSize: 16, color: '#d9d9d9', marginLeft: 15, marginRight: 15, textAlign: 'center'}}>Câmara Municipal de Lagarto</Text>
+                    <Text style={[customStyles.titulo,{fontSize: 20, color: '#d9d9d9', marginHorizontal: 15, textAlign: 'center'}]}>Câmara Municipal de Lagarto</Text>
                 </View>
 
                 <View style={styles.containerLogin}>
                     <View style={{alignItems: 'center', marginBottom: 40}}>
 
-                        <Text style={{fontSize: 14, color: '#d9d9d9', marginLeft: 15, marginRight: 15, textAlign: 'center'}}>Escolha abaixo a rede social que deseja utilizar para efetuar o login:</Text>
+                        <Text style={[customStyles.descricao,{fontSize: 16, color: '#d9d9d9', marginHorizontal: 15, textAlign: 'center'}]}>Escolha abaixo a rede social que deseja utilizar para efetuar o login:</Text>
                         <TouchableHighlight onPress={this._googleAuth} style={[styles.button, {marginTop: 10, height: 40, backgroundColor: '#b24d34'}]} >
                              <View style={{alignSelf: 'center', alignItems: 'center'}}>
                                 <Icon
@@ -205,7 +206,7 @@ export default class LoginView extends Component{
                                 </Icon>
                             </View> 
                         </TouchableHighlight>
-                        <Text style={{fontSize: 12, color: '#d9d9d9' /*color: '#007399'*/, marginLeft: 15, marginRight: 15, textAlign: 'center', fontStyle: 'italic'}}>O aplicativo não postará nada em suas redes sociais sem a sua autorização.</Text>
+                        <Text style={[customStyles.fonteDescricaoItalic, {fontSize: 12, color: '#d9d9d9', marginHorizontal: 15, textAlign: 'center', fontStyle: 'italic'}]}>O aplicativo não postará nada em suas redes sociais sem a sua autorização.</Text>
                     </View>
                 </View>
                 </View>

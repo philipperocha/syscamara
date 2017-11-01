@@ -9,6 +9,7 @@ import {
 import { COLOR, ThemeProvider, Toolbar, Drawer, Avatar } from 'react-native-material-ui';
 import Container from '../Container';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import customStyles from '../src/components/auxiliares/customStyles';
 
 const uiTheme = {
     palette: {
@@ -48,7 +49,7 @@ export default class DrawerMenu extends Component {
                     <Toolbar
                     leftElement="arrow-back"
                     onLeftElementPress={() => this.props.navigation.navigate('DrawerClose')}
-                    centerElement="Menu"
+                    centerElement={[<Text style={[customStyles.titulo,{color: 'white'}]}>Menu</Text>]}
                 />
                     <View style={styles.container}>
                         <Drawer>
@@ -80,7 +81,7 @@ export default class DrawerMenu extends Component {
                             items={[
                                 {
                                 icon: <Icon name='home' size={24} color='black' />,
-                                    value: 'Home',
+                                    value: <Text style={customStyles.descricao}>Home</Text>,
                                     active: this.state.active == 'home',
                                     onPress: () => {
                                         this.setState({ active: 'home' });
@@ -89,7 +90,7 @@ export default class DrawerMenu extends Component {
                                   },
                                 {
                                 icon: <Icon name='newspaper-o' size={20} color='black' />, 
-                                    value: 'Noticias',
+                                    value: <Text style={customStyles.descricao}>Notícias</Text>,
                                     active: this.state.active == 'noticias',
                                     onPress: () => {
                                         this.setState({ active: 'noticias' });
@@ -98,7 +99,7 @@ export default class DrawerMenu extends Component {
                                   },
                                 {
                                     icon: <Icon name='users' size={20} color='black' />,
-                                    value: 'Politicos',
+                                    value: <Text style={customStyles.descricao}>Políticos</Text>,
                                     active: this.state.active == 'politicos',
                                     onPress: () => {
                                         this.setState({ active: 'politicos' });
@@ -107,7 +108,7 @@ export default class DrawerMenu extends Component {
                                   },
                                   {
                                   icon: <Icon name='university' size={20} color='black' />,
-                                    value: 'Sessoes',
+                                    value: <Text style={customStyles.descricao}>Sessões</Text>,
                                     active: this.state.active == 'sessoes',
                                     onPress: () => {
                                         this.setState({ active: 'sessoes' });
@@ -116,7 +117,7 @@ export default class DrawerMenu extends Component {
                                   },
                                   {
                                   icon: <Icon name='pencil-square-o' size={24} color='black' />,
-                                    value: 'Projetos',
+                                    value: <Text style={customStyles.descricao}>Projetos</Text>,
                                     active: this.state.active == 'projetos',
                                     onPress: () => {
                                         this.setState({ active: 'projetos' });
@@ -126,11 +127,11 @@ export default class DrawerMenu extends Component {
                             ]}
                         />
                             <Drawer.Section
-                            title="Configurações"
+                            title={['Configurações']}
                             items={[
                                 {
                                     icon: <Icon name='cog' size={24} color='black' />,
-                                    value: 'Perfil',
+                                    value: <Text style={customStyles.descricao}>Perfil</Text>,
                                     active: this.state.active == 'perfil',
                                     onPress: () => {
                                         this.setState({ active: 'perfil' });

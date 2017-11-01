@@ -108,7 +108,7 @@ export default class SessoesView extends Component {
           <StatusBar backgroundColor="rgba(0, 0, 0, 0.2)" translucent />
           <Toolbar
             leftElement="menu"
-            centerElement={this.state.active}
+            centerElement={[<Text style={[customStyles.titulo,{color: 'white'}]}>{this.state.active}</Text>]}
             onLeftElementPress={() => this.navigate()}
           />
           <View style={styles.container}>
