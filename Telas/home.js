@@ -12,6 +12,7 @@ import {
 import { COLOR, ThemeProvider, Toolbar } from 'react-native-material-ui';
 import Container from '../Container';
 import customStyles from '../src/components/auxiliares/customStyles';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const uiTheme = {
   palette: {
@@ -85,13 +86,15 @@ export default class HomeView extends Component {
                   <View>
                     <TouchableHighlight onPress={() => this.goTo('noticias','Noticias')} 
                       style={[styles.button, {borderRightWidth: 2, borderBottomWidth: 2}]} >
-                      <View style={{flex: 1, justifyContent: 'center'}}>
+                      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+                        <Icon name='newspaper-o' size={16} color='#f2f2f2'/>
                         <Text style={[customStyles.descricao, styles.buttonText]}>Notícias</Text>
                       </View>
                     </TouchableHighlight>
                     <TouchableHighlight onPress={() => this.goTo('politicos','Politicos')}
                       style={[styles.button, {borderRightWidth: 2, borderTopWidth: 2}]} >
-                      <View style={{flex: 1, justifyContent: 'center'}}>
+                      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+                        <Icon name='users' size={16} color='#f2f2f2'/>
                         <Text style={[customStyles.descricao, styles.buttonText]}>Políticos</Text>
                       </View>
                     </TouchableHighlight>
@@ -99,13 +102,15 @@ export default class HomeView extends Component {
                   <View>
                     <TouchableHighlight onPress={() => this.goTo('projetos','Projetos')}
                       style={[styles.button, {borderLeftWidth: 2, borderBottomWidth: 2}]} >
-                      <View style={{flex: 1, justifyContent: 'center'}}>
+                      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+                        <Icon name='pencil-square-o' size={18} color='#f2f2f2' style={{marginTop: 2}}/>
                         <Text style={[customStyles.descricao, styles.buttonText]}>Projetos</Text>
                       </View>
                     </TouchableHighlight>
                     <TouchableHighlight onPress={() => this.goTo('sessoes','Sessoes')}
                       style={[styles.button, {borderLeftWidth: 2, borderTopWidth: 2}]} >
-                      <View style={{flex: 1, justifyContent: 'center'}}>
+                      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+                        <Icon name='university' size={16} color='#f2f2f2'/>
                         <Text style={[customStyles.descricao, styles.buttonText]}>Sessões</Text>
                       </View>
                     </TouchableHighlight>
@@ -167,6 +172,7 @@ const styles = StyleSheet.create({
   },
   buttonText:{
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
+    marginTop: 4
   }
 });
