@@ -123,6 +123,18 @@ export default class PoliticosView extends Component {
     componentDidMount() {
       this.listenFor(this.state.fireRef);
     }
+
+    filterText(text){
+      const newData = this.state.data.filter(function(item){
+        const itemData = item.name.toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1
+      })
+      this.setState({
+        dataSource: this.state.dataSource.cloneWithRows(newData),
+        text: text
+      })
+    }
   
 
   render() {
@@ -224,7 +236,7 @@ const styles = StyleSheet.create({
     height: 26,
   },
   textInput:{
-    height: 30,
+    height: 37,
     width: "90%",
     //borderWidth: 0.5,
     marginLeft: 10,
