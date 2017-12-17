@@ -91,27 +91,27 @@ export default class HomeView extends Component {
                         <Text style={[customStyles.descricao, styles.buttonText]}>Notícias</Text>
                       </View>
                     </TouchableHighlight>
-                    <TouchableHighlight onPress={() => this.goTo('politicos','Politicos')}
+                    <TouchableHighlight onPress={() => this.goTo('sessoes','Sessoes')}
                       style={[styles.button, {borderRightWidth: 2, borderTopWidth: 2}]} >
                       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                         <Icon name='users' size={16} color='#f2f2f2'/>
-                        <Text style={[customStyles.descricao, styles.buttonText]}>Políticos</Text>
+                        <Text style={[customStyles.descricao, styles.buttonText]}>Sessões</Text>
                       </View>
                     </TouchableHighlight>
                   </View>
                   <View>
-                    <TouchableHighlight onPress={() => this.goTo('projetos','Projetos')}
+                    <TouchableHighlight onPress={() => this.goTo('politicos','Politicos')}
                       style={[styles.button, {borderLeftWidth: 2, borderBottomWidth: 2}]} >
                       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                         <Icon name='pencil-square-o' size={18} color='#f2f2f2' style={{marginTop: 2}}/>
-                        <Text style={[customStyles.descricao, styles.buttonText]}>Projetos</Text>
+                        <Text style={[customStyles.descricao, styles.buttonText]}>Parlamentares</Text>
                       </View>
                     </TouchableHighlight>
-                    <TouchableHighlight onPress={() => this.goTo('sessoes','Sessoes')}
+                    <TouchableHighlight onPress={() => this.goTo('projetos','Projetos')}
                       style={[styles.button, {borderLeftWidth: 2, borderTopWidth: 2}]} >
                       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                         <Icon name='university' size={16} color='#f2f2f2'/>
-                        <Text style={[customStyles.descricao, styles.buttonText]}>Sessões</Text>
+                        <Text style={[customStyles.descricao, styles.buttonText]}>Projetos</Text>
                       </View>
                     </TouchableHighlight>
                   </View>

@@ -99,7 +99,7 @@ export default class DrawerMenu extends Component {
                                   },
                                 {
                                     icon: <Icon name='users' size={20} color='black' />,
-                                    value: <Text style={customStyles.descricao}>Políticos</Text>,
+                                    value: <Text style={customStyles.descricao}>Parlamentares</Text>,
                                     active: this.state.active == 'politicos',
                                     onPress: () => {
                                         this.setState({ active: 'politicos' });
