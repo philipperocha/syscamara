@@ -145,7 +145,7 @@ export default class PoliticosView extends Component {
           <StatusBar backgroundColor="rgba(0, 0, 0, 0.2)" translucent />
           <Toolbar
             leftElement="menu"
-            centerElement={[<Text style={[customStyles.titulo,{color: 'white'}]}>{this.state.active}</Text>]}
+            centerElement={[<Text style={[customStyles.titulo,{color: 'white'}]}>{'Parlamentares'}</Text>]}
             onLeftElementPress={() => this.navigate()}
           />
           
@@ -158,7 +158,7 @@ export default class PoliticosView extends Component {
                   onChangeText={(text) => this.filterText(text)}
                   value={this.state.text}
                   underlineColorAndroid='transparent'
-                  placeholder='Buscar pelo nome do político'
+                  placeholder='Buscar pelo nome do parlamentar'
                   //placeholderStyle={{fontStyle: 'italic'}}
                 />
               </View >

@@ -38,8 +38,8 @@ export default customStyles = StyleSheet.create({
     },
     mostrarMais: {
         fontFamily: fonteMostrarMais,
-        fontSize: 16,
-        color: 'green'
+        fontSize: 14,
+        color: 'grey'
     },
     data: {
         fontFamily: fonteData,

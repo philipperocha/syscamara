@@ -94,7 +94,7 @@ export default class PerfilView extends Component {
         const usuario = firebase.auth().currentUser.displayName;
         const email = firebase.auth().currentUser.email;
         const foto = firebase.auth().currentUser.photoURL;
-        const sobre = 'Este aplicativo foi criado em Aracaju-SE, 2017, pela NuvemHost.IN. Tem como finalidade exibir notícias sobre o meio político, assim como Câmaras Municipais. Por meio do SysCamara é possível curtir um político, assim como uma Notícia postada no Feed de Notícias. Outra importante funcionalidade é o acesso às pautas e resultados das Sessões, bem como votação nos projetos de lei.';
+        const sobre = 'Este aplicativo tem como finalidade exibir notícias sobre o meio político. Por meio dele é possível curtir um político, assim como uma Notícia postada na lista de Notícias. Outra importante funcionalidade é o acesso às pautas e resultados das Sessões, bem como votação nos projetos de lei.';
         
         return (
         <ThemeProvider uiTheme={uiTheme}>
