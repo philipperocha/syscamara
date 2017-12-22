@@ -49,30 +49,9 @@ export default class DrawerMenu extends Component {
                     <Toolbar
                     leftElement="arrow-back"
                     onLeftElementPress={() => this.props.navigation.navigate('DrawerClose')}
-                    centerElement={[<Text style={[customStyles.titulo,{color: 'white'}]}>Menu</Text>]}
                 />
                     <View style={styles.container}>
                         <Drawer>
-                            {/* <Drawer.Header >
-                                <Drawer.Header.Account
-                                style={{ 
-                                    container: { backgroundColor: '#fafafa' },
-                                }}
-                                avatar={<Avatar text={'K'} />}
-                                accounts={[
-                                    { avatar: <Avatar text="H" /> },
-                                    { avatar: <Avatar text="L" /> },
-                                ]}
-                                footer={{
-                                    dense: true,
-                                    centerElement: {
-                                        primaryText: 'Kevin Le',
-                                        secondaryText: 'kevin@codeprototype.com',
-                                    },
-                                    rightElement: 'arrow-drop-down',
-                                  }}
-                            />
-                            </Drawer.Header> */}
                             <Drawer.Section
                             style={{
                                 label: {color: '#0000ff'}
