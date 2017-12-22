@@ -59,7 +59,8 @@ export default class DrawerMenu extends Component {
                             divider
                             items={[
                                 {
-                                icon: <Icon name='home' size={24} color='black' />,
+                                    key: '28664196-b3b1-41a3-ae19-1525829aa01f',
+                                icon: 'home',
                                     value: <Text style={customStyles.descricao}>Home</Text>,
                                     active: this.state.active == 'home',
                                     onPress: () => {
@@ -68,7 +69,8 @@ export default class DrawerMenu extends Component {
                                       },
                                   },
                                 {
-                                icon: <Icon name='newspaper-o' size={20} color='black' />, 
+                                    key: 'd729a113-fc6c-4e36-9aaa-78a3fc09c632',
+                                icon: 'view-carousel', 
                                     value: <Text style={customStyles.descricao}>Notícias</Text>,
                                     active: this.state.active == 'noticias',
                                     onPress: () => {
@@ -77,7 +79,8 @@ export default class DrawerMenu extends Component {
                                       },
                                   },
                                 {
-                                    icon: <Icon name='users' size={20} color='black' />,
+                                    key: '3c4d8936-6a58-43ee-990a-3bbe506544cb',
+                                    icon:'recent-actors',
                                     value: <Text style={customStyles.descricao}>Parlamentares</Text>,
                                     active: this.state.active == 'politicos',
                                     onPress: () => {
@@ -86,7 +89,8 @@ export default class DrawerMenu extends Component {
                                       },
                                   },
                                   {
-                                  icon: <Icon name='university' size={20} color='black' />,
+                                    key: '6913fd68-6194-4737-931b-c44cb81ff115',
+                                  icon: 'work',
                                     value: <Text style={customStyles.descricao}>Sessões</Text>,
                                     active: this.state.active == 'sessoes',
                                     onPress: () => {
@@ -95,7 +99,8 @@ export default class DrawerMenu extends Component {
                                       },
                                   },
                                   {
-                                  icon: <Icon name='pencil-square-o' size={24} color='black' />,
+                                      key: '57dd7a97-49db-4aae-9fd0-468ed9cc63ed',
+                                  icon: 'receipt',
                                     value: <Text style={customStyles.descricao}>Projetos</Text>,
                                     active: this.state.active == 'projetos',
                                     onPress: () => {
@@ -106,27 +111,19 @@ export default class DrawerMenu extends Component {
                             ]}
                         />
                             <Drawer.Section
-                            title={['Configurações']}
+                            title={'Configurações'}
                             items={[
                                 {
-                                    icon: <Icon name='cog' size={24} color='black' />,
+                                    key: '15aa69bb-d51d-4033-ae6b-b3d0bf0afc5b',
+                                    icon: 'perm-identity',
                                     value: <Text style={customStyles.descricao}>Perfil</Text>,
                                     active: this.state.active == 'perfil',
                                     onPress: () => {
                                         this.setState({ active: 'perfil' });
 
-                                        //this.props.navigation.navigate('DrawerClose');
                                         this.props.navigation.navigate('Perfil');
                                       },
                                   },
-                                // {
-                                //     icon: 'info', value: 'Configurações',
-                                //     active: this.state.active == 'settings',
-                                //     onPress: () => {
-                                //         this.setState({ active: 'settings' });
-                                //         this.props.navigation.navigate('Settings');
-                                //       },
-                                //   },
                             ]}
                         />
                         </Drawer>
