@@ -97,7 +97,7 @@ export default class NoticiasView extends Component {
           titulo: child.val().titulo,
           descricao: child.val().descricao,
           foto: child.val().foto,
-          data: child.val().data,
+          data: child.val().dataNoticia,
           _key: child.key
         });
       });

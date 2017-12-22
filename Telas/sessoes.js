@@ -36,7 +36,7 @@ export default class SessoesView extends Component {
   constructor(props, context) {
       super(props, context);
       
-      let fireRef = firebase.database().ref('Sessoes');
+      let fireRef = firebase.database().ref('sessaos');
 
       const dataSource = new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
@@ -86,7 +86,7 @@ export default class SessoesView extends Component {
           titulo: child.val().titulo,
           descricao: child.val().descricao,
           foto: child.val().foto,
-          data: child.val().data,
+          data: child.val().dataSessao,
           _key: child.key
         });
       });
