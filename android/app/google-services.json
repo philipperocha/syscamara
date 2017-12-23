@@ -8,34 +8,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:566860187383:android:1c46d13e28751cd2",
+        "mobilesdk_app_id": "1:566860187383:android:124b434a60c4bacb",
         "android_client_info": {
-          "package_name": "com.politicoapp"
+          "package_name": "nuvem.camara"
         }
       },
       "oauth_client": [
         {
-          "client_id": "566860187383-5h2ab2uffc0b9f04q7n8f2mcnue813j1.apps.googleusercontent.com",
+          "client_id": "566860187383-q1u8doj0e1uemkuap4i27uk50jcifcet.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.politicoapp",
+            "package_name": "nuvem.camara",
             "certificate_hash": "aeee03c4735c71eabddf86926e432279922d8031"
-          }
-        },
-        {
-          "client_id": "566860187383-na25epfur2dgjqgns1cnu9m8ekihlb05.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.politicoapp",
-            "certificate_hash": "f7f791da847da68f24224b5933f1634eb991e2de"
-          }
-        },
-        {
-          "client_id": "566860187383-qqpeagojv54elphusr13tir84nbt0je5.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.politicoapp",
-            "certificate_hash": "143c882fe1d7e54e031316dba3cfe2e486e602ca"
           }
         },
         {
@@ -75,17 +59,17 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:566860187383:android:124b434a60c4bacb",
+        "mobilesdk_app_id": "1:566860187383:android:3773c0a456d0b36a",
         "android_client_info": {
-          "package_name": "nuvem.camara"
+          "package_name": "nuvem.camara.lagarto"
         }
       },
       "oauth_client": [
         {
-          "client_id": "566860187383-q1u8doj0e1uemkuap4i27uk50jcifcet.apps.googleusercontent.com",
+          "client_id": "566860187383-2a06lo4i42gpg2rp4og0g6cb03sngeam.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "nuvem.camara",
+            "package_name": "nuvem.camara.lagarto",
             "certificate_hash": "aeee03c4735c71eabddf86926e432279922d8031"
           }
         },
