@@ -57,12 +57,8 @@ class DetalheSessao extends Component {
     return (
       // <TouchableNativeFeedback onPress={() => this.onLearnMore(sessoes)}  underlayColor="#D9D9D9">
           <View style={styles.tituloArquivos}>
-              <View>
-                  <Text style={[customStyles.renderItemTitle, {marginBottom: 2}]} numberOfLines={2}>{arquivo.titulo}</Text>
-              </View>
-
               <View style={styles.dataDownload}>
-                    <Text style={customStyles.data} numberOfLines={2}>{arquivo.data} </Text>
+                    <Text style={[customStyles.renderItemTitle, {marginBottom: 2}]} numberOfLines={2}>{arquivo.titulo}</Text>
                     <View style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end'}}>
                       <TouchableHighlight onPress={() => this._downloadFile(arquivo)} style={styles.button} >
                             <View style={{alignSelf: 'center', alignItems: 'center', marginVertical: -4}}>
@@ -277,7 +273,7 @@ class DetalheSessao extends Component {
 
             <View style={styles.mesaDiretora}>
                 <View style={{backgroundColor: '#f2f2f2', borderWidth: 0.5, height: 50, justifyContent: 'center', borderLeftWidth: 0, borderRightWidth: 0}}>
-                    <Text style={[customStyles.titulo, {textAlign: 'center'}]}>Downloads</Text>
+                    <Text style={[customStyles.titulo, {textAlign: 'center'}]}>Arquivos</Text>
                 </View>
                 <ListView
                   dataSource={this.state.dataSource}
