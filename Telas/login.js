@@ -87,7 +87,8 @@ export default class LoginView extends Component{
         LoginManager.logInWithReadPermissions(['public_profile', 'email']).then(
             function(result){
                 if (result.isCancelled){
-                    alert('Login Cancelado!');
+                    console.log('Login cancelado!');
+                    //alert('Login Cancelado!');
                 }else{
                     AccessToken.getCurrentAccessToken().then((accessTokenData) => {
                         const credential = firebase.auth.FacebookAuthProvider.credential(accessTokenData.accessToken);
