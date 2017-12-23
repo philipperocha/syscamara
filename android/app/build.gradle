@@ -94,7 +94,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion '25.0.2'
     defaultConfig {
-        applicationId "com.politicoapp"
+        applicationId 'nuvem.camara'
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 10

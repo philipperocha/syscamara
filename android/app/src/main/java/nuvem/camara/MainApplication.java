@@ -1,4 +1,4 @@
-package com.politicoapp;
+package nuvem.camara;
 
 import android.app.Application;
 
@@ -6,9 +6,6 @@ import com.facebook.react.ReactApplication;
 import com.oblador.vectoricons.VectorIconsPackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
-import co.apptailor.googlesignin.RNGoogleSigninPackage;
-import com.facebook.reactnative.androidsdk.FBSDKPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
 //import io.invertase.firebase.RNFirebaseAdMobPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -21,6 +18,7 @@ import java.util.List;
 
 // ...
 // Required package
+import nuvem.camara.BuildConfig;
 import io.invertase.firebase.RNFirebasePackage; // <-- Add this line
 // Optional packages - add as appropriate
 import io.invertase.firebase.auth.RNFirebaseAuthPackage; // Firebase Auth
@@ -28,7 +26,6 @@ import io.invertase.firebase.database.RNFirebaseDatabasePackage; // Firebase Rea
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
-import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.facebook.appevents.AppEventsLogger;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -49,11 +46,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNGoogleSigninPackage(),
-            new VectorIconsPackage(),
-            //new RNFirebaseAdMobPackage(),
-          new RNFirebasePackage(),  // <-- Add this line
-          // Add these packages as appropriate
+          new RNGoogleSigninPackage(),
+          new VectorIconsPackage(),
+          new RNFirebasePackage(),
           new RNFirebaseAuthPackage(),
           new RNFirebaseDatabasePackage(),
           new FBSDKPackage(mCallbackManager)

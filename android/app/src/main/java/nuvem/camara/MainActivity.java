@@ -1,4 +1,4 @@
-package com.politicoapp;
+package nuvem.camara;
 
 import android.content.Intent;
 
