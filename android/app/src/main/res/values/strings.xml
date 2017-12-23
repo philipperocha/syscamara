@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SysCamara</string>
-    <string name="facebook_app_id">683775828478267</string>
+    <string name="facebook_app_id">136740760299589</string>
+    <string name="fb_login_protocol_scheme">fb136740760299589</string>
 </resources>

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "566860187383-5h2ab2uffc0b9f04q7n8f2mcnue813j1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.politicoapp",
+            "certificate_hash": "aeee03c4735c71eabddf86926e432279922d8031"
+          }
+        },
+        {
           "client_id": "566860187383-na25epfur2dgjqgns1cnu9m8ekihlb05.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -47,6 +55,64 @@
         "appinvite_service": {
           "status": 2,
           "other_platform_oauth_client": [
+            {
+              "client_id": "566860187383-s44f2hkrh1cl0f8797io9df9l8fmopsh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example"
+              }
+            },
+            {
+              "client_id": "566860187383-ant0bjv496hmgdmj3t2hhk9qlqnh5e70.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566860187383:android:124b434a60c4bacb",
+        "android_client_info": {
+          "package_name": "nuvem.camara"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566860187383-q1u8doj0e1uemkuap4i27uk50jcifcet.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nuvem.camara",
+            "certificate_hash": "aeee03c4735c71eabddf86926e432279922d8031"
+          }
+        },
+        {
+          "client_id": "566860187383-ant0bjv496hmgdmj3t2hhk9qlqnh5e70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtNPYhG7ED7q96lIlWy7KIQNqKpo3jCT0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566860187383-s44f2hkrh1cl0f8797io9df9l8fmopsh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example"
+              }
+            },
             {
               "client_id": "566860187383-ant0bjv496hmgdmj3t2hhk9qlqnh5e70.apps.googleusercontent.com",
               "client_type": 3
