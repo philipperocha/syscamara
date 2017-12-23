@@ -23,12 +23,12 @@
     "babel-jest": "20.0.3",
     "babel-preset-react-native": "2.1.0",
     "jest": "20.0.4",
-    "react-native-kill-packager": "^1.0.0",
-    "react-test-renderer": "16.0.0-alpha.6",
-    "react-native-elements": "^0.13.0",
     "react-native-action-button": "^2.7.2",
     "react-native-deprecated-custom-components": "^0.1.1",
-    "react-native-firebase": "^2.0.4"
+    "react-native-elements": "^0.13.0",
+    "react-native-firebase": "^2.0.4",
+    "react-native-kill-packager": "^1.0.0",
+    "react-test-renderer": "16.0.0-alpha.6"
   },
   "jest": {
     "preset": "react-native"
