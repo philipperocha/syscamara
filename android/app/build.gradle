@@ -141,16 +141,16 @@ android {
             }
         }
     }
-    productFlavors {
-        CamaraLagarto {
-            minSdkVersion 23
-            applicationId 'nuvem.camara.lagarto'
-            targetSdkVersion 23
-            versionCode 10
-            versionName '1.0'
-            versionNameSuffix 'release'
-        }
-    }
+    // productFlavors {
+    //     CamaraLagarto {
+    //         minSdkVersion 23
+    //         applicationId 'nuvem.camara.lagarto'
+    //         targetSdkVersion 23
+    //         versionCode 10
+    //         versionName '1.0'
+    //         versionNameSuffix 'release'
+    //     }
+    // }
 
     dexOptions {
         jumboMode = true
