@@ -20,10 +20,10 @@ class DetalheSessao extends Component {
     super(props);
 
     const keySessao = this.props.navigation.state.params._key;
-    let fireRef = firebase.database().ref('Sessoes/' + keySessao + '/downloads');
-    let mesaRef = firebase.database().ref('Sessoes/' + keySessao + '/mesaDiretora');
-    let presentesRef = firebase.database().ref('Sessoes/' + keySessao + '/presentes');
-    let materiasRef = firebase.database().ref('Sessoes/' + keySessao + '/materias');
+    let fireRef = firebase.database().ref('sessaos/' + keySessao + '/downloads');
+    let mesaRef = firebase.database().ref('sessaos/' + keySessao + '/mesaDiretora');
+    let presentesRef = firebase.database().ref('sessaos/' + keySessao + '/presentes');
+    let materiasRef = firebase.database().ref('sessaos/' + keySessao + '/materias');
 
     const dataSource = new ListView.DataSource({
       rowHasChanged: (row1, row2) => row1 !== row2,
