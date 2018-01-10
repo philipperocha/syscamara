@@ -1,22 +1,15 @@
 import React, {Component} from 'react'
-import {StatusBar, Image, FlatList, ActivityIndicator, AppRegistry, ListView, ToolbarAndroid, Text, View, StyleSheet, TextInput, TouchableHighlight, ScrollView, Modal, Dimensions} from 'react-native'
-//import BarraNavegacao from './auxiliares/BarraNavegacao';
-
+import {StatusBar, Image, FlatList, ActivityIndicator, AppRegistry, ListView, 
+    ToolbarAndroid, Text, View, StyleSheet, TextInput, TouchableHighlight, ScrollView, 
+    Modal, Dimensions, ImageBackground} from 'react-native'
 import firebase from '../src/data/firebase';
-
 import Icon from 'react-native-vector-icons/FontAwesome';
-
 import{StackNavigator, TabNavigator, TabBarBottom} from 'react-navigation';
-import{GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 import customStyles from '../src/components/auxiliares/customStyles';
- 
-const FBSDK = require('react-native-fbsdk');
-const {
-    LoginManager,
-    LoginButton,
-    AccessToken
-} = FBSDK;
 
+const FBSDK = require('react-native-fbsdk');
+const {LoginManager, LoginButton, AccessToken} = FBSDK;
+ 
 export default class LoginView extends Component{
 
   static navigationOptions = {
@@ -96,48 +89,8 @@ export default class LoginView extends Component{
         )
     }
 
-    _googleAuth(){
-
-        GoogleSignin.signIn().then(
-            (user) => {
-            console.log(user);
-
-            console.log(user.name);
-
-            // GoogleSignin.getAccessToken(user)
-            // .then((token) => {
-            //     console.log(token);
-            // })
-
-            const credential = firebase.auth.GoogleAuthProvider.credential(user.idToken);
-            // console.log('token google -> ' + user.accessToken);
-            
-
-            //const credential = {token: user.idToken, secret: user.serverAuthCode, provider: 'google', providerId: 'google'}
-
-            firebase.auth().signInWithCredential(credential).then((result) => {
-                    console.log(result);
-                    // this.props.navigator.push({
-                    //     id: 'principal'
-                    // })
-
-                }, (error) => {
-                    console.log(error);
-            })
-
-
-        }
-        
-        ).catch((err) => {
-            console.log('WRONG SIGNIN', err)
-        }).done();
-    }
-
     componentWillMount(){
-        GoogleSignin.hasPlayServices({autoResolve: true});
-        GoogleSignin.configure({
-            webClientId: '566860187383-ant0bjv496hmgdmj3t2hhk9qlqnh5e70.apps.googleusercontent.com'
-        });
+
     }
 
     setModalVisible(visible) {
@@ -159,46 +112,30 @@ export default class LoginView extends Component{
                         <StatusBar backgroundColor='black'/>
                         {/*<BarraNavegacao titulo='SysCamara' corDeFundo='#004466' />*/}
                         <Image source={require('../src/img/logo.png')} style={{width: 150, height: 150, marginTop: 60}}/>
-                        <Text style={[customStyles.titulo,{fontSize: 20, color: '#d9d9d9', marginHorizontal: 15, textAlign: 'center'}]}>Câmara Municipal de Lagarto</Text>
+                        <Text style={[customStyles.titulo,{fontSize: 20, color: '#d9d9d9', marginHorizontal: 15, textAlign: 'center', backgroundColor: 'transparent'}]}>Câmara Municipal de Lagarto</Text>
                     </View>
 
                     <View style={styles.containerLogin}>
                         <View style={{alignItems: 'center', marginBottom: 40}}>
 
-                            <Text style={[customStyles.descricao,{fontSize: 16, color: '#d9d9d9', marginHorizontal: 15, textAlign: 'center'}]}>Escolha abaixo a rede social que deseja utilizar para efetuar o login:</Text>
-                            <TouchableHighlight onPress={this._googleAuth} style={[styles.button, {marginTop: 10, height: 40, backgroundColor: '#b24d34'}]} >
-                                <View style={{alignSelf: 'center', alignItems: 'center'}}>
-                                    <Icon
-                                        name='google'
-                                        size={18}
-                                        color='white'
-                                        style={styles.btnIcon}
-                                    >
-                                        <Text style={[styles.btnText, {fontWeight: 'bold'}]}>    Login com Google</Text>
-                                    </Icon>
-                                </View> 
-                            </TouchableHighlight>
+                            <Text style={[customStyles.descricao,{fontSize: 16, color: '#d9d9d9', marginHorizontal: 15, textAlign: 'center', backgroundColor: 'transparent'}]}>Escolha uma opção para efetuar o login:</Text>
+                            
                             <TouchableHighlight onPress={this._fbAuth} style={[styles.button, {marginTop: 10, height: 40, backgroundColor: '#3b5998'}]} >
                                 <View style={{alignSelf: 'center', alignItems: 'center'}}>
-                                    <Icon
-                                        name='facebook'
-                                        size={18}
-                                        color='white'
-                                        style={styles.btnIcon}
-                                    >
+                                    <Icon name='facebook' size={18} color='white' style={styles.btnIcon}>
                                         <Text style={[styles.btnText, {fontWeight: 'bold'}]}>    Login com Facebook</Text>
                                     </Icon>
                                 </View> 
                             </TouchableHighlight>
-                            <TouchableHighlight style={[styles.button, {marginTop: 10, height: 40, backgroundColor: '#003566'}]}
+                            <TouchableHighlight style={[styles.button, {marginTop: 10, height: 40, backgroundColor: 'transparent', borderWidth: 0}]} underlayColor="transparent"
                                                 onPress={() => {
                                                     this.setModalVisible(true)
                                                 }}>
                                                 <View style={{alignSelf: 'center', alignItems: 'center'}}>
-                                                    <Text style={[styles.btnText, {marginLeft: 0, fontWeight: 'bold'}]}>Login com Email</Text>
+                                                    <Text style={[customStyles.descricao, styles.btnText,{marginLeft: 0, color: '#79d279'}]}>Login com Email</Text>
                                                 </View>
                             </TouchableHighlight>
-                            <Text style={[customStyles.fonteDescricaoItalic, {fontSize: 12, color: '#d9d9d9', marginHorizontal: 15, textAlign: 'center', fontStyle: 'italic'}]}>O aplicativo não postará nada em suas redes sociais sem a sua autorização.</Text>
+                            <Text style={[customStyles.fonteDescricaoItalic, {fontSize: 12, color: '#d9d9d9', marginHorizontal: 15, textAlign: 'center', fontStyle: 'italic', backgroundColor: 'transparent'}]}>O aplicativo não postará nada em suas redes sociais sem a sua autorização.</Text>
                         </View>
                     </View>
 
@@ -213,6 +150,7 @@ export default class LoginView extends Component{
                                         style={styles.inputText}
                                         underlineColorAndroid='transparent'
                                         onChangeText={(email) => this.setState({email})}
+                                        autoCorrect={false}
                                     />
                                     <TextInput
                                         placeholderTextColor="grey"
@@ -221,17 +159,19 @@ export default class LoginView extends Component{
                                         underlineColorAndroid='transparent'
                                         password={true}
                                         onChangeText={(password) => this.setState({password})}
+                                        autoCorrect={false}
+                                        secureTextEntry={true}
                                     />
                                 </View>
                                 <View style={[styles.containerInputs, {}]}>
                                     <TouchableHighlight onPress={this.login} style={[styles.button, {marginBottom: 18}]} >
-                                        <Text style={styles.textButton}>Login</Text>
+                                        <Text style={styles.textButton}>Logar</Text>
                                     </TouchableHighlight>
                                     <TouchableHighlight onPress={this.signUp} style={[styles.button, {marginBottom: 18}]} >
-                                        <Text style={styles.textButton}>Novo Cadastro</Text>
+                                        <Text style={styles.textButton}>Cadastrar Usuário</Text>
                                     </TouchableHighlight>
-                                    <TouchableHighlight onPress={() => { this.setModalVisible(!this.state.modalVisible); }} style={[styles.button, {marginBottom: 18}]} >
-                                        <Text style={styles.textButton}>Cancelar</Text>
+                                    <TouchableHighlight onPress={() => { this.setModalVisible(!this.state.modalVisible); }} style={[styles.button, {marginTop: 9, marginBottom: 18, backgroundColor: 'transparent', borderWidth: 0,}]} >
+                                        <Text style={[customStyles.descricao, styles.textButton, {color: '#333333'}]}>Cancelar</Text>
                                     </TouchableHighlight>
                                     <Text style={[customStyles.descricaoItalic, {textAlign: 'center', color: '#333333', marginBottom: 24}]}>Em caso de problemas, contatar o administrador.</Text>
                                 </View>
