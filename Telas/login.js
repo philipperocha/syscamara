@@ -9,6 +9,8 @@ import customStyles from '../src/components/auxiliares/customStyles';
 
 const FBSDK = require('react-native-fbsdk');
 const {LoginManager, LoginButton, AccessToken} = FBSDK;
+
+console.disableYellowBox = true;
  
 export default class LoginView extends Component{
 
@@ -116,7 +118,7 @@ export default class LoginView extends Component{
                             </Text>
                             <ActivityIndicator
                             //animating={this.state.animating}
-                            color="#0000ff"
+                            color="87cac0"
                             size="large"
                             />
                         
@@ -154,7 +156,7 @@ export default class LoginView extends Component{
                                                         this.setModalVisible(true)
                                                     }}>
                                                     <View style={{alignSelf: 'center', alignItems: 'center'}}>
-                                                        <Text style={[customStyles.titulo, styles.btnText,{marginLeft: 0, color: '#7194a8'}]}>Login com Email</Text>
+                                                        <Text style={[customStyles.descricao, styles.btnText,{marginLeft: 0, color: '#7194a8'}]}>Entrar com Email</Text>
                                                     </View>
                                 </TouchableHighlight>
                                 <Text style={[customStyles.fonteDescricaoItalic, {fontSize: 12, color: '#d9d9d9', marginHorizontal: 15, textAlign: 'center', fontStyle: 'italic', backgroundColor: 'transparent'}]}>O aplicativo não postará nada em suas redes sociais sem a sua autorização.</Text>

@@ -5,4 +5,14 @@
         <!-- Customize your theme here. -->
     </style>
 
+
+    <!-- Adicionado para esconder o circulo de progrsso no login do Facebook -->
+    <style name="FullyTranslucent" parent="android:Theme.Translucent.NoTitleBar">
+        <item name="android:progressBarStyle">@style/InvisibleProgress</item>
+    </style>
+
+    <style name="InvisibleProgress">
+        <item name="android:visibility">gone</item>
+    </style>
+
 </resources>
