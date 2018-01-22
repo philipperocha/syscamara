@@ -118,7 +118,7 @@ export default class LoginView extends Component{
                             </Text>
                             <ActivityIndicator
                             //animating={this.state.animating}
-                            color="87cac0"
+                            color="#87cac0"
                             size="large"
                             />
                         
